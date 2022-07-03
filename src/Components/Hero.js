@@ -1,6 +1,26 @@
 import hero from "../images/hero-img.png";
+import imunify from "../images/partners/imunify.png";
+import ibm from "../images/partners/ibm.png";
+import microsoft from "../images/partners/microsoft.png";
+import certiport from "../images/partners/certiport.png";
+import ic3 from "../images/partners/ic3.png";
+import apple from "../images/partners/apple.png";
 
 const Hero = () => {
+  const partnersList = [imunify, ibm, microsoft, certiport, ic3, apple];
+  const partnersRow = partnersList.map((partner, index) => {
+    return (
+      <div className="col">
+        <img
+          key={index}
+          src={partner}
+          alt="partner logo"
+          className="img-fluid"
+        />
+      </div>
+    );
+  });
+
   return (
     <>
       <style>{`
@@ -32,12 +52,12 @@ const Hero = () => {
         }
     `}</style>
       <section id="hero-section" className="container-fluid">
-        <div className="container d-flex justify-content-center align-items-center p-5 my-5">
-          <div className="col col-md-7 me-5">
+        <div className="container d-flex justify-content-center align-items-start p-5 my-5">
+          <div className="col col-md-7 me-5 pt-5">
             <h1 className="mb-5 display-4 fw-bold">
               Learn any course at your own pace here from world class tutors
             </h1>
-            <div id="hero-search-container" className="">
+            <div id="hero-search-container" className="mb-5">
               <svg
                 id="search-icon"
                 className="mx-3 bi bi-search"
@@ -74,7 +94,8 @@ const Hero = () => {
                 </span>
               </button>
             </div>
-            <div className="row"></div>
+            <br />
+            <div className="row pt-5 align-items-center">{partnersRow}</div>
           </div>
           <div className="col col-md-5">
             <img
