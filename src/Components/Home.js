@@ -15,6 +15,7 @@ const Home = () => {
       <Divider />
       <ExploreCourses />
       <Tutors />
+      <Divider />
     </>
   );
 };
