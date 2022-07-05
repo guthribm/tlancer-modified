@@ -13,7 +13,7 @@ const FooterLinks = () => {
             font-weight: 500;
         }
       `}</style>
-      <div className="container d-flex mb-5">
+      <div className="container d-flex flex-column flex-md-row mb-5">
         <div className="col">
           <ul className="footer-col">
             <li className="top">Categories</li>

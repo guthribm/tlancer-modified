@@ -21,7 +21,7 @@ const Footer = () => {
         <div className="container">
           <FooterLinks />
           <hr />
-          <div className="d-flex align-items-end mt-4 mb-5">
+          <div className="d-flex flex-column flex-md-row align-items-end mt-4 mb-5">
             <div className="col col-md-3">
               <a href="/">
                 <img src={footerLogo} alt="tlancer" width="107" height="28" />
