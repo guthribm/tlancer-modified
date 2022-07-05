@@ -21,7 +21,7 @@ const TipsCard = (props) => {
             color: #6c757d;
         }
     `}</style>
-      <div class="card tip-card mx-4 p-4">
+      <div className="card tip-card mx-4 p-4">
         <img className="card-img-top" src={props.src} alt="Suggested Tip" />
         <div className="card-body p-0">
           <p className="my-3 tricks">Tips & Tricks</p>

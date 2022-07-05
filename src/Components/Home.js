@@ -5,6 +5,7 @@ import Divider from "./Divider";
 import ExploreCourses from "./ExploreCourses/ExploreCourses";
 import Tutors from "./Tutors";
 import Tips from "./ExploreCourses/Tips/Tips";
+import Newsletter from "./Newsletter";
 
 const Home = () => {
   return (
@@ -18,6 +19,8 @@ const Home = () => {
       <Tutors />
       <Divider />
       <Tips />
+      <Divider />
+      <Newsletter />
       <Divider />
     </>
   );

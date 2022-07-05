@@ -8,8 +8,16 @@ const Tips = () => {
   });
   return (
     <>
+      <style>{`
+    #tips-heading {
+                font-family: 'Ubuntu', san-serif;
+            }
+    `}</style>
       <section>
-        <div className="container d-flex justify-content-between my-5">
+        <div
+          id="tips-heading"
+          className="container d-flex justify-content-between my-5"
+        >
           <h2 className="h4 fw-bold pb-4">Tips & Updates</h2>
           <button className="more-courses-btn h5">
             See more tips
@@ -29,7 +37,7 @@ const Tips = () => {
             </svg>
           </button>
         </div>
-        <div className="d-flex container py-5">{tipsRow}</div>
+        <div className="d-flex container pt-5">{tipsRow}</div>
       </section>
     </>
   );

@@ -10,13 +10,8 @@ const Hero = () => {
   const partnersList = [imunify, ibm, microsoft, certiport, ic3, apple];
   const partnersRow = partnersList.map((partner, index) => {
     return (
-      <div className="col">
-        <img
-          key={index}
-          src={partner}
-          alt="partner logo"
-          className="img-fluid"
-        />
+      <div key={index} className="col">
+        <img src={partner} alt="partner logo" className="img-fluid" />
       </div>
     );
   });
