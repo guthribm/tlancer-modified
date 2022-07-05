@@ -39,7 +39,7 @@ const Newsletter = () => {
         }        
       `}</style>
       <section id="newsletter-section" className="container-fluid">
-        <div className="container d-flex align-items-center">
+        <div className="container d-flex flex-column flex-md-row align-items-center">
           <div className="col col-md-8">
             <h2 className="fw-bold mb-4">Sign up for our newsletter</h2>
             <p>

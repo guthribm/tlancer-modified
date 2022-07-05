@@ -51,8 +51,12 @@ const ExploreCourses = () => {
           <h2 id="explore-courses-heading" className="h3 fw-bold pb-5">
             Explore Course Library
           </h2>
-          <div className="d-flex justify-content-evenly my-5">{courses}</div>
-          <div className="d-flex justify-content-evenly my-5">{courses2}</div>
+          <div className="d-flex flex-column flex-md-row justify-content-evenly my-5">
+            {courses}
+          </div>
+          <div className="d-flex flex-column flex-md-row justify-content-evenly my-5">
+            {courses2}
+          </div>
         </div>
       </section>
     </>

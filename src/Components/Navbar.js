@@ -48,12 +48,25 @@ const Navbar = () => {
             background: var(--dark-blue);
             color: white;
         }
+
+        @media (max-width: 768px) {
+          #home-logo {
+            width: 50%;
+            height: 50%;
+          }
+        }
     `}</style>
-      <header>
+      <header className="contianer-fluid">
         <nav className="navbar navbar-expand-md navbar-light bg-white">
           <div className="container mt-2">
             <a className="navbar-brand" href="/">
-              <img src={logo} alt="Tlancer" width={"187"} height={"45"} />
+              <img
+                id="home-logo"
+                src={logo}
+                alt="Tlancer"
+                width={"187"}
+                height={"45"}
+              />
             </a>
             <button
               className="navbar-toggler"

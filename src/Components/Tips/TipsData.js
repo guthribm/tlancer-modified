@@ -1,7 +1,7 @@
-import tip1 from "../../../images/tips/tip1.png";
-import tip2 from "../../../images/tips/tip2.png";
-import tip3 from "../../../images/tips/tip3.png";
-import tip4 from "../../../images/tips/tip4.png";
+import tip1 from "../../images/tips/tip1.png";
+import tip2 from "../../images/tips/tip2.png";
+import tip3 from "../../images/tips/tip3.png";
+import tip4 from "../../images/tips/tip4.png";
 
 export const tipData = [
   {

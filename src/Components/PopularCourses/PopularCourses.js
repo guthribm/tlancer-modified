@@ -24,7 +24,7 @@ const PopularCourses = () => {
             }
             `}</style>
       <section id="popular-courses-section">
-        <div className="container d-flex justify-content-between my-5">
+        <div className="container d-flex flex-column flex-md-row justify-content-between my-5">
           <h2 className="h4 fw-bold pb-4">Popular Courses</h2>
           <button className="more-courses-btn h5">
             See more courses
