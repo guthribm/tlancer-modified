@@ -3,5 +3,8 @@
   --dark-blue: #00274c;
   --active-link: #0ebe6a;
 }
+*, ::after, ::before {
+  box-sizing: border-box;
+}
 
 /* * { border: 1px solid red} */

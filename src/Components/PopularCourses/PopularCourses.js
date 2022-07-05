@@ -34,7 +34,7 @@ const PopularCourses = () => {
               width="16"
               height="16"
               fill="currentColor"
-              className="bi bi-arrow-down"
+              className="bi bi-arrow-down ms-2"
               viewBox="0 0 16 16"
             >
               <path

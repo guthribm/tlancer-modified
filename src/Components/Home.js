@@ -7,6 +7,7 @@ import Tutors from "./Tutors";
 import Tips from "./Tips/Tips";
 import Testimonies from "./Testimonies";
 import Newsletter from "./Newsletter";
+import Footer from "./Footer";
 
 const Home = () => {
   return (
@@ -25,6 +26,7 @@ const Home = () => {
       <Divider />
       <Newsletter />
       <Divider />
+      <Footer />
     </>
   );
 };

@@ -46,7 +46,7 @@ const Hero = () => {
             color: var(--active-link);
         }
     `}</style>
-      <section id="hero-section" className="container-fluid">
+      <section id="hero-section" className="container-fluid pt-5">
         <div className="container d-flex flex-column-reverse flex-md-row justify-content-center align-items-start p-5 my-5">
           <div className="col col-md-7 me-5 pt-5">
             <h1 className="mb-5 display-4 fw-bold">

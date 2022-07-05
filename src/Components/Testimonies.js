@@ -56,7 +56,7 @@ const Testimonies = () => {
       
       }
       `}</style>
-      <section id="testimonials" className="container-fluid bg-white my-5">
+      <section id="testimonials" className="container-fluid bg-white mt-5">
         <div id="testimonials-target" className="link-target"></div>
         <div className="container p-md-5 bg-white">
           {/* ______ Top Row */}
@@ -180,7 +180,7 @@ const Testimonies = () => {
             </div>
           </div>
           {/* ______ Bottom Row */}
-          <div className="row my-md-5">
+          <div className="row mt-md-5">
             <div className="col-9 col-md-5 col-md-6 mb-md-5">
               <h2 className="h1 fw-bold">
                 Every year 1000+ students register with us and lot more get
