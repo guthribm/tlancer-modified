@@ -2,10 +2,13 @@ const FooterLinks = () => {
   return (
     <>
       <style>{`
+        .footer-col {
+          padding-left: 0;
+        }
         .footer-col li {
             color: #6b7280;
             font-family: 'Work Sans', sans-serif;
-            list-style: none;
+            list-style: none;            
         }
         .footer-col li:first-of-type {
             font-family: 'Ubuntu', san-serif;
@@ -13,7 +16,7 @@ const FooterLinks = () => {
             font-weight: 500;
         }
       `}</style>
-      <div className="container d-flex flex-column flex-md-row mb-5">
+      <div className="container d-flex flex-column flex-md-row mb-5 text-center text-md-start">
         <div className="col">
           <ul className="footer-col">
             <li className="top">Categories</li>

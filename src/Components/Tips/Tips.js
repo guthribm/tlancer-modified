@@ -16,7 +16,7 @@ const Tips = () => {
       <section>
         <div
           id="tips-heading"
-          className="container d-flex flex-column flex-md-row justify-content-between my-5"
+          className="container d-flex flex-column flex-md-row align-items-center justify-content-between my-5"
         >
           <h2 className="h4 fw-bold pb-4">Tips & Updates</h2>
           <button className="more-courses-btn h5">

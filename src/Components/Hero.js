@@ -7,15 +7,6 @@ import ic3 from "../images/partners/ic3.png";
 import apple from "../images/partners/apple.png";
 
 const Hero = () => {
-  const partnersList = [imunify, ibm, microsoft, certiport, ic3, apple];
-  const partnersRow = partnersList.map((partner, index) => {
-    return (
-      <div key={index} className="col">
-        <img src={partner} alt="partner logo" className="img-fluid" />
-      </div>
-    );
-  });
-
   return (
     <>
       <style>{`
@@ -27,6 +18,9 @@ const Hero = () => {
         #hero-search {
             border: none;
         }
+        #hero-search:focus {
+          outline: none;
+        }
 
         #search-icon {
             opacity: .5;
@@ -35,7 +29,6 @@ const Hero = () => {
         #hero-search-container {
             border: 1px solid #d1d5db;
             border-radius: 20px;
-            padding: 1rem;
         }
 
         #hero-search-btn {
@@ -46,16 +39,19 @@ const Hero = () => {
             color: var(--active-link);
         }
     `}</style>
-      <section id="hero-section" className="container-fluid pt-5">
-        <div className="container d-flex flex-column-reverse flex-md-row justify-content-center align-items-start p-5 my-5">
-          <div className="col col-md-7 me-5 pt-5">
-            <h1 className="mb-5 display-4 fw-bold">
+      <section id="hero-section" className="container-fluid pt-md-5">
+        <div className="container d-flex flex-column-reverse flex-md-row justify-content-center align-items-center align-items-md-start p-md-5 my-5">
+          <div className="col col-md-7 me-md-5">
+            <h1 className="my-3 my-md-5 display-4 text-center text-md-start fw-bold">
               Learn any course at your own pace here from world class tutors
             </h1>
-            <div id="hero-search-container" className="mb-5">
+            <div
+              id="hero-search-container"
+              className="my-5 d-flex justify-content-start align-items-center p-2 p-md-3"
+            >
               <svg
                 id="search-icon"
-                className="mx-3 bi bi-search"
+                className="mx-3 bi bi-search d-none d-md-block"
                 xmlns="http://www.w3.org/2000/svg"
                 width="30"
                 height="30"
@@ -66,13 +62,13 @@ const Hero = () => {
               </svg>
               <input
                 id="hero-search"
-                className="w-75"
+                className="me-auto w-100"
                 placeholder="Search for any course, tutors, categories"
                 type={"text"}
               />
-              <button id="hero-search-btn" className="fw-medium">
+              <button id="hero-search-btn" className="fw-medium d-flex">
                 Search
-                <span className="ms-2">
+                <span className="ms-2 d-none d-md-inline">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
@@ -90,7 +86,56 @@ const Hero = () => {
               </button>
             </div>
             <br />
-            <div className="row pt-5 align-items-center">{partnersRow}</div>
+            <div className="d-flex flex-column flex-md-row pt-md-5 align-items-center">
+              <div className="d-flex align-items-center">
+                <div className="col mx-3">
+                  <img
+                    src={imunify}
+                    alt="partner logo"
+                    className="img-fluid my-3"
+                  />
+                </div>
+                <div className="col mx-3">
+                  <img
+                    src={ibm}
+                    alt="partner logo"
+                    className="img-fluid my-3"
+                  />
+                </div>
+              </div>
+              <div className="d-flex align-items-center">
+                <div className="col mx-3">
+                  <img
+                    src={microsoft}
+                    alt="partner logo"
+                    className="img-fluid my-3"
+                  />
+                </div>
+                <div className="col mx-3">
+                  <img
+                    src={certiport}
+                    alt="partner logo"
+                    className="img-fluid my-3"
+                  />
+                </div>
+              </div>
+              <div className="d-flex align-items-center">
+                <div className="col mx-3">
+                  <img
+                    src={ic3}
+                    alt="partner logo"
+                    className="img-fluid my-3"
+                  />
+                </div>
+                <div className="col mx-3">
+                  <img
+                    src={apple}
+                    alt="partner logo"
+                    className="img-fluid my-3"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
           <div className="col col-md-5">
             <img

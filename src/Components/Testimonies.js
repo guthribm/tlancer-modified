@@ -15,8 +15,8 @@ const Testimonies = () => {
       }
       
       .big-quote {
-          width: 4rem;
-          height: 4rem;
+          width: 2rem;
+          height: 2rem;
       }
 
       .card-text-test {
@@ -61,7 +61,7 @@ const Testimonies = () => {
         <div className="container p-md-5 bg-white">
           {/* ______ Top Row */}
           <div className="row mb-5">
-            <div className="col-3 text-center col-md-4">
+            <div className="col-3 text-center col-md-4 ps-0">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
@@ -71,7 +71,7 @@ const Testimonies = () => {
                 <path d="M12 12a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1h-1.388c0-.351.021-.703.062-1.054.062-.372.166-.703.31-.992.145-.29.331-.517.559-.683.227-.186.516-.279.868-.279V3c-.579 0-1.085.124-1.52.372a3.322 3.322 0 0 0-1.085.992 4.92 4.92 0 0 0-.62 1.458A7.712 7.712 0 0 0 9 7.558V11a1 1 0 0 0 1 1h2Zm-6 0a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1H4.612c0-.351.021-.703.062-1.054.062-.372.166-.703.31-.992.145-.29.331-.517.559-.683.227-.186.516-.279.868-.279V3c-.579 0-1.085.124-1.52.372a3.322 3.322 0 0 0-1.085.992 4.92 4.92 0 0 0-.62 1.458A7.712 7.712 0 0 0 3 7.558V11a1 1 0 0 0 1 1h2Z" />
               </svg>
             </div>
-            <div className="col-9 col-md-4">
+            <div className="col-9 col-md-4 px-0 pe-2">
               <h2 className="h1 ms-md-5 fw-bold">
                 Testimonies from Our Customers
               </h2>
@@ -84,7 +84,7 @@ const Testimonies = () => {
             <div className="row gx-lg-5">
               {/* ______ Card 1*/}
               <div className="col-lg-2"></div>
-              <div className="col col-lg-4 mt-md-5">
+              <div className="col col-lg-4 mt-md-5 px-0 px-md-5">
                 <div
                   id="putin"
                   className="border-0 shadow pt-5 pb-4 ps-5 pe-4 my-3 card "
@@ -114,7 +114,7 @@ const Testimonies = () => {
                 </div>
               </div>
               {/* ______ Card 2*/}
-              <div className="col col-lg-6">
+              <div className="col col-lg-6 px-0 px-md-5">
                 <div
                   id="riley"
                   className="border-0 shadow pt-5 pb-4 ps-5 pe-4 mt-3 card "
@@ -149,7 +149,7 @@ const Testimonies = () => {
             <div className="row  mb-md-5">
               {/* ______ Card 3*/}
               <div className="col-md-6 col-lg-6"></div>
-              <div className="col-md-5 col-lg-4">
+              <div className="col-md-5 col-lg-4 px-0 px-md-5">
                 <div
                   id="huey"
                   className="border-0 shadow pt-5 pb-4 ps-5 pe-4 mt-3 mb-5 card "
@@ -181,7 +181,7 @@ const Testimonies = () => {
           </div>
           {/* ______ Bottom Row */}
           <div className="row mt-md-5">
-            <div className="col-9 col-md-5 col-md-6 mb-md-5">
+            <div className="col-9 col-md-5 col-md-6 mb-md-5 ps-2">
               <h2 className="h1 fw-bold">
                 Every year 1000+ students register with us and lot more get
                 certified
@@ -191,7 +191,7 @@ const Testimonies = () => {
                 today
               </p>
             </div>
-            <div className="col-3 col-md-6 text-center">
+            <div className="col-3 col-md-6 text-center pe-0">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"

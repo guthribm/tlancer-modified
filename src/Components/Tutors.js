@@ -34,11 +34,22 @@ const Tutors = () => {
           font-weight: 500;
           font-family: 'Ubuntu', san-serif;
         }
+        @media (max-width: 768px) {
+          .cta-btn {
+            width: 100%;
+          }
+          .tutor-display {
+            font-size: 2.5rem;
+          }
+          #tutors-section li {
+            font-size: 1rem;
+          }
+        }
     `}</style>
-      <section id="tutors-section" className="container-fluid p-5">
-        <div className="container d-flex justify-content-center">
+      <section id="tutors-section" className="container-fluid p-md-5">
+        <div className="container d-flex flex-column-reverse flex-md-row justify-content-center">
           <div className="col col-md-6">
-            <div className="d-flex align-items-center my-3">
+            <div className="d-flex align-items-center justify-content-center justify-content-md-start my-3">
               <img
                 className="img-fluid"
                 src={logoTutors}
@@ -49,15 +60,15 @@ const Tutors = () => {
               <h2 className="h4 ms-2 pt-1 tutors-heading">tutors</h2>
             </div>
 
-            <h3 className="tutor-display my-4">
+            <h3 className="tutor-display my-4 text-center text-md-start">
               You know it, You can teach it.
               <span className="tutor-span fw-bold"> Become a tutor.</span>
             </h3>
-            <p className="my-4 pe-5">
+            <p className="my-4 pe-md-5 text-center text-md-start">
               Hackton is the leading online coding tutor for beginners join us
               today to take a step further.
             </p>
-            <ul className="w-75 pt-1 ps-4">
+            <ul className="pt-1 ps-4 tutor-list">
               <li>Upload and manage your courses</li>
               <li>Purus augue in sed nam enim.</li>
               <li>
@@ -65,13 +76,13 @@ const Tutors = () => {
                 lectus at.
               </li>
             </ul>
-            <button className="btn btn-lg cta-btn px-5 mt-4">
+            <button className="btn btn-lg cta-btn px-md-5 mt-4 mx-auto mb-5">
               Sign Up as a tutor
             </button>
           </div>
           <div className="col col-md-6">
             <img
-              className="img-fluid"
+              className="img-fluid my-3"
               src={tutors}
               alt="tutors using laptops"
               width="919"

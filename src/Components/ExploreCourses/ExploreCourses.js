@@ -3,7 +3,7 @@ const ExploreCourses = () => {
   const courses = data.map((course, index) => {
     return (
       <div
-        className="course-container px-2 py-4 d-flex flex-column align-items-center"
+        className="course-container px-2 py-4 my-3 d-flex flex-column align-items-center"
         key={index}
       >
         <img src={course.image} alt={course.alt} width="60" height="60" />
@@ -16,7 +16,7 @@ const ExploreCourses = () => {
     console.log(course.course);
     return (
       <div
-        className="course-container p-3 d-flex flex-column align-items-center"
+        className="course-container px-2 py-4 my-3 d-flex flex-column align-items-center"
         key={index}
       >
         <img src={course.image} alt={course.alt} width="60" height="60" />
@@ -48,13 +48,16 @@ const ExploreCourses = () => {
         `}</style>
       <section id="explore-courses-section" className="container-fluid">
         <div className="container pb-5 mb-5">
-          <h2 id="explore-courses-heading" className="h3 fw-bold pb-5">
+          <h2
+            id="explore-courses-heading"
+            className="h3 fw-bold py-5 text-center text-md-start"
+          >
             Explore Course Library
           </h2>
-          <div className="d-flex flex-column flex-md-row justify-content-evenly my-5">
+          <div className="d-flex flex-column align-items-center flex-md-row justify-content-evenly">
             {courses}
           </div>
-          <div className="d-flex flex-column flex-md-row justify-content-evenly my-5">
+          <div className="d-flex flex-column align-items-center flex-md-row justify-content-evenly">
             {courses2}
           </div>
         </div>

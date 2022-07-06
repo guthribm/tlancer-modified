@@ -40,7 +40,7 @@ const Newsletter = () => {
       `}</style>
       <section id="newsletter-section" className="container-fluid">
         <div className="container d-flex flex-column flex-md-row align-items-center">
-          <div className="col col-md-8">
+          <div className="col col-md-8 text-center text-md-start">
             <h2 className="fw-bold mb-4">Sign up for our newsletter</h2>
             <p>
               Be the first to know about releases and industry news and
@@ -50,7 +50,7 @@ const Newsletter = () => {
           <div className="col col-md-4">
             <div
               id="newsletter-signup-container"
-              className="py-3 px-4 d-flex justify-content-between"
+              className=" p-2 my-3 py-md-3 px-md-4 d-flex justify-content-between"
             >
               <input
                 id="newsletter-signup-input"
@@ -64,7 +64,7 @@ const Newsletter = () => {
                 Send
               </button>
             </div>
-            <p className="privacy mt-2 ms-4">
+            <p className="privacy mt-4 mt-md-2 ms-md-4 text-center text-md-start">
               We care about your data in our
               <a className="privacy-link" href="/">
                 {" "}

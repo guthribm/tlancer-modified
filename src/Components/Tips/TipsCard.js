@@ -2,12 +2,17 @@ const TipsCard = (props) => {
   return (
     <>
       <style>{`
+        .tip-card:hover {
+          transform: scale(1.05);
+          box-shadow: 0px 5px 60px rgba(0,0,0,0.15);
+        }
         .tip-card {
             border: none;
             box-shadow: 0px 5px 30px rgba(0,0,0,0.06);
-            margin-bottom: 6rem;
+            margin-bottom: 2rem;
             color: #00274c;
             display: flex;
+            transition: .3s ease-in-out;
         }
         .tricks {
             font-family: 'Work Sans', sans-serif;
@@ -21,8 +26,13 @@ const TipsCard = (props) => {
             font-family: 'Work Sans', sans-serif;
             color: #6c757d;
         }
+        @media (max-width: 768px) {
+          .tip-card {
+            margin-bottom: 6rem;
+          }
+        }
     `}</style>
-      <div className="col col-md-3 px-4">
+      <div className="col col-md-3 px-md-4">
         <div className="card tip-card p-4">
           <img
             className="card-img-top img-fluid"
