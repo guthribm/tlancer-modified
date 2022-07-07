@@ -69,8 +69,8 @@ const Navbar = () => {
         }
     `}</style>
       <header className="contianer-fluid">
-        <nav className="navbar navbar-expand-md navbar-light bg-white position-fixed w-100">
-          <div className="container mt-2">
+        <nav className="navbar navbar-expand-md navbar-light bg-white fixed-top w-100">
+          <div className="container mt-2 mx-0">
             <a className="navbar-brand" href="/">
               <img
                 id="home-logo"
