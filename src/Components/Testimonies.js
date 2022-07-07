@@ -181,7 +181,7 @@ const Testimonies = () => {
           </div>
           {/* ______ Bottom Row */}
           <div className="row mt-md-5">
-            <div className="col-9 col-md-5 col-md-6 mb-md-5 ps-2">
+            <div className="col-9 col-md-5 col-md-6 mb-4 mb-md-5 ps-2">
               <h2 className="h1 fw-bold">
                 Every year 1000+ students register with us and lot more get
                 certified

@@ -32,7 +32,7 @@ const TipsCard = (props) => {
           }
         }
     `}</style>
-      <div className="col col-md-3 px-md-4">
+      <div className="col col-md-3 px-4">
         <div className="card tip-card p-4">
           <img
             className="card-img-top img-fluid"

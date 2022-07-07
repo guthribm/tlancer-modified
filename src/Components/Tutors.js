@@ -34,6 +34,8 @@ const Tutors = () => {
           font-weight: 500;
           font-family: 'Ubuntu', san-serif;
         }
+
+        
         @media (max-width: 768px) {
           .cta-btn {
             width: 100%;
@@ -44,12 +46,32 @@ const Tutors = () => {
           #tutors-section li {
             font-size: 1rem;
           }
+          #tutors-container {
+            position: relative;
+          }
+          #tutor-title {
+            position: absolute;
+            top: 1.5rem;
+            left: 0;
+            right: 0;
+            margin: auto;
+          }
+          #tutor-image-container {
+            margin-top: 5rem;
+          }
+
         }
     `}</style>
-      <section id="tutors-section" className="container-fluid p-md-5">
-        <div className="container d-flex flex-column-reverse flex-md-row justify-content-center">
+      <section id="tutors-section" className="container-fluid p-md-5 mb-5">
+        <div
+          id="tutors-container"
+          className="container d-flex flex-column-reverse flex-md-row justify-content-center"
+        >
           <div className="col col-md-6">
-            <div className="d-flex align-items-center justify-content-center justify-content-md-start my-3">
+            <div
+              id="tutor-title"
+              className="d-flex align-items-center justify-content-center justify-content-md-start my-3"
+            >
               <img
                 className="img-fluid"
                 src={logoTutors}
@@ -60,7 +82,10 @@ const Tutors = () => {
               <h2 className="h4 ms-2 pt-1 tutors-heading">tutors</h2>
             </div>
 
-            <h3 className="tutor-display my-4 text-center text-md-start">
+            <h3
+              id="tutor-heading"
+              className="tutor-display my-4 text-center text-md-start"
+            >
               You know it, You can teach it.
               <span className="tutor-span fw-bold"> Become a tutor.</span>
             </h3>
@@ -80,7 +105,7 @@ const Tutors = () => {
               Sign Up as a tutor
             </button>
           </div>
-          <div className="col col-md-6">
+          <div id="tutor-image-container" className="col col-md-6">
             <img
               className="img-fluid my-3"
               src={tutors}
