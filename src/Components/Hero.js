@@ -87,15 +87,15 @@ const Hero = () => {
             </div>
             <br />
             <div className="d-flex flex-column flex-md-row pt-md-5 align-items-center">
-              <div className="d-flex align-items-center">
-                <div className="col mx-3">
+              <div className="d-flex align-items-center w-100">
+                <div className="col mx-3  text-center">
                   <img
                     src={imunify}
                     alt="partner logo"
                     className="img-fluid my-3"
                   />
                 </div>
-                <div className="col mx-3">
+                <div className="col mx-3 text-center">
                   <img
                     src={ibm}
                     alt="partner logo"
@@ -103,15 +103,15 @@ const Hero = () => {
                   />
                 </div>
               </div>
-              <div className="d-flex align-items-center">
-                <div className="col mx-3">
+              <div className="d-flex align-items-center  w-100">
+                <div className="col mx-3  text-center">
                   <img
                     src={microsoft}
                     alt="partner logo"
                     className="img-fluid my-3"
                   />
                 </div>
-                <div className="col mx-3">
+                <div className="col mx-3  text-center">
                   <img
                     src={certiport}
                     alt="partner logo"
@@ -119,15 +119,15 @@ const Hero = () => {
                   />
                 </div>
               </div>
-              <div className="d-flex align-items-center">
-                <div className="col mx-3">
+              <div className="d-flex align-items-center  w-100">
+                <div className="col mx-3  text-center">
                   <img
                     src={ic3}
                     alt="partner logo"
                     className="img-fluid my-3"
                   />
                 </div>
-                <div className="col mx-3">
+                <div className="col mx-3  text-center">
                   <img
                     src={apple}
                     alt="partner logo"

@@ -53,15 +53,20 @@ const Testimonies = () => {
         position: relative;
         top: 8rem;
       }
+      @media (max-width: 768px) {
+        .card-text-test {
+          width: 130%;
+        }
+      }
       
       }
       `}</style>
-      <section id="testimonials" className="container-fluid bg-white mt-5">
+      <section id="testimonials" className="container-fluid bg-white my-5">
         <div id="testimonials-target" className="link-target"></div>
         <div className="container p-md-5 bg-white">
           {/* ______ Top Row */}
-          <div className="row mb-5">
-            <div className="col-3 text-center col-md-4 ps-0">
+          <div className="row mb-3 mb-md-5">
+            <div className="col-2 text-center col-md-4 px-0">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
@@ -71,7 +76,7 @@ const Testimonies = () => {
                 <path d="M12 12a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1h-1.388c0-.351.021-.703.062-1.054.062-.372.166-.703.31-.992.145-.29.331-.517.559-.683.227-.186.516-.279.868-.279V3c-.579 0-1.085.124-1.52.372a3.322 3.322 0 0 0-1.085.992 4.92 4.92 0 0 0-.62 1.458A7.712 7.712 0 0 0 9 7.558V11a1 1 0 0 0 1 1h2Zm-6 0a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1H4.612c0-.351.021-.703.062-1.054.062-.372.166-.703.31-.992.145-.29.331-.517.559-.683.227-.186.516-.279.868-.279V3c-.579 0-1.085.124-1.52.372a3.322 3.322 0 0 0-1.085.992 4.92 4.92 0 0 0-.62 1.458A7.712 7.712 0 0 0 3 7.558V11a1 1 0 0 0 1 1h2Z" />
               </svg>
             </div>
-            <div className="col-9 col-md-4 px-0 pe-2">
+            <div className="col-10 col-md-4 px-0 pe-2">
               <h2 className="h1 ms-md-5 fw-bold">
                 Testimonies from Our Customers
               </h2>
@@ -181,7 +186,7 @@ const Testimonies = () => {
           </div>
           {/* ______ Bottom Row */}
           <div className="row mt-md-5">
-            <div className="col-9 col-md-5 col-md-6 mb-4 mb-md-5 ps-2">
+            <div className="col-10 col-md-5 col-md-6 mb-4 mb-md-5 ps-2">
               <h2 className="h1 fw-bold">
                 Every year 1000+ students register with us and lot more get
                 certified
@@ -191,7 +196,7 @@ const Testimonies = () => {
                 today
               </p>
             </div>
-            <div className="col-3 col-md-6 text-center pe-0">
+            <div className="col-2 col-md-6 text-center pe-0">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"

@@ -33,7 +33,7 @@ const TipsCard = (props) => {
         }
     `}</style>
       <div className="col col-md-3 px-4">
-        <div className="card tip-card p-4">
+        <div className="card tip-card p-4 my-3">
           <img
             className="card-img-top img-fluid"
             src={props.src}

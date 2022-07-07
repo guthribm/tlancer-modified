@@ -8,6 +8,7 @@ const Navbar = () => {
       }
         nav {
             font-family: 'Work Sans', sans-serif;
+            z-index: 100;
         }
 
         .nav-link {
@@ -68,7 +69,7 @@ const Navbar = () => {
         }
     `}</style>
       <header className="contianer-fluid">
-        <nav className="navbar navbar-expand-md navbar-light bg-white">
+        <nav className="navbar navbar-expand-md navbar-light bg-white position-fixed w-100">
           <div className="container mt-2">
             <a className="navbar-brand" href="/">
               <img
