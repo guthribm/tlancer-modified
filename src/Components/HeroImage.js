@@ -116,17 +116,39 @@ const HeroImage = () => {
         }
 
         #hero-left, #hero-right {
-          animation: slide 8s ease-in-out infinite;
+          animation: slide 8s linear infinite;
+        }
+
+        #hero-right {
+          animation: slide 7.5s linear infinite;
+          animation-delay: 1s;
         }
         
         #hero-center {
-          animation: slide 8s ease-in-out infinite;
-          animation-delay: 3s;
+          animation: slide-middle 8s linear infinite;
+        }
+
+        .bobble {
+          animation: bobble 3.5s linear infinite;
+        }
+
+        @keyframes bobble {
+          0%{transform: scale(1)}
+          25%{transform: translateY(5px) scale(1.06)}
+          50%{transform: scale(1)}
+          75%{transform: translateY(-5px) scale(1.06)}
+          100%{transform: scale(1)}
         }
 
         @keyframes slide {
           0%{transform: translateY(0)}         
           50%{transform: translateY(8px)}
+          100%{transform: translateY(0)}
+        }
+
+        @keyframes slide-middle {
+          0%{transform: translateY(0)}         
+          50%{transform: translateY(18px)}
           100%{transform: translateY(0)}
         }
     `}</style>
@@ -142,15 +164,15 @@ const HeroImage = () => {
               }
               id="beard-txt"
               src={beardtxt}
-              alt="student studying"
+              alt="I enjoyed my class"
             />
             <img
               className={
-                avatar === 1 ? "img-fluid grow-beard-head" : "img-fluid"
+                avatar === 1 ? "img-fluid grow-beard-head" : "img-fluid bobble"
               }
               id="beard"
               src={beard}
-              alt="student studying"
+              alt="guy with beard"
             />
           </div>
           <img
@@ -170,19 +192,21 @@ const HeroImage = () => {
           />
           <div
             id="hat-container"
-            className="d-flex flex-column align-items-center my-4"
+            className="d-flex flex-column align-items-center mb-4 mt-0"
           >
             <img
               className={avatar === 2 ? "img-fluid grow-text" : "img-fluid"}
               id="hat-txt"
               src={hattxt}
-              alt="student studying"
+              alt="The math class really helped me with my grades"
             />
             <img
-              className={avatar === 2 ? "img-fluid grow-head" : "img-fluid"}
+              className={
+                avatar === 2 ? "img-fluid grow-head" : "img-fluid bobble"
+              }
               id="hat"
               src={hat}
-              alt="student studying"
+              alt="girl in brown hat"
             />
           </div>
         </div>
@@ -196,13 +220,15 @@ const HeroImage = () => {
               className={avatar === 3 ? "img-fluid grow-text" : "img-fluid"}
               id="purple-txt"
               src={purpletxt}
-              alt="student studying"
+              alt="My class was very interactive"
             />
             <img
-              className={avatar === 3 ? "img-fluid grow-head" : "img-fluid"}
+              className={
+                avatar === 3 ? "img-fluid grow-head" : "img-fluid bobble"
+              }
               id="purple"
               src={purple}
-              alt="student studying"
+              alt="girl with purple hair"
             />
           </div>
           <img
