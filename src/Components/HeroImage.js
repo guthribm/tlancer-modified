@@ -56,12 +56,11 @@ const HeroImage = () => {
         }
         #beard {                        
             z-index: 2;
-            transition: 2s;
+            border-radius: 100%;
         }
 
         .grow-beard-head {
             animation: grow-head 6s linear forwards;
-            transition: 2s;
         }
         .grow-beard-text {
             animation: grow-text-beard 5.8s linear forwards;
@@ -74,6 +73,7 @@ const HeroImage = () => {
         }
         #purple {  
             z-index: 2;
+            border-radius: 100%;
         }
 
         #hat-txt {
@@ -82,10 +82,12 @@ const HeroImage = () => {
         }
         #hat {            
             z-index: 2;
+            border-radius: 100%;
         }
 
         .grow-head {
             animation: grow-head 6s linear forwards;
+            
         }
         .grow-text {
             animation: grow-text 5.8s ease-in-out forwards;
