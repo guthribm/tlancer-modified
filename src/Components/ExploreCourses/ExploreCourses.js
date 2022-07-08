@@ -3,7 +3,7 @@ const ExploreCourses = () => {
   const courses = data.map((course, index) => {
     return (
       <div
-        className="course-container px-2 py-4 my-3 d-flex flex-column align-items-center"
+        className="course-container px-2 py-4 my-2 d-flex flex-column align-items-center justify-content-center text-center"
         key={index}
       >
         <img src={course.image} alt={course.alt} width="60" height="60" />
@@ -15,7 +15,7 @@ const ExploreCourses = () => {
   const courses2 = data2.map((course, index) => {
     return (
       <div
-        className="course-container px-2 py-4 my-3 d-flex flex-column align-items-center"
+        className="course-container px-2 py-4 my-2 d-flex flex-column align-items-center justify-content-center text-center"
         key={index}
       >
         <img src={course.image} alt={course.alt} width="60" height="60" />
@@ -33,7 +33,9 @@ const ExploreCourses = () => {
           margin-top: .5rem;
         }
         .course-container {
-          width: 200px;
+          max-width: 200px;
+          width: 100%;
+          height: 180px;
           border-radius: 20px;
           transition: .3s ease-in-out;
         }
@@ -46,18 +48,20 @@ const ExploreCourses = () => {
         }
         `}</style>
       <section id="explore-courses-section" className="container-fluid">
-        <div className="container pb-5 mb-5">
+        <div className="container pb-5 mb-5 px-0">
           <h2
             id="explore-courses-heading"
             className="h3 fw-bold py-5 text-center text-md-start"
           >
             Explore Course Library
           </h2>
-          <div className="d-flex flex-column align-items-center flex-md-row justify-content-evenly">
-            {courses}
-          </div>
-          <div className="d-flex flex-column align-items-center flex-md-row justify-content-evenly">
-            {courses2}
+          <div className="d-flex flex-md-column">
+            <div className="d-flex flex-column align-items-center flex-md-row justify-content-evenly px-2">
+              {courses}
+            </div>
+            <div className="d-flex flex-column align-items-center flex-md-row justify-content-evenly px-2">
+              {courses2}
+            </div>
           </div>
         </div>
       </section>

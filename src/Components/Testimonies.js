@@ -94,7 +94,7 @@ const Testimonies = () => {
               <div className="col col-lg-4 mt-md-5 px-0 px-md-5">
                 <div
                   id="putin"
-                  className="border-0 shadow pt-2 pb-4 ps-4 pe-3 my-3 card "
+                  className="border-0 shadow pt-2 pb-4 ps-4 pe-2 my-3 card "
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -124,7 +124,7 @@ const Testimonies = () => {
               <div className="col col-lg-6 px-0 px-md-5">
                 <div
                   id="riley"
-                  className="border-0 shadow pt-2 pb-4 ps-4 pe-3 mt-3 card "
+                  className="border-0 shadow pt-2 pb-4 ps-4 pe-2 mt-3 card "
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -159,7 +159,7 @@ const Testimonies = () => {
               <div className="col-md-5 col-lg-4 px-0 px-md-5">
                 <div
                   id="huey"
-                  className="border-0 shadow pt-2 pb-4 ps-4 pe-3 mt-3 mb-5 card "
+                  className="border-0 shadow pt-2 pb-4 ps-4 pe-2 mt-3 mb-5 card "
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
