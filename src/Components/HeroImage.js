@@ -100,9 +100,9 @@ const HeroImage = () => {
         }
         @keyframes grow-text-beard {
             0%{transform:  scale(0) translateX(0) translateY(0)}             
-            20%{transform: scale(1.75) translateX(-15px) translateY(-1rem)}
-            50%{transform: scale(1.65) translateX(-15px) translateY(-1.25rem)}
-            80%{transform: scale(1.75) translateX(-15px) translateY(-1rem)} 
+            20%{transform: scale(1.75) translateX(-10px) translateY(-1rem)}
+            50%{transform: scale(1.65) translateX(-10px) translateY(-1.25rem)}
+            80%{transform: scale(1.75) translateX(-10px) translateY(-1rem)} 
             100%{transform: scale(0) translateY(0)}
         }
 
