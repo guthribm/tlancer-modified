@@ -1,4 +1,4 @@
-import hero from "../images/hero-img.png";
+import HeroImage from "./HeroImage";
 import imunify from "../images/partners/imunify.png";
 import ibm from "../images/partners/ibm.png";
 import microsoft from "../images/partners/microsoft.png";
@@ -137,15 +137,7 @@ const Hero = () => {
               </div>
             </div>
           </div>
-          <div className="col col-md-5">
-            <img
-              className="img-fluid"
-              src={hero}
-              alt="students studying at computers"
-              width="846"
-              height="724"
-            />
-          </div>
+          <HeroImage />
         </div>
       </section>
     </>

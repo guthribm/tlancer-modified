@@ -13,7 +13,6 @@ const ExploreCourses = () => {
   });
 
   const courses2 = data2.map((course, index) => {
-    console.log(course.course);
     return (
       <div
         className="course-container px-2 py-4 my-3 d-flex flex-column align-items-center"

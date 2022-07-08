@@ -30,7 +30,7 @@ const Testimonies = () => {
       .blue-quote {
           position: relative;
           top: 1rem;
-          right: 1.75rem;
+          right: 1rem;
           color: #2EC5CE;
           opacity: .5;
       }
@@ -43,6 +43,7 @@ const Testimonies = () => {
           width: 4rem;
           height: 4rem;
         }
+        
       }
       @media (min-width: 1024px) {
         .big-quote {
@@ -57,6 +58,7 @@ const Testimonies = () => {
         .card-text-test {
           width: 130%;
         }
+        
       }
       
       }
@@ -86,13 +88,13 @@ const Testimonies = () => {
           </div>
           {/* ______ Middle Row With Individual Quotes*/}
           <div className="row justify-content-center">
-            <div className="row gx-lg-5">
+            <div className="d-flex px-0 flex-column flex-lg-row gx-lg-5">
               {/* ______ Card 1*/}
               <div className="col-lg-2"></div>
               <div className="col col-lg-4 mt-md-5 px-0 px-md-5">
                 <div
                   id="putin"
-                  className="border-0 shadow pt-5 pb-4 ps-5 pe-4 my-3 card "
+                  className="border-0 shadow pt-2 pb-4 ps-4 pe-3 my-3 card "
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -122,7 +124,7 @@ const Testimonies = () => {
               <div className="col col-lg-6 px-0 px-md-5">
                 <div
                   id="riley"
-                  className="border-0 shadow pt-5 pb-4 ps-5 pe-4 mt-3 card "
+                  className="border-0 shadow pt-2 pb-4 ps-4 pe-3 mt-3 card "
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -151,13 +153,13 @@ const Testimonies = () => {
             </div>
 
             {/* ______ Huey's Row*/}
-            <div className="row  mb-md-5">
+            <div className="row px-0 mb-md-5">
               {/* ______ Card 3*/}
               <div className="col-md-6 col-lg-6"></div>
               <div className="col-md-5 col-lg-4 px-0 px-md-5">
                 <div
                   id="huey"
-                  className="border-0 shadow pt-5 pb-4 ps-5 pe-4 mt-3 mb-5 card "
+                  className="border-0 shadow pt-2 pb-4 ps-4 pe-3 mt-3 mb-5 card "
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
