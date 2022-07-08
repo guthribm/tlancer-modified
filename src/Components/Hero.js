@@ -41,7 +41,7 @@ const Hero = () => {
     `}</style>
       <section id="hero-section" className="container-fluid pt-5">
         <div className="container d-flex flex-column-reverse flex-md-row justify-content-center align-items-center align-items-md-start p-md-5 my-5">
-          <div className="col col-md-7 me-md-5">
+          <div className="col col-md-7 me-md-5 pe-md-5">
             <h1 className="my-3 my-md-5 display-4 text-center text-md-start fw-bold">
               Learn any course at your own pace here from world class tutors
             </h1>

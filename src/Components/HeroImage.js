@@ -40,7 +40,7 @@ const HeroImage = () => {
   const [avatar, setAvatar] = useState(1);
   setTimeout(() => {
     animationHandler();
-  }, 5000);
+  }, 6100);
 
   const animationHandler = () => {
     setAvatar(avatar >= 3 ? avatar - 2 : avatar + 1);
@@ -60,11 +60,11 @@ const HeroImage = () => {
         }
 
         .grow-beard-head {
-            animation: grow-head 3s ease-in-out forwards;
+            animation: grow-head 6s linear forwards;
             transition: 2s;
         }
         .grow-beard-text {
-            animation: grow-text-beard 4s ease-in-out forwards;
+            animation: grow-text-beard 5.8s linear forwards;
             transition: 2s;
         }
 
@@ -85,29 +85,34 @@ const HeroImage = () => {
         }
 
         .grow-head {
-            animation: grow-head 3s ease-in-out forwards;
+            animation: grow-head 6s linear forwards;
         }
         .grow-text {
-            animation: grow-text 4s ease-in-out forwards;
+            animation: grow-text 5.8s ease-in-out forwards;
         }
         
         @keyframes grow-head {
             0%{transform: scale(1)} 
-            50%{transform: scale(1.5) translateY(-1rem)}
-            75%{transform: scale(1.4) translateY(-1rem)}           
-            100%{transform: scale(1.5) translateY(-1rem)}
+            30%{transform: scale(1.5) translateY(-1rem)}
+            50%{transform: scale(1.45) translateY(-1rem)}
+            80%{transform: scale(1.5) translateY(-1rem)} 
+            100%{transform: scale(1) translateY(0)}
         }
         @keyframes grow-text-beard {
-            0%{transform: scale(0)}
-            50%{transform: scale(0);}                      
-            100%{transform: scale(1.75) translateX(-15px) translateY(-1rem)}
+            0%{transform:  scale(0) translateX(0) translateY(0)}             
+            20%{transform: scale(1.75) translateX(-15px) translateY(-1rem)}
+            50%{transform: scale(1.65) translateX(-15px) translateY(-1.25rem)}
+            80%{transform: scale(1.75) translateX(-15px) translateY(-1rem)} 
+            100%{transform: scale(0) translateY(0)}
         }
 
 
         @keyframes grow-text {
-            0%{transform: scale(0)}
-            50%{transform: scale(0);}                      
-            100%{transform: scale(1.75) translateX(15px) translateY(-1rem)}
+            0%{transform:  scale(0) translateX(0) translateY(0)}             
+            20%{transform: scale(1.75) translateX(15px) translateY(-1rem)}
+            50%{transform: scale(1.65) translateX(15px) translateY(-1.25rem)}
+            80%{transform: scale(1.75) translateX(15px) translateY(-1rem)} 
+            100%{transform: scale(0) translateY(0)}
         }
 
         #hero-left, #hero-right {
@@ -121,7 +126,7 @@ const HeroImage = () => {
 
         @keyframes slide {
           0%{transform: translateY(0)}         
-          50%{transform: translateY(5px)}
+          50%{transform: translateY(8px)}
           100%{transform: translateY(0)}
         }
     `}</style>
