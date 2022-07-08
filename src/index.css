@@ -7,5 +7,26 @@
   box-sizing: border-box;
 }
 
+.registration {
+  margin-top: 6rem;
+  height: 60vh;
+  border: 5px solid var(--active-link);
+  background: var(--dark-blue);
+  color: var(--active-link);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fade-in {
+  animation: fade-in .3s linear forwards;
+}
+
+@keyframes fade-in {
+  0%{opacity: 0}
+  70%{opacity: .6}
+  100%{opacity: 1}
+}
+
 
 /* * { border: 1px solid red} */

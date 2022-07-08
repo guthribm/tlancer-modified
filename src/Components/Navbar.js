@@ -1,5 +1,9 @@
-import logo from "../images/logo.png";
+import { Link } from "react-router-dom";
+import CustomLink from "./CustomLink";
+import logo from "../images/logo.webp";
 const Navbar = () => {
+  console.log("navbar rendered");
+
   return (
     <>
       <style>{`
@@ -20,13 +24,13 @@ const Navbar = () => {
           border-width: 2px;
         }
 
-        .active {
+        {/* .active {
             font-weight: bold;
             transform: translateY(-4px);
             text-decoration: dashed underline;
             text-decoration-color: var(--active-link);
             text-underline-offset: 6px;
-        }        
+        }         */}
 
         .btn-nav {
             border: 1px solid var(--dark-blue);
@@ -62,6 +66,10 @@ const Navbar = () => {
         #login-mobile {
           display: none;
         }
+        #home-logo {
+          width: 50%;
+          height: 50%;
+        }
 
         @media (max-width: 1024px) {
           #home-logo {
@@ -81,7 +89,7 @@ const Navbar = () => {
             margin: 1rem auto;
 
           }
-          .nav-home {
+          .nav-item:first-of-type {
             padding-top: 5rem;
           }
         }
@@ -90,15 +98,15 @@ const Navbar = () => {
         <nav className="navbar navbar-expand-lg navbar-light bg-white fixed-top w-100">
           <div className="container mt-2 mx-auto px-0">
             <div className="d-flex align-items-center justify-content-between container-fluid">
-              <a className="navbar-brand" href="/">
+              <Link className="navbar-brand" to="/">
                 <img
                   id="home-logo"
                   src={logo}
                   alt="Tlancer"
-                  width={"187"}
-                  height={"45"}
+                  width={"374"}
+                  height={"90"}
                 />
-              </a>
+              </Link>
               <button
                 id="login-mobile"
                 className="btn btn-nav btn-lg ms-auto me-3 fw-bold text-nowrap"
@@ -134,43 +142,26 @@ const Navbar = () => {
 
             <div className="collapse navbar-collapse" id="navbar">
               <ul className="navbar-nav m-auto mb-2 mb-lg-0">
-                <li className="nav-item nav-home">
-                  <a className="nav-link active" aria-current="page" href="/">
-                    Home
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="/">
-                    Student
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="/">
-                    Tutor
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="/">
-                    Mission
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link text-nowrap" href="/">
-                    Why us?
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="/">
-                    Reviews
-                  </a>
-                </li>
+                <CustomLink to="/">Home</CustomLink>
+                <CustomLink to="/">Student</CustomLink>
+                <CustomLink to="/">Tutor</CustomLink>
+                <CustomLink to="/">Mission</CustomLink>
+                <CustomLink to="/">Why us?</CustomLink>
+                <CustomLink to="/">Reviews</CustomLink>
                 <li className="nav-btn-container">
-                  <button className="btn btn-nav btn-lg join mx-auto ms-lg-4">
+                  <Link
+                    to="/registration"
+                    className="btn btn-nav btn-lg join mx-auto ms-lg-4"
+                  >
                     Join
-                  </button>
+                  </Link>
                 </li>
+
                 <li className="nav-btn-container">
-                  <button className="btn btn-nav btn-lg login mx-auto ms-lg-4">
+                  <Link
+                    to="/"
+                    className="btn btn-nav btn-lg login mx-auto ms-lg-4"
+                  >
                     login
                     <svg
                       id="nav-login-arrow"
@@ -186,7 +177,7 @@ const Navbar = () => {
                         d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"
                       />
                     </svg>
-                  </button>
+                  </Link>
                 </li>
                 <li id="lang-btn-list-item">
                   <button className="btn btn-lang btn-lg mx-auto ms-lg-4">

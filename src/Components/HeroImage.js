@@ -17,15 +17,15 @@
 //   );
 // };
 import { useState } from "react";
-import hero1 from "../images/hero/hero1.png";
-import hero2 from "../images/hero/hero2.png";
-import hero3 from "../images/hero/hero3.png";
+import hero1 from "../images/hero/hero1.webp";
+import hero2 from "../images/hero/hero2.webp";
+import hero3 from "../images/hero/hero3.webp";
 // import hero4 from "../images/hero/hero4.png";
-import beard from "../images/hero/beard/beard.png";
+import beard from "../images/hero/beard/beard.webp";
 import beardtxt from "../images/hero/beard/beardtxt.png";
-import hat from "../images/hero/hat/hat.png";
+import hat from "../images/hero/hat/hat.webp";
 import hattxt from "../images/hero/hat/hattxt.png";
-import purple from "../images/hero/purple/purple.png";
+import purple from "../images/hero/purple/purple.webp";
 import purpletxt from "../images/hero/purple/purpletxt.png";
 
 // const beardEl = document.getElementById("beard");
@@ -48,7 +48,9 @@ const HeroImage = () => {
   return (
     <>
       <style>{`
-        
+        #image-container {
+          overflow-x: hidden;          
+        }
         #beard-txt {
             transform: scale(0);
             z-index: 3;
@@ -154,7 +156,10 @@ const HeroImage = () => {
           100%{transform: translateY(0)}
         }
     `}</style>
-      <div className="container col col-md-5 d-flex align-items-center justify-content-between">
+      <div
+        id="image-container p-5"
+        className="container col col-md-5 d-flex align-items-center justify-content-between"
+      >
         <div className="col px-2">
           <div
             id="beard-container"
@@ -167,6 +172,8 @@ const HeroImage = () => {
               id="beard-txt"
               src={beardtxt}
               alt="I enjoyed my class"
+              width={"196"}
+              height="71"
             />
             <img
               className={
@@ -175,6 +182,8 @@ const HeroImage = () => {
               id="beard"
               src={beard}
               alt="guy with beard"
+              width={"154"}
+              height="154"
             />
           </div>
           <img
@@ -182,6 +191,8 @@ const HeroImage = () => {
             id="hero-left"
             src={hero1}
             alt="student studying"
+            width={"136"}
+            height="435"
           />
         </div>
 
@@ -191,6 +202,8 @@ const HeroImage = () => {
             className="img-fluid"
             src={hero2}
             alt="student studying"
+            width={"133"}
+            height="436"
           />
           <div
             id="hat-container"
@@ -201,6 +214,8 @@ const HeroImage = () => {
               id="hat-txt"
               src={hattxt}
               alt="The math class really helped me with my grades"
+              width={"199"}
+              height="101"
             />
             <img
               className={
@@ -209,6 +224,8 @@ const HeroImage = () => {
               id="hat"
               src={hat}
               alt="girl in brown hat"
+              width={"154"}
+              height="154"
             />
           </div>
         </div>
@@ -223,6 +240,8 @@ const HeroImage = () => {
               id="purple-txt"
               src={purpletxt}
               alt="My class was very interactive"
+              width={"203"}
+              height="82"
             />
             <img
               className={
@@ -231,6 +250,8 @@ const HeroImage = () => {
               id="purple"
               src={purple}
               alt="girl with purple hair"
+              width={"154"}
+              height="154"
             />
           </div>
           <img
@@ -238,6 +259,8 @@ const HeroImage = () => {
             className="img-fluid"
             src={hero3}
             alt="student studying"
+            width={"132"}
+            height="437"
           />
         </div>
       </div>
