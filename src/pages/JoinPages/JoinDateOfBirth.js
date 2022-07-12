@@ -7,13 +7,7 @@ const JoinName = () => {
   return (
     <>
       <style>{`
-      #registration-first-name, #registration-last-name {
-        border: none;
-        width: 100%;
-      }
-      #registration-first-name:hover, #registration-last-name:hover, #registration-first-name:focus, #registration-last-name:focus {        
-        outline: none;
-      }
+     
       .registration-date {
         border-radius: 12px;
         border: 1px solid #d1d5db;
@@ -23,30 +17,21 @@ const JoinName = () => {
       
     `}</style>
       <JoinNav to="/join-names" button="back" />
-      <section className="container-fluid registration fade-in d-flex flex-column p-md-5">
+      <section className="container-fluid registration fade-in d-flex flex-column p-md-5 mb-5">
         <div className="container d-flex flex-column-reverse flex-md-row  align-items-center">
           <div className="col col-md-7 me-md-5 text-center text-md-start mb-5">
             <h2 className="account-heading mb-3">Age is just a number</h2>
             <h3 className="h1 display-5 fw-bold account-form-label">
               Pick your birth date
             </h3>
-            <div className="my-3 my-md-5">
+
+            <form className="my-5">
               <input
                 type={"date"}
                 className="registration-date h4 p-3 registration-input"
                 placeholder="DD"
               />
-              {/* <input
-                type={"month"}
-                className="registration-date"
-                placeholder="MM"
-              />
-              <input
-                type={"year"}
-                className="registration-date"
-                placeholder="YYYY"
-              /> */}
-            </div>
+            </form>
 
             <Link className="btn-registration btn btn-lg" to={"/join-location"}>
               Next{" "}

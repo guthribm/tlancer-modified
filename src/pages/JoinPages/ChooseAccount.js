@@ -15,7 +15,7 @@ const ChooseAccount = () => {
       
     `}</style>
       <JoinNav to="/" button="close" />
-      <section className="container-fluid registration fade-in d-flex flex-column p-md-5">
+      <section className="container-fluid registration fade-in d-flex flex-column p-md-5 mb-5">
         <div className="container d-flex flex-column-reverse flex-md-row align-items-center">
           <div className="col col-md-7 me-md-5 pe-md-5 text-center text-md-start mb-5">
             <h2 className="account-heading mb-3">
@@ -24,14 +24,26 @@ const ChooseAccount = () => {
             <h3 className="h1 display-5 fw-bold account-form-label">
               Choose account type
             </h3>
-            <select className="form-select account-form my-3 my-md-5 p-3">
-              <option disabled selected className="my-5">
-                Select account type
-              </option>
-              <option className="my-5">Student</option>
-              <option className="my-5">Tutor</option>
-              <option className="my-5">Parent</option>
-            </select>
+            <form>
+              <select
+                defaultValue={"DEFAULT"}
+                className="form-select account-form my-5 p-3"
+              >
+                <option value="DEFAULT" disabled className="my-5">
+                  Select account type
+                </option>
+                <option value="student" className="my-5">
+                  Student
+                </option>
+                <option value="tutor" className="my-5">
+                  Tutor
+                </option>
+                <option value="parent" className="my-5">
+                  Parent
+                </option>
+              </select>
+            </form>
+
             <Link className="btn-registration btn btn-lg" to={"/join-email"}>
               Next{" "}
               <svg

@@ -9,9 +9,9 @@ const JoinNav = (props) => {
       .registration-back-btn {
         font-family: 'Ubuntu', san-serif;
         font-weight: 500;
-        font-size: 2rem;
         text-decoration: none;
         color: #00274c;
+        font-size: 1.5rem;
       }
       .registration-back-btn:hover {
         color: #00274c;
@@ -21,21 +21,30 @@ const JoinNav = (props) => {
         width: 25px;
         height: 25px;
       }
+      #registration-close-btn {
+        width: 35px;
+        height: 35px;
+      }
       
       
       .reg-logo{
-        width: 75%;
-        height: 75%;
+        width: 150px;
+        height: 35px;
       }
 
       @media (min-width: 768px) {
-        .reg-logo{
-          width: 25%;
-          height: 25%;
-        }
-        #registration-back-btn {
-        width: 70px;
-        height: 70px;
+        
+      #registration-close-btn {
+        width: 60px;
+        height: 60px;
+      }
+      #registration-back-btn {
+        width: 40px;
+        height: 40px;
+      }
+      .reg-logo{
+        width: 187px;
+        height: 45px;
       }
         
       }
@@ -47,7 +56,7 @@ const JoinNav = (props) => {
           {props.button === "close" ? (
             <Link to={props.to}>
               <img
-                className=""
+                id="registration-close-btn"
                 src={closeBtn}
                 alt="close button"
                 width={"70"}

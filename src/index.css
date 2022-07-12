@@ -7,6 +7,14 @@
   box-sizing: border-box;
 }
 
+.text-input {
+  border: none;
+  width: 100%;
+}
+.text-input:hover, text-input:focus {        
+  outline: none;
+}
+
 .registration {
   margin-top: 6rem;
   display: flex;

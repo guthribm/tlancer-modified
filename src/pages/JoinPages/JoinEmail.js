@@ -16,18 +16,21 @@ const JoinEmail = () => {
       
     `}</style>
       <JoinNav to="/" button="close" />
-      <section className="container-fluid registration fade-in d-flex flex-column p-md-5">
+      <section className="container-fluid registration fade-in d-flex flex-column p-md-5 mb-5">
         <div className="container d-flex flex-column-reverse flex-md-row  align-items-center">
           <div className="col col-md-7 me-md-5 text-center text-md-start mb-5">
             <h2 className="account-heading mb-3">Continue to registration</h2>
             <h3 className="h1 display-5 fw-bold account-form-label">
               Type in your email to continue
             </h3>
-            <input
-              className="registration-input registration-email d-block my-3 my-md-5 p-3 w-75"
-              type={"email"}
-              placeholder="Enter your email"
-            />
+            <form>
+              <input
+                className="registration-input registration-email d-block my-5 p-3 w-75"
+                type={"email"}
+                placeholder="Enter your email"
+              />
+            </form>
+
             <Link className="btn-registration btn btn-lg" to={"/join-names"}>
               Next{" "}
               <svg

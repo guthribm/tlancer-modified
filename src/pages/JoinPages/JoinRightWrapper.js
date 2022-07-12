@@ -5,7 +5,7 @@ const JoinRightWrapper = (props) => {
         <img
           src={props.src}
           alt={props.alt}
-          className="img-fluid ms-auto mb-5"
+          className="img-fluid ms-auto mb-0"
         />
       </div>
     </>

@@ -11,7 +11,7 @@ const JoinLocation = () => {
       
     `}</style>
       <JoinNav to="/join-date-of-birth" button="back" />
-      <section className="container-fluid registration fade-in d-flex flex-column p-md-5">
+      <section className="container-fluid registration fade-in d-flex flex-column p-md-5 mb-5">
         <div className="container d-flex flex-column-reverse flex-md-row  align-items-center">
           <div className="col col-md-7 me-md-5 text-center text-md-start mb-5">
             <h2 className="account-heading mb-3">
@@ -21,14 +21,19 @@ const JoinLocation = () => {
               Pick your location
             </h3>
 
-            <select className="form-select account-form my-3 my-md-5 p-3">
-              <option disabled selected>
-                Region
-              </option>
-              <option>Region One</option>
-              <option>Region Two</option>
-              <option>Region Three</option>
-            </select>
+            <form>
+              <select
+                defaultValue={"DEFAULT"}
+                className="form-select account-form my-5 p-3"
+              >
+                <option value="DEFAULT" disabled>
+                  Region
+                </option>
+                <option value="1">Region One</option>
+                <option value="2">Region Two</option>
+                <option value="3">Region Three</option>
+              </select>
+            </form>
 
             <Link
               className="btn-registration btn btn-lg"
