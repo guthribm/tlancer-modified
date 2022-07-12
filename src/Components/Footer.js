@@ -5,7 +5,6 @@ import twitter from "../images/footer/twitter.svg";
 import github from "../images/footer/github.svg";
 import dribble from "../images/footer/dribble.svg";
 import mysteryicon from "../images/footer/mysteryicon.svg";
-import FooterLinks from "./FooterLinks";
 const Footer = () => {
   return (
     <>
@@ -19,7 +18,6 @@ const Footer = () => {
       `}</style>
       <footer className="container-fluid">
         <div className="container">
-          <FooterLinks />
           <hr />
           <div className="d-flex flex-column flex-md-row align-items-md-end mt-4 mb-5">
             <div className="col col-md-3">

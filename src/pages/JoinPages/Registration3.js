@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import Divider from "../Components/Divider";
 const RegistrationThree = () => {
   console.log("registration 3 rendered");
   return (
@@ -17,7 +16,6 @@ const RegistrationThree = () => {
           <h2>Registration Page 3</h2>
         </div>
       </section>
-      <Divider />
     </>
   );
 };

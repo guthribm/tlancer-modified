@@ -9,14 +9,37 @@
 
 .registration {
   margin-top: 6rem;
-  height: 60vh;
-  border: 5px solid var(--active-link);
-  background: var(--dark-blue);
-  color: var(--active-link);
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 }
+
+.btn-registration {
+  background: #0ebe6a;
+  color: #fff;
+  font-weight: 500;
+  font-family: 'Ubuntu', san-serif;
+}
+
+.registration-name {
+  border-radius: 12px;
+  border: 1px solid #d1d5db;
+}
+
+.account-heading {
+  font-family: 'Work Sans', sans-serif;
+  color: #6b7280;
+}
+.account-form {
+  font-family: 'Ubuntu', san-serif;
+  font-size: 1.5rem;
+  color: #374151;
+}
+.account-form-label {
+  font-family: 'Ubuntu', san-serif;
+  color: #00274c;
+}
+
 
 .fade-in {
   animation: fade-in .3s linear forwards;
@@ -27,6 +50,27 @@
   70%{opacity: .6}
   100%{opacity: 1}
 }
-
+.home-logo {
+  width: 50%;
+  height: 50%;
+}
 
 /* * { border: 1px solid red} */
+
+/* @media (max-width: 1024px) {
+  .home-logo {
+    width: 100%;
+    height: 100%;
+  }
+} */
+
+
+@media (max-width: 768px) {
+  .registration-input {
+    width: 100%!important;
+  }
+  .home-logo {
+    width: 75%;
+    height: 75%;
+  }
+}

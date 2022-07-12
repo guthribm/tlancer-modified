@@ -7,44 +7,97 @@ import Tutors from "./Tutors";
 import Tips from "./Tips/Tips";
 import Testimonies from "./Testimonies";
 import Newsletter from "./Newsletter";
+import FooterLinks from "./FooterLinks";
 import Footer from "./Footer";
 import { Route, Routes } from "react-router-dom";
-import Registration from "../pages/Registration";
-import RegistrationTwo from "../pages/Registration2";
-import RegistrationThree from "../pages/Registration3";
+import ChooseAccount from "../pages/JoinPages/ChooseAccount";
+import JoinEmail from "../pages/JoinPages/JoinEmail";
+import JoinName from "../pages/JoinPages/JoinName";
+import JoinDateOfBirth from "../pages/JoinPages/JoinDateOfBirth";
+import JoinLocation from "../pages/JoinPages/JoinLocation";
+import JoinPhoneNumber from "../pages/JoinPages/JoinPhoneNumber";
 
 const Home = () => {
   console.log("home rendered");
   return (
     <>
-      <Navbar />
-      <div className="container">
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <>
-                <Hero />
-                <Divider />
-                <PopularCourses />
-                <Divider />
-                <ExploreCourses />
-                <Tutors />
-                <Divider />
-                <Testimonies />
-                <Divider />
-                <Tips />
-                <Divider />
-                <Newsletter />
-                <Divider />
-              </>
-            }
-          />
-          <Route path="/registration" element={<Registration />} />
-          <Route path="/registration-two" element={<RegistrationTwo />} />
-          <Route path="/registration-three" element={<RegistrationThree />} />
-        </Routes>
-      </div>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              <Navbar />
+              <Hero />
+              <Divider />
+              <PopularCourses />
+              <Divider />
+              <ExploreCourses />
+              <Tutors />
+              <Divider />
+              <Testimonies />
+              <Divider />
+              <Tips />
+              <Divider />
+              <Newsletter />
+              <Divider />
+              <FooterLinks />
+            </>
+          }
+        />
+        <Route
+          path="/join"
+          element={
+            <>
+              <ChooseAccount />
+            </>
+          }
+        />
+
+        <Route
+          path="/join-email"
+          element={
+            <>
+              <JoinEmail />
+            </>
+          }
+        />
+
+        <Route
+          path="/join-names"
+          element={
+            <>
+              <JoinName />
+            </>
+          }
+        />
+
+        <Route
+          path="/join-date-of-birth"
+          element={
+            <>
+              <JoinDateOfBirth />
+            </>
+          }
+        />
+
+        <Route
+          path="/join-location"
+          element={
+            <>
+              <JoinLocation />
+            </>
+          }
+        />
+
+        <Route
+          path="/join-phone-number"
+          element={
+            <>
+              <JoinPhoneNumber />
+            </>
+          }
+        />
+      </Routes>
 
       <Footer />
     </>

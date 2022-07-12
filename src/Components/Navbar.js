@@ -66,16 +66,10 @@ const Navbar = () => {
         #login-mobile {
           display: none;
         }
-        #home-logo {
-          width: 50%;
-          height: 50%;
-        }
+        
 
         @media (max-width: 1024px) {
-          #home-logo {
-            width: 100%;
-            height: 100%;
-          }
+          
           #login-mobile {
             display: flex;
           }
@@ -100,7 +94,7 @@ const Navbar = () => {
             <div className="d-flex align-items-center justify-content-between container-fluid">
               <Link className="navbar-brand" to="/">
                 <img
-                  id="home-logo"
+                  className="home-logo"
                   src={logo}
                   alt="Tlancer"
                   width={"374"}
@@ -150,7 +144,7 @@ const Navbar = () => {
                 <CustomLink to="/">Reviews</CustomLink>
                 <li className="nav-btn-container">
                   <Link
-                    to="/registration"
+                    to="/join"
                     className="btn btn-nav btn-lg join mx-auto ms-lg-4"
                   >
                     Join
