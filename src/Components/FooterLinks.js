@@ -8,29 +8,39 @@ const FooterLinks = () => {
         .footer-col li {
             color: #6b7280;
             font-family: 'Work Sans', sans-serif;
-            list-style: none;            
+            list-style: none;  
+            transition: .3s;          
         }
-        .footer-col li:first-of-type {
+        .footer-col li:hover {
+          background: #6b7280;
+          color: #fff;
+        }
+        .top {
             font-family: 'Ubuntu', san-serif;
             color: #00274c;
             font-weight: 500;
         }
       `}</style>
-      <div className="container d-flex mb-5 text-center text-md-start">
-        <div className="col-6 text-center">
-          <ul className="footer-col">
-            <li className="top">Products</li>
-            <li>Overview</li>
-            <li>Features</li>
-            <li>Solutions</li>
-            <li>Tutorials</li>
-            <li>Pricing</li>
-            <li>Releases</li>
-          </ul>
+      <div className="container d-flex flex-column flex-md-row mb-5 text-center text-md-start">
+        <div className="col col-md-8 text-center">
+          <p className="top">Products</p>
+          <div className="d-flex flex-column flex-md-row">
+            <ul className="col footer-col mb-0">
+              <li>Overview</li>
+              <li>Features</li>
+              <li>Solutions</li>
+            </ul>
+            <ul className="col footer-col">
+              <li>Tutorials</li>
+              <li>Pricing</li>
+              <li>Releases</li>
+            </ul>
+          </div>
         </div>
-        <div className="col-6 text-center">
+        <div className="col col-md-4 text-center">
+          <p className="top">Company</p>
+          <div className="d-flex flex-column"></div>
           <ul className="footer-col">
-            <li className="top">Company</li>
             <li>About us</li>
             <li>Careers</li>
             <li>Contact</li>
