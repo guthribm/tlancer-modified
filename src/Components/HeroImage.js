@@ -65,7 +65,7 @@ const HeroImage = () => {
             animation: grow-head 6s linear forwards;
         }
         .grow-beard-text {
-            animation: grow-text-beard 5.8s linear forwards;
+            animation: grow-text-beard 5s linear forwards;
             transition: 2s;
         }
 
@@ -92,7 +92,7 @@ const HeroImage = () => {
             
         }
         .grow-text {
-            animation: grow-text 5.8s ease-in-out forwards;
+            animation: grow-text 5.3s ease-in-out forwards;
         }
         
         @keyframes grow-head {
@@ -103,19 +103,21 @@ const HeroImage = () => {
             100%{transform: scale(1) translateY(0)}
         }
         @keyframes grow-text-beard {
-            0%{transform:  scale(0) translateX(0) translateY(0)}             
-            20%{transform: scale(1.75) translateX(-10px) translateY(-1rem)}
+            0%{transform: scale(0) translateX(0) translateY(0)}             
+            10%{transform: scale(0) translateX(0) translateY(0)}             
+            25%{transform: scale(1.75) translateX(-10px) translateY(-1rem)}
             50%{transform: scale(1.65) translateX(-10px) translateY(-1.25rem)}
-            80%{transform: scale(1.75) translateX(-10px) translateY(-1rem)} 
+            85%{transform: scale(1.75) translateX(-10px) translateY(-1rem)} 
             100%{transform: scale(0) translateY(0)}
         }
 
 
         @keyframes grow-text {
-            0%{transform:  scale(0) translateX(0) translateY(0)}             
-            20%{transform: scale(1.75) translateX(15px) translateY(-1rem)}
+            0%{transform: scale(0) translateX(0) translateY(0)}             
+            10%{transform: scale(0) translateX(0) translateY(0)}             
+            25%{transform: scale(1.75) translateX(15px) translateY(-1rem)}
             50%{transform: scale(1.65) translateX(15px) translateY(-1.25rem)}
-            80%{transform: scale(1.75) translateX(15px) translateY(-1rem)} 
+            85%{transform: scale(1.75) translateX(15px) translateY(-1rem)} 
             100%{transform: scale(0) translateY(0)}
         }
 
@@ -124,16 +126,16 @@ const HeroImage = () => {
         }
 
         #hero-right {
-          animation: slide 7.5s linear infinite;
+          animation: slide 8.5s linear infinite;
           animation-delay: 1s;
         }
         
         #hero-center {
-          animation: slide-middle 8s linear infinite;
+          animation: slide-middle 9s linear infinite;
         }
 
         .bobble {
-          animation: bobble 3.5s linear infinite;
+          animation: bobble 4s linear infinite;
         }
 
         @keyframes bobble {
