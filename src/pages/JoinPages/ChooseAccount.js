@@ -44,8 +44,8 @@ const ChooseAccount = () => {
               </select>
             </form>
 
-            <Link className="btn-registration btn btn-lg" to={"/join-email"}>
-              Next{" "}
+            <Link className="btn-registration btn btn-lg" to={"/email"}>
+              Continue{" "}
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"

@@ -1,10 +1,10 @@
-import footerLogo from "../images/footer/footerLogo.svg";
-import facebook from "../images/footer/facebook.svg";
-import linkedin from "../images/footer/linkedin.svg";
-import twitter from "../images/footer/twitter.svg";
-import github from "../images/footer/github.svg";
-import dribble from "../images/footer/dribble.svg";
-import mysteryicon from "../images/footer/mysteryicon.svg";
+import footerLogo from "../../images/footer/footerLogo.svg";
+import facebook from "../../images/footer/facebook.svg";
+import linkedin from "../../images/footer/linkedin.svg";
+import twitter from "../../images/footer/twitter.svg";
+import github from "../../images/footer/github.svg";
+import dribble from "../../images/footer/dribble.svg";
+import mysteryicon from "../../images/footer/mysteryicon.svg";
 const Footer = () => {
   return (
     <>

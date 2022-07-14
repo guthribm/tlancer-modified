@@ -1,7 +1,7 @@
-import tip1 from "../../images/tips/tip1.webp";
-import tip2 from "../../images/tips/tip2.webp";
-import tip3 from "../../images/tips/tip3.webp";
-import tip4 from "../../images/tips/tip4.webp";
+import tip1 from "../../../images/tips/tip1.webp";
+import tip2 from "../../../images/tips/tip2.webp";
+import tip3 from "../../../images/tips/tip3.webp";
+import tip4 from "../../../images/tips/tip4.webp";
 
 export const tipData = [
   {

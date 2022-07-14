@@ -1,8 +1,8 @@
 import CourseCard from "./CourseCard";
-import adobe from "../../images/adobe.png";
-import dataAnalytics from "../../images/dataAnalytics.png";
-import figma from "../../images/figma.png";
-import python from "../../images/python.png";
+import adobe from "../../../images/adobe.png";
+import dataAnalytics from "../../../images/dataAnalytics.png";
+import figma from "../../../images/figma.png";
+import python from "../../../images/python.png";
 const PopularCourses = () => {
   return (
     <>

@@ -4,11 +4,15 @@ import imgLogin from "../../images/Registration/img-login.webp";
 import atSign from "../../images/Registration/at-sign.svg";
 import padlock from "../../images/Registration/padlock.svg";
 import JoinNav from "./JoinNav";
+import LoginButton from "../../Components/LoginButton";
 const Login = () => {
   console.log("registration 2 rendered");
   return (
     <>
       <style>{`
+      .login-btn-container, .login-btn-container span {
+        color: #00274c;
+      }
       .quote-container {
         position: relative;
         bottom: 1rem;
@@ -76,23 +80,27 @@ const Login = () => {
               </div>
             </form>
 
-            <Link className="btn-registration btn btn-lg" to={"/join-email"}>
-              Login{" "}
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                fill="currentColor"
-                className="bi bi-arrow-down ms-5"
-                viewBox="0 0 16 16"
-                style={{ transform: "rotate(-90deg)" }}
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"
-                />
-              </svg>
-            </Link>
+            <div className="my-4 login-btn-container">
+              <Link className="btn-registration btn btn-lg" to={"/"}>
+                Login{" "}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  className="bi bi-arrow-down ms-5"
+                  viewBox="0 0 16 16"
+                  style={{ transform: "rotate(-90deg)" }}
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"
+                  />
+                </svg>
+              </Link>
+              <span className="mx-5"> or </span>
+              <LoginButton />
+            </div>
           </div>
           <div className="col col-md-5">
             <JoinRightWrapper src={imgLogin} alt="person using laptop" />

@@ -10,13 +10,15 @@ import Newsletter from "./Newsletter";
 import FooterLinks from "./FooterLinks";
 import Footer from "./Footer";
 import { Route, Routes } from "react-router-dom";
-import Login from "../pages/JoinPages/Login";
-import ChooseAccount from "../pages/JoinPages/ChooseAccount";
-import JoinEmail from "../pages/JoinPages/JoinEmail";
-import JoinName from "../pages/JoinPages/JoinName";
-import JoinDateOfBirth from "../pages/JoinPages/JoinDateOfBirth";
-import JoinLocation from "../pages/JoinPages/JoinLocation";
-import JoinPhoneNumber from "../pages/JoinPages/JoinPhoneNumber";
+import Login from "../../pages/JoinPages/Login";
+import ChooseAccount from "../../pages/JoinPages/ChooseAccount";
+import JoinEmail from "../../pages/JoinPages/JoinEmail";
+import JoinName from "../../pages/JoinPages/JoinName";
+import JoinDateOfBirth from "../../pages/JoinPages/JoinDateOfBirth";
+import JoinLocation from "../../pages/JoinPages/JoinLocation";
+import JoinPhoneNumber from "../../pages/JoinPages/JoinPhoneNumber";
+import JoinPassword from "../JoinPages/JoinPassword";
+import VerifyEmail from "../JoinPages/VerifyEmail";
 
 const Home = () => {
   console.log("home rendered");
@@ -65,7 +67,7 @@ const Home = () => {
         />
 
         <Route
-          path="/join-email"
+          path="/email"
           element={
             <>
               <JoinEmail />
@@ -74,7 +76,7 @@ const Home = () => {
         />
 
         <Route
-          path="/join-names"
+          path="/names"
           element={
             <>
               <JoinName />
@@ -83,7 +85,7 @@ const Home = () => {
         />
 
         <Route
-          path="/join-date-of-birth"
+          path="/date-of-birth"
           element={
             <>
               <JoinDateOfBirth />
@@ -92,7 +94,7 @@ const Home = () => {
         />
 
         <Route
-          path="/join-location"
+          path="/location"
           element={
             <>
               <JoinLocation />
@@ -101,10 +103,28 @@ const Home = () => {
         />
 
         <Route
-          path="/join-phone-number"
+          path="/phone-number"
           element={
             <>
               <JoinPhoneNumber />
+            </>
+          }
+        />
+
+        <Route
+          path="/verify-email"
+          element={
+            <>
+              <VerifyEmail />
+            </>
+          }
+        />
+
+        <Route
+          path="/password"
+          element={
+            <>
+              <JoinPassword />
             </>
           }
         />

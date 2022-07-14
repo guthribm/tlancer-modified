@@ -1,10 +1,10 @@
 import HeroImage from "./HeroImage";
-import imunify from "../images/partners/imunify.png";
-import ibm from "../images/partners/ibm.png";
-import microsoft from "../images/partners/microsoft.png";
-import certiport from "../images/partners/certiport.png";
-import ic3 from "../images/partners/ic3.png";
-import apple from "../images/partners/apple.png";
+import imunify from "../../images/partners/imunify.png";
+import ibm from "../../images/partners/ibm.png";
+import microsoft from "../../images/partners/microsoft.png";
+import certiport from "../../images/partners/certiport.png";
+import ic3 from "../../images/partners/ic3.png";
+import apple from "../../images/partners/apple.png";
 
 const Hero = () => {
   return (

@@ -1,13 +1,13 @@
-import mathematics from "../../images/courses/mathematics.svg";
-import language from "../../images/courses/language.svg";
-import analytics from "../../images/courses/analytics.svg";
-import design from "../../images/courses/design.svg";
-import programming from "../../images/courses/programming.svg";
-import business from "../../images/courses/business.svg";
-import photography from "../../images/courses/photography.svg";
-import music from "../../images/courses/music.svg";
-import marketing from "../../images/courses/marketing.svg";
-import video from "../../images/courses/video.svg";
+import mathematics from "../../../images/courses/mathematics.svg";
+import language from "../../../images/courses/language.svg";
+import analytics from "../../../images/courses/analytics.svg";
+import design from "../../../images/courses/design.svg";
+import programming from "../../../images/courses/programming.svg";
+import business from "../../../images/courses/business.svg";
+import photography from "../../../images/courses/photography.svg";
+import music from "../../../images/courses/music.svg";
+import marketing from "../../../images/courses/marketing.svg";
+import video from "../../../images/courses/video.svg";
 const data = [
   { alt: "Math", course: "Mathematics", image: mathematics },
   { alt: "Language", course: "Writing & Language", image: language },

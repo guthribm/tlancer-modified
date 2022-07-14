@@ -1,5 +1,5 @@
-import tutors from "../images/tutors.webp";
-import logoTutors from "../images/logoTutors.svg";
+import tutors from "../../images/tutors.webp";
+import logoTutors from "../../images/logoTutors.svg";
 const Tutors = () => {
   const check = (
     <svg

@@ -11,8 +11,9 @@
   border: none;
   width: 100%;
 }
-.text-input:hover, text-input:focus {        
+.text-input:hover, .text-input:focus {        
   outline: none;
+  border: none;
 }
 
 .registration {

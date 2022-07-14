@@ -1,32 +1,14 @@
-// import hero from "../images/hero-img.png";
-
-// const HeroImage = () => {
-//   return (
-//     <>
-//       <style>{``}</style>
-//       <div id="hero-img" className="col col-md-5">
-//         <img
-//           className="img-fluid"
-//           src={hero}
-//           alt="students studying at computers"
-//           width="846"
-//           height="724"
-//         />
-//       </div>
-//     </>
-//   );
-// };
 import { useState } from "react";
-import hero1 from "../images/hero/hero1.webp";
-import hero2 from "../images/hero/hero2.webp";
-import hero3 from "../images/hero/hero3.webp";
+import hero1 from "../../images/hero/hero1.webp";
+import hero2 from "../../images/hero/hero2.webp";
+import hero3 from "../../images/hero/hero3.webp";
 // import hero4 from "../images/hero/hero4.png";
-import beard from "../images/hero/beard/beard.webp";
-import beardtxt from "../images/hero/beard/beardtxt.png";
-import hat from "../images/hero/hat/hat.webp";
-import hattxt from "../images/hero/hat/hattxt.png";
-import purple from "../images/hero/purple/purple.webp";
-import purpletxt from "../images/hero/purple/purpletxt.png";
+import beard from "../../images/hero/beard/beard.webp";
+import beardtxt from "../../images/hero/beard/beardtxt.png";
+import hat from "../../images/hero/hat/hat.webp";
+import hattxt from "../../images/hero/hat/hattxt.png";
+import purple from "../../images/hero/purple/purple.webp";
+import purpletxt from "../../images/hero/purple/purpletxt.png";
 
 // const beardEl = document.getElementById("beard");
 // const beardTxtEl = document.getElementById("beard-txt");

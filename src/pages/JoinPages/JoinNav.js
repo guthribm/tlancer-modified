@@ -35,12 +35,12 @@ const JoinNav = (props) => {
       @media (min-width: 768px) {
         
       #registration-close-btn {
-        width: 60px;
-        height: 60px;
+        width: 50px;
+        height: 50px;
       }
       #registration-back-btn {
-        width: 40px;
-        height: 40px;
+        width: 50px;
+        height: 50px;
       }
       .reg-logo{
         width: 187px;
@@ -52,7 +52,7 @@ const JoinNav = (props) => {
 
     `}</style>
       <header className="container-fluid">
-        <nav className="container navbar navbar-expand-lg navbar-light bg-white fixed-top w-100 d-flex align-items-center justify-content-between px-2">
+        <nav className="container navbar navbar-expand-lg navbar-light bg-white fixed-top w-100 d-flex align-items-center justify-content-between p-2 pt-4">
           {props.button === "close" ? (
             <Link to={props.to}>
               <img

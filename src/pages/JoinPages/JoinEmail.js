@@ -31,8 +31,8 @@ const JoinEmail = () => {
               />
             </form>
 
-            <Link className="btn-registration btn btn-lg" to={"/join-names"}>
-              Next{" "}
+            <Link className="btn-registration btn btn-lg" to={"/names"}>
+              Continue{" "}
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"

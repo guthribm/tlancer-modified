@@ -1,60 +1,77 @@
 import { Link } from "react-router-dom";
 import JoinNav from "./JoinNav";
 import JoinRightWrapper from "./JoinRightWrapper";
-import imgSignup from "../../images/Registration/img-signup-2.webp";
-import personIcon from "../../images/Registration/person-icon.svg";
-const JoinName = () => {
+import imgSignup from "../../images/Registration/img-signup-5.webp";
+import padlock from "../../images/Registration/padlock.svg";
+const JoinPassword = () => {
   console.log("registration 2 rendered");
   return (
     <>
       <style>{`
-      
-      
+      #registration-phone {
+        border: none;
+        width: 100%;
+        font-family: 'Work Sans', sans-serif;
+        color: #6b7280;
+      }
+      #registration-phone:hover, #registration-phone:focus {        
+        outline: none;
+      }
+      .password-subtitle {
+        font-family: 'Work Sans', sans-serif;
+        color: #6b7280;
+        font-weight: 400;
+      }
       
     `}</style>
-      <JoinNav to="/email" button="back" />
+      <JoinNav to="/verify-email" button="back" />
       <section className="container-fluid registration fade-in d-flex flex-column p-md-5 mb-5">
         <div className="container d-flex flex-column-reverse flex-md-row  align-items-center">
           <div className="col col-md-7 me-md-5 text-center text-md-start mb-5">
-            <h2 className="account-heading mb-3">Continue to registration</h2>
+            <h2 className="account-heading mb-3">
+              Passwords are personal, keep you safe online too
+            </h2>
             <h3 className="h1 display-5 fw-bold account-form-label">
-              Type in names
+              Set a password
             </h3>
-            <form className="my-5">
-              <div className="w-75 my-3 my-md-5 p-3 registration-name d-flex flex-row align-items-center registration-input">
+            <form className="d-flex">
+              <div className="w-75 my-3 mt-md-4 p-3 registration-name d-flex flex-row align-items-center registration-input me-5">
                 <img
                   className="me-3"
-                  src={personIcon}
-                  alt="person icon"
+                  src={padlock}
+                  alt="@"
                   width="24"
                   height="24"
                 />
                 <input
-                  id="registration-first-name"
+                  id="login-password"
                   className="d-block text-input"
                   type={"text"}
-                  placeholder="First Name"
+                  placeholder="Enter password"
                 />
               </div>
 
-              <div className="w-75 my-3 my-md-5 p-3 registration-name d-flex flex-row align-items-center registration-input">
+              <div className="w-75 my-3 mt-md-4 p-3 registration-name d-flex flex-row align-items-center registration-input me-5">
                 <img
                   className="me-3"
-                  src={personIcon}
-                  alt="person icon"
+                  src={padlock}
+                  alt="padlock icon"
                   width="24"
                   height="24"
                 />
                 <input
-                  id="registration-last-name"
+                  id="login-confirm-password"
                   className="d-block text-input"
-                  type={"text"}
-                  placeholder="Last Name"
+                  type={"password"}
+                  placeholder="Confirm password"
                 />
               </div>
             </form>
+            <h5 className="password-subtitle">
+              Password must include, Letters, numbers, and symbols
+            </h5>
 
-            <Link className="btn-registration btn btn-lg" to={"/date-of-birth"}>
+            <Link className="btn-registration btn btn-lg mt-5" to={"/"}>
               Continue{" "}
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -81,4 +98,4 @@ const JoinName = () => {
   );
 };
 
-export default JoinName;
+export default JoinPassword;
