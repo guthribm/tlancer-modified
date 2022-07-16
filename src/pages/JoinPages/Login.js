@@ -1,12 +1,37 @@
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 import JoinRightWrapper from "./JoinRightWrapper";
 import imgLogin from "../../images/Registration/img-login.webp";
 import atSign from "../../images/Registration/at-sign.svg";
 import padlock from "../../images/Registration/padlock.svg";
 import JoinNav from "./JoinNav";
-import LoginButton from "../../Components/LoginButton";
+import PostLogin from "../../helperFunctions/PostLogin";
+
+// import LoginButton from "../../Components/LoginButton";
 const Login = () => {
-  console.log("registration 2 rendered");
+  console.log("login rendered");
+
+  const [loginPassword, setLoginPassword] = useState("");
+  const [loginEmail, setLoginEmail] = useState("");
+
+  const emailInputHandler = (e) => {
+    console.log(e.target.value);
+    setLoginEmail(e.target.value);
+  };
+  const passwordInputHandler = (e) => {
+    console.log(e.target.value);
+    setLoginPassword(e.target.value);
+  };
+  const submitHandler = (e) => {
+    e.preventDefault();
+    console.log("button clicked");
+    const loginData = { email: loginEmail, password: loginPassword };
+    PostLogin(loginData);
+  };
+
+  console.log("email " + loginEmail + " pass " + loginPassword);
+  useEffect(() => {});
+
   return (
     <>
       <style>{`
@@ -23,6 +48,16 @@ const Login = () => {
         font-family: 'Ubuntu', san-serif;
         font-weight: 500;
         color: #00274c;
+      }
+
+        .text-input {
+        border: none;
+        width: 100%;
+      }
+
+        .text-input:hover, .text-input:focus {        
+        outline: none;
+        border: none;
       }
 
       .quote-container p {
@@ -47,7 +82,7 @@ const Login = () => {
             <h3 className="h1 display-5 fw-bold account-form-label">Login</h3>
 
             <form className="my-5">
-              <div className="w-75 my-3 my-md-5 p-3 registration-name d-flex flex-row align-items-center registration-input">
+              <div className="w-75 my-3 my-md-5 p-3 registration-name d-flex flex-row align-items-center registration-input form-group">
                 <img
                   className="me-3"
                   src={atSign}
@@ -55,15 +90,19 @@ const Login = () => {
                   width="24"
                   height="24"
                 />
+                <label className="d-none" htmlFor="login-email">
+                  Enter email
+                </label>
                 <input
                   id="login-email"
-                  className="d-block text-input"
+                  className="d-block text-input form-control"
                   type={"text"}
                   placeholder="Enter email"
+                  onChange={emailInputHandler}
                 />
               </div>
 
-              <div className="w-75 my-3 my-md-5 p-3 registration-name d-flex flex-row align-items-center registration-input">
+              <div className="w-75 my-3 my-md-5 p-3 registration-name d-flex flex-row align-items-center registration-input form-group">
                 <img
                   className="me-3"
                   src={padlock}
@@ -71,17 +110,25 @@ const Login = () => {
                   width="24"
                   height="24"
                 />
+                <label className="d-none" htmlFor="login-password">
+                  Enter password
+                </label>
                 <input
                   id="login-password"
-                  className="d-block text-input"
+                  className="d-block text-input form-control"
                   type={"text"}
-                  placeholder="enter password"
+                  placeholder="Enter password"
+                  onChange={passwordInputHandler}
                 />
               </div>
             </form>
 
             <div className="my-4 login-btn-container">
-              <Link className="btn-registration btn btn-lg" to={"/"}>
+              <Link
+                onClick={submitHandler}
+                className="btn-registration btn btn-lg"
+                to={"/"}
+              >
                 Login{" "}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -98,8 +145,8 @@ const Login = () => {
                   />
                 </svg>
               </Link>
-              <span className="mx-5"> or </span>
-              <LoginButton />
+              {/* <span className="my-4 d-block d-xl-inline mx-xl-4"> or </span>
+              <LoginButton /> */}
             </div>
           </div>
           <div className="col col-md-5">

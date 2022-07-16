@@ -19,9 +19,49 @@ import JoinLocation from "../../pages/JoinPages/JoinLocation";
 import JoinPhoneNumber from "../../pages/JoinPages/JoinPhoneNumber";
 import JoinPassword from "../JoinPages/JoinPassword";
 import VerifyEmail from "../JoinPages/VerifyEmail";
+import { useState } from "react";
 
 const Home = () => {
   console.log("home rendered");
+
+  const [accountType, setAccountType] = useState("");
+  const [email, setEmail] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [date, setDate] = useState("");
+  const [location, setLocation] = useState("");
+  const [phone, setPhone] = useState("");
+  const [password, setPassword] = useState("");
+
+  let joinData = {
+    type: accountType,
+    email: email,
+    first_name: firstName,
+    last_name: lastName,
+    dob: date,
+    location: location,
+    password: password,
+  };
+
+  console.log(
+    " acctType: " +
+      joinData.accountType +
+      "email " +
+      joinData.email +
+      " firstname " +
+      joinData.firstName +
+      " lastname " +
+      joinData.lastName +
+      " birthday " +
+      joinData.date,
+    " location " +
+      joinData.location +
+      " password " +
+      joinData.password +
+      " phone " +
+      phone
+  );
+
   return (
     <>
       <Routes>
@@ -61,7 +101,7 @@ const Home = () => {
           path="/join"
           element={
             <>
-              <ChooseAccount />
+              <ChooseAccount setAccountType={setAccountType} />
             </>
           }
         />
@@ -70,7 +110,7 @@ const Home = () => {
           path="/email"
           element={
             <>
-              <JoinEmail />
+              <JoinEmail setEmail={setEmail} />
             </>
           }
         />
@@ -79,7 +119,7 @@ const Home = () => {
           path="/names"
           element={
             <>
-              <JoinName />
+              <JoinName setFirstName={setFirstName} setLastName={setLastName} />
             </>
           }
         />
@@ -88,7 +128,7 @@ const Home = () => {
           path="/date-of-birth"
           element={
             <>
-              <JoinDateOfBirth />
+              <JoinDateOfBirth setDate={setDate} />
             </>
           }
         />
@@ -97,7 +137,7 @@ const Home = () => {
           path="/location"
           element={
             <>
-              <JoinLocation />
+              <JoinLocation setLocation={setLocation} />
             </>
           }
         />
@@ -106,16 +146,16 @@ const Home = () => {
           path="/phone-number"
           element={
             <>
-              <JoinPhoneNumber />
+              <JoinPhoneNumber setPhone={setPhone} />
             </>
           }
         />
 
         <Route
-          path="/verify-email"
+          path="/verify-account"
           element={
             <>
-              <VerifyEmail />
+              <VerifyEmail joinData={joinData} />
             </>
           }
         />
@@ -124,7 +164,7 @@ const Home = () => {
           path="/password"
           element={
             <>
-              <JoinPassword />
+              <JoinPassword setPassword={setPassword} joinData={joinData} />
             </>
           }
         />

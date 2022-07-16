@@ -2,7 +2,9 @@ import { Link } from "react-router-dom";
 import logo from "../../images/logo.webp";
 import closeBtn from "../../images/Registration/blueX.svg";
 import backBtn from "../../images/Registration/arrow-left.svg";
+
 const JoinNav = (props) => {
+  console.log("navbar rendered");
   return (
     <>
       <style>{`

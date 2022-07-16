@@ -1,11 +1,8 @@
 import { Link } from "react-router-dom";
 import CustomLink from "./CustomLink";
 import logo from "../../images/logo.webp";
-import LogoutButton from "../../Components/LogoutButton";
-import { useAuth0 } from "@auth0/auth0-react";
 const Navbar = () => {
   console.log("navbar rendered");
-  const { isAuthenticated } = useAuth0();
   return (
     <>
       <style>{`
@@ -103,29 +100,29 @@ const Navbar = () => {
                   height={"90"}
                 />
               </Link>
-              {!isAuthenticated && (
-                <Link
-                  to="/login"
-                  id="login-mobile"
-                  className="btn btn-nav btn-lg ms-auto me-3 fw-bold text-nowrap"
+
+              <Link
+                to="/login"
+                id="login-mobile"
+                className="btn btn-nav btn-lg ms-auto me-3 fw-bold text-nowrap"
+              >
+                login
+                <svg
+                  id="nav-login-arrow"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  className="bi bi-arrow-down ms-2"
+                  viewBox="0 0 16 16"
                 >
-                  login
-                  <svg
-                    id="nav-login-arrow"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="currentColor"
-                    className="bi bi-arrow-down ms-2"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"
-                    />
-                  </svg>
-                </Link>
-              )}
+                  <path
+                    fillRule="evenodd"
+                    d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"
+                  />
+                </svg>
+              </Link>
+
               <button
                 className="navbar-toggler"
                 type="button"
@@ -147,41 +144,37 @@ const Navbar = () => {
                 <CustomLink to="/">Mission</CustomLink>
                 <CustomLink to="/">Why us?</CustomLink>
                 <CustomLink to="/">Reviews</CustomLink>
-                {!isAuthenticated && (
-                  <li className="nav-btn-container">
-                    <Link
-                      to="/join"
-                      className="btn btn-nav btn-lg join mx-auto ms-lg-4"
-                    >
-                      Join
-                    </Link>
-                  </li>
-                )}
 
                 <li className="nav-btn-container">
-                  <LogoutButton />
-                  {!isAuthenticated && (
-                    <Link
-                      to="/login"
-                      className="btn btn-nav btn-lg login mx-auto ms-lg-4"
+                  <Link
+                    to="/join"
+                    className="btn btn-nav btn-lg join mx-auto ms-lg-4"
+                  >
+                    Join
+                  </Link>
+                </li>
+
+                <li className="nav-btn-container">
+                  <Link
+                    to="/login"
+                    className="btn btn-nav btn-lg login mx-auto ms-lg-4"
+                  >
+                    login
+                    <svg
+                      id="nav-login-arrow"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      className="bi bi-arrow-down ms-2"
+                      viewBox="0 0 16 16"
                     >
-                      login
-                      <svg
-                        id="nav-login-arrow"
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="16"
-                        height="16"
-                        fill="currentColor"
-                        className="bi bi-arrow-down ms-2"
-                        viewBox="0 0 16 16"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"
-                        />
-                      </svg>
-                    </Link>
-                  )}
+                      <path
+                        fillRule="evenodd"
+                        d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"
+                      />
+                    </svg>
+                  </Link>
                 </li>
                 <li id="lang-btn-list-item">
                   <button className="btn btn-lang btn-lg mx-auto ms-lg-4">

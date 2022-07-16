@@ -18,7 +18,7 @@ import purpletxt from "../../images/hero/purple/purpletxt.png";
 // const hatTxtEl = document.getElementById("hat-txt");
 
 const HeroImage = () => {
-  console.log("hero image rendered");
+  // console.log("hero image rendered");
   const [avatar, setAvatar] = useState(1);
   setTimeout(() => {
     animationHandler();

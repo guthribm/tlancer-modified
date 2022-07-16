@@ -1,10 +1,15 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
 import JoinNav from "./JoinNav";
 import JoinRightWrapper from "./JoinRightWrapper";
 import imgSignup from "../../images/Registration/img-signup-2.webp";
 import personIcon from "../../images/Registration/person-icon.svg";
-const JoinName = () => {
-  console.log("registration 2 rendered");
+import ValueChecker from "../../helperFunctions/ValueChecker";
+const JoinName = (props) => {
+  console.log("names rendered");
+  const [fName, setFName] = useState("");
+  const [lName, setLName] = useState("");
+
   return (
     <>
       <style>{`
@@ -31,6 +36,9 @@ const JoinName = () => {
                 />
                 <input
                   id="registration-first-name"
+                  onChange={(e) => {
+                    setFName(e.target.value);
+                  }}
                   className="d-block text-input"
                   type={"text"}
                   placeholder="First Name"
@@ -48,29 +56,59 @@ const JoinName = () => {
                 <input
                   id="registration-last-name"
                   className="d-block text-input"
+                  onChange={(e) => {
+                    setLName(e.target.value);
+                  }}
                   type={"text"}
                   placeholder="Last Name"
                 />
               </div>
+              {!ValueChecker(fName) || !ValueChecker(lName) ? (
+                <button disabled className="btn-registration btn btn-lg">
+                  Continue{" "}
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    className="bi bi-arrow-down ms-5"
+                    viewBox="0 0 16 16"
+                    style={{ transform: "rotate(-90deg)" }}
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"
+                    />
+                  </svg>
+                </button>
+              ) : (
+                <Link to={"/date-of-birth"}>
+                  <button
+                    onClick={() => {
+                      props.setFirstName((prev) => (prev = fName));
+                      props.setLastName((prev) => (prev = lName));
+                    }}
+                    className="btn-registration btn btn-lg"
+                  >
+                    Continue{" "}
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      className="bi bi-arrow-down ms-5"
+                      viewBox="0 0 16 16"
+                      style={{ transform: "rotate(-90deg)" }}
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"
+                      />
+                    </svg>
+                  </button>
+                </Link>
+              )}
             </form>
-
-            <Link className="btn-registration btn btn-lg" to={"/date-of-birth"}>
-              Continue{" "}
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                fill="currentColor"
-                className="bi bi-arrow-down ms-5"
-                viewBox="0 0 16 16"
-                style={{ transform: "rotate(-90deg)" }}
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"
-                />
-              </svg>
-            </Link>
           </div>
           <div className="col col-md-5">
             <JoinRightWrapper src={imgSignup} alt="person using laptop" />
