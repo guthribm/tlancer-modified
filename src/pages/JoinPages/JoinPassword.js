@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import JoinNav from "./JoinNav";
 import JoinRightWrapper from "./JoinRightWrapper";
@@ -7,6 +7,7 @@ import padlock from "../../images/Registration/padlock.svg";
 import PostSighUp from "../../helperFunctions/PostSighUp";
 const JoinPassword = (props) => {
   console.log("passwords rendered");
+  const navigate = useNavigate();
   const [pass, setPass] = useState("");
   const [confirmPass, setConfirmPass] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -20,7 +21,7 @@ const JoinPassword = (props) => {
 
     PostSighUp(props.joinData);
     setIsLoading(false);
-    window.location.replace("https://tlancer-modified.herokuapp.com/data-sent");
+    navigate("/data-sent");
   };
 
   return (
