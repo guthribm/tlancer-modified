@@ -1,4 +1,4 @@
-import { Link, Navigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useState } from "react";
 import JoinNav from "./JoinNav";
 import JoinRightWrapper from "./JoinRightWrapper";
@@ -12,14 +12,15 @@ const JoinPassword = (props) => {
   const [isLoading, setIsLoading] = useState(false);
   console.dir(props.joinData);
 
-  const joinSubmitHandler = () => {
+  const joinSubmitHandler = (e) => {
+    e.preventDefault();
     setIsLoading(true);
     console.log("propsJoinData submitted:  ");
     console.dir(props.joinData);
-    props.setPassword((prev) => (prev = confirmPass));
+
     PostSighUp(props.joinData);
     setIsLoading(false);
-    <Navigate to="/data-sent" />;
+    window.location.replace("https://tlancer-modified.herokuapp.com/data-sent");
   };
 
   return (
@@ -132,8 +133,8 @@ const JoinPassword = (props) => {
                 <Link to={"/data-sent"}>
                   <button
                     onClick={(e) => {
-                      e.preventDefault();
-                      joinSubmitHandler();
+                      props.setPassword((prev) => (prev = confirmPass));
+                      joinSubmitHandler(e);
                     }}
                     className="btn-registration btn btn-lg mt-5"
                   >
