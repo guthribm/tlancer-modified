@@ -6,6 +6,7 @@ import imgSignup from "../../images/Registration/img-signup-4.webp";
 const JoinLocation = (props) => {
   console.log("location rendered");
   const [loc, setLoc] = useState();
+  console.log("location: " + loc);
   const [locIsValid, setLocIsValid] = useState(false);
   return (
     <>
