@@ -1,4 +1,4 @@
-import { Link, Redirect } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { useState } from "react";
 import JoinNav from "./JoinNav";
 import JoinRightWrapper from "./JoinRightWrapper";
@@ -19,7 +19,7 @@ const JoinPassword = (props) => {
     props.setPassword((prev) => (prev = confirmPass));
     PostSighUp(props.joinData);
     setIsLoading(false);
-    <Redirect to="/data-sent" />;
+    <Navigate to="/data-sent" />;
   };
 
   return (
