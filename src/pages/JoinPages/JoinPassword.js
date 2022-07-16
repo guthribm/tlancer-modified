@@ -17,9 +17,9 @@ const JoinPassword = (props) => {
     console.log("propsJoinData submitted:  ");
     console.dir(props.joinData);
     props.setPassword((prev) => (prev = confirmPass));
-
     PostSighUp(props.joinData);
     setIsLoading(false);
+    window.location.replace("https://tlancer-modified.herokuapp.com/data-sent");
   };
 
   return (
@@ -132,6 +132,7 @@ const JoinPassword = (props) => {
                 <Link to={"/data-sent"}>
                   <button
                     onClick={(e) => {
+                      e.preventDefault();
                       joinSubmitHandler();
                     }}
                     className="btn-registration btn btn-lg mt-5"
