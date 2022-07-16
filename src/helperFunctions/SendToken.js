@@ -1,6 +1,4 @@
-import data from "../pages/HomePage/ExploreCourses/CoursesData";
-import SendToken from "./SendToken";
-const PostSignUp = async (body) => {
+const SendToken = async (body) => {
   console.log("fetch started");
 
   const settings = {
@@ -14,7 +12,7 @@ const PostSignUp = async (body) => {
   console.dir(body);
   try {
     const formResponse = await fetch(
-      "https://tlancer.herokuapp.com/api/signup",
+      `https://tlancer.herokuapp.com/api/verify-account/${body.token}`,
       settings
     );
     if (!formResponse.ok) {
@@ -26,6 +24,5 @@ const PostSignUp = async (body) => {
   } catch (e) {
     console.log("error: " + e);
   }
-  SendToken({ token: data.token, verification_code: "373894" });
 };
-export default PostSignUp;
+export default SendToken;
