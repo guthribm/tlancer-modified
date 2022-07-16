@@ -14,7 +14,7 @@ const VerifyEmail = (props) => {
       }
       
     `}</style>
-      <JoinNav to="/phone-number" button="back" />
+      <JoinNav to="/" button="close" />
       <section className="container-fluid registration fade-in d-flex flex-column p-md-5 mb-5">
         <div className="container d-flex flex-column-reverse flex-md-row  align-items-center">
           <div className="col col-md-7 me-md-5 text-center text-md-start mb-5">
@@ -35,13 +35,13 @@ const VerifyEmail = (props) => {
                   height="24"
                 />
                 <input
-                  id="login-password"
+                  id="verification code"
                   className="d-block text-input"
                   type={"text"}
                   placeholder="Verification Code"
                 />
               </div>
-              <Link to={"/password"}>
+              <Link to={"/"}>
                 <button
                   onClick={(e) => {
                     e.preventDefault();

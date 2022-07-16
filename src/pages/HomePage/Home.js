@@ -19,6 +19,7 @@ import JoinLocation from "../../pages/JoinPages/JoinLocation";
 import JoinPhoneNumber from "../../pages/JoinPages/JoinPhoneNumber";
 import JoinPassword from "../JoinPages/JoinPassword";
 import VerifyEmail from "../JoinPages/VerifyEmail";
+import JoinDataSent from "../JoinPages/JoinDataSent";
 import { useState } from "react";
 
 const Home = () => {
@@ -152,19 +153,28 @@ const Home = () => {
         />
 
         <Route
-          path="/verify-account"
+          path="/password"
           element={
             <>
-              <VerifyEmail joinData={joinData} />
+              <JoinPassword setPassword={setPassword} joinData={joinData} />
             </>
           }
         />
 
         <Route
-          path="/password"
+          path="/data-sent"
           element={
             <>
-              <JoinPassword setPassword={setPassword} joinData={joinData} />
+              <JoinDataSent />
+            </>
+          }
+        />
+
+        <Route
+          path="/verify-account"
+          element={
+            <>
+              <VerifyEmail joinData={joinData} />
             </>
           }
         />

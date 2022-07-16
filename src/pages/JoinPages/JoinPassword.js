@@ -9,13 +9,17 @@ const JoinPassword = (props) => {
   console.log("passwords rendered");
   const [pass, setPass] = useState("");
   const [confirmPass, setConfirmPass] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   console.dir(props.joinData);
 
   const joinSubmitHandler = () => {
-    console.log("propsJoinData ");
+    setIsLoading(true);
+    console.log("propsJoinData submitted:  ");
     console.dir(props.joinData);
     props.setPassword((prev) => (prev = confirmPass));
+
     PostSighUp(props.joinData);
+    setIsLoading(false);
   };
 
   return (
@@ -35,10 +39,27 @@ const JoinPassword = (props) => {
         color: #6b7280;
         font-weight: 400;
       }
+
+      .loading {
+        z-index: 10;
+        background: rgba(0,0,0,.5);
+        position: fixed;     
+      }
+      .loading-box {
+       
+      }
       
     `}</style>
       <JoinNav to="/phone-number" button="back" />
+
       <section className="container-fluid registration fade-in d-flex flex-column p-md-5 mb-5">
+        {isLoading && (
+          <div className="container-fluid loading d-flex fade-in p-5 m-5">
+            <div className="col container loading-box mx-auto bg-white p-5 text-center m-5">
+              <h2 className="h1 display-1">Loading..</h2>
+            </div>
+          </div>
+        )}
         <div className="container d-flex flex-column-reverse flex-md-row  align-items-center">
           <div className="col col-md-7 me-md-5 text-center text-md-start mb-5">
             <h2 className="account-heading mb-3">
@@ -108,10 +129,9 @@ const JoinPassword = (props) => {
                   </svg>
                 </button>
               ) : (
-                <Link to={"/"}>
+                <Link to={"/data-sent"}>
                   <button
                     onClick={(e) => {
-                      e.preventDefault();
                       joinSubmitHandler();
                     }}
                     className="btn-registration btn btn-lg mt-5"
