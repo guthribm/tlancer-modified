@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import { useState } from "react";
 import JoinNav from "./JoinNav";
 import JoinRightWrapper from "./JoinRightWrapper";
@@ -19,7 +19,7 @@ const JoinPassword = (props) => {
     props.setPassword((prev) => (prev = confirmPass));
     PostSighUp(props.joinData);
     setIsLoading(false);
-    window.location.replace("https://tlancer-modified.herokuapp.com/data-sent");
+    <Redirect to="/data-sent" />;
   };
 
   return (
