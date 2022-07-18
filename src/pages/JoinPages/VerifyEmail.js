@@ -1,11 +1,57 @@
 import { Link } from "react-router-dom";
+import { useContext, useState } from "react";
 import JoinNav from "./JoinNav";
 import JoinRightWrapper from "./JoinRightWrapper";
 import imgSignup from "../../images/Registration/img-signup-6.webp";
 import padlock from "../../images/Registration/padlock.svg";
-import PostVerify from "../../helperFunctions/PostVerify";
+import AuthContext from "../../store/auth-context";
+import SignUpContext from "../../store/signup-context";
 const VerifyEmail = (props) => {
   console.log("verifyEmail rendered");
+  const authCtx = useContext(AuthContext);
+  const sighUPCtx = useContext(SignUpContext);
+  const [verifyCode, setVerifyCode] = useState("");
+  const verifyBody = {
+    verify_token: authCtx.token,
+    verfy_code: verifyCode,
+  };
+
+  const settings = {
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(verifyBody),
+  };
+
+  const verifySubmitHandler = (e) => {
+    e.preventDefault();
+    console.log("verify submit started");
+    console.log("verify body being sent: " + JSON.stringify(verifyBody));
+    fetch("https://tlancer.herokuapp.com/api/verify-account-code", settings)
+      .then((res) => {
+        if (res.ok) {
+          return res.json();
+        } else {
+          return res.json().then((data) => {
+            let errorMessage = "Authentication Failed";
+            // if (data && data.error && data.error.message) {
+            //   errorMessage = data.error.message;
+            // }
+
+            throw new Error(errorMessage);
+          });
+        }
+      })
+      .then((data) => {
+        console.log("data recieved from verify code: " + JSON.stringify(data));
+      })
+      .catch((err) => {
+        alert(err.message);
+      });
+  };
+
   return (
     <>
       <style>{`
@@ -20,7 +66,11 @@ const VerifyEmail = (props) => {
           <div className="col col-md-7 me-md-5 text-center text-md-start mb-5">
             <h2 className="account-heading mb-3">
               A verification code was sent to your email{" "}
-              <span className="email-accent">{props.joinData.email}</span>
+              {sighUPCtx.data.email && (
+                <span className="email-accent">
+                  {props.sighUPCtx.data.email}
+                </span>
+              )}
             </h2>
             <h3 className="h1 display-5 fw-bold account-form-label">
               Enter Verification code
@@ -35,6 +85,7 @@ const VerifyEmail = (props) => {
                   height="24"
                 />
                 <input
+                  onChange={(e) => setVerifyCode(e.target.value)}
                   id="verification code"
                   className="d-block text-input"
                   type={"text"}
@@ -44,8 +95,7 @@ const VerifyEmail = (props) => {
               <Link to={"/"}>
                 <button
                   onClick={(e) => {
-                    e.preventDefault();
-                    PostVerify({ token: "" });
+                    verifySubmitHandler(e);
                   }}
                   className="btn-registration btn btn-lg mt-5"
                 >

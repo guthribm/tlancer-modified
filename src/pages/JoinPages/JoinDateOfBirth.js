@@ -1,9 +1,13 @@
 import { Link } from "react-router-dom";
+import { useState, useContext } from "react";
 import JoinNav from "./JoinNav";
 import JoinRightWrapper from "./JoinRightWrapper";
 import imgSignup from "../../images/Registration/img-signup-3.webp";
+import SignUpContext from "../../store/signup-context";
 const JoinName = (props) => {
   console.log("dob rendered");
+  const signupCTX = useContext(SignUpContext);
+  const [dateValue, setDateValue] = useState();
 
   return (
     <>
@@ -29,6 +33,7 @@ const JoinName = (props) => {
             <form className="my-5">
               <input
                 id="join-date"
+                onChange={(e) => setDateValue(e.target.value)}
                 type={"date"}
                 className="registration-date h4 p-3 registration-input d-block mb-5"
                 placeholder="DD"
@@ -37,10 +42,7 @@ const JoinName = (props) => {
               <Link to={"/location"}>
                 <button
                   onClick={() => {
-                    props.setDate(
-                      (prev) =>
-                        (prev = document.getElementById("join-date").value)
-                    );
+                    signupCTX.actions.dateHandler(dateValue);
                   }}
                   className="btn-registration btn btn-lg"
                 >

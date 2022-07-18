@@ -1,13 +1,15 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import JoinNav from "./JoinNav";
 import JoinRightWrapper from "./JoinRightWrapper";
 import imgSignup from "../../images/Registration/img-signup-4.webp";
+import SignUpContext from "../../store/signup-context";
 const JoinLocation = (props) => {
   console.log("location rendered");
   const [loc, setLoc] = useState();
   console.log("location: " + loc);
   const [locIsValid, setLocIsValid] = useState(false);
+  const signupCTX = useContext(SignUpContext);
   return (
     <>
       <style>{`
@@ -64,11 +66,7 @@ const JoinLocation = (props) => {
                 <Link to={"/phone-number"}>
                   <button
                     onClick={() => {
-                      props.setLocation(
-                        (prev) =>
-                          (prev =
-                            document.getElementById("join-location").value)
-                      );
+                      signupCTX.actions.locationHandler(loc);
                     }}
                     className="btn-registration btn btn-lg"
                   >

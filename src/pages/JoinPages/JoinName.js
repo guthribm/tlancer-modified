@@ -1,14 +1,20 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import JoinNav from "./JoinNav";
 import JoinRightWrapper from "./JoinRightWrapper";
 import imgSignup from "../../images/Registration/img-signup-2.webp";
 import personIcon from "../../images/Registration/person-icon.svg";
 import ValueChecker from "../../helperFunctions/ValueChecker";
+import SignUpContext from "../../store/signup-context";
 const JoinName = (props) => {
   console.log("names rendered");
+  const signupCTX = useContext(SignUpContext);
   const [fName, setFName] = useState("");
   const [lName, setLName] = useState("");
+  const onClickHandler = () => {
+    signupCTX.actions.firstNameHandler(fName);
+    signupCTX.actions.lastNameHandler(lName);
+  };
 
   return (
     <>
@@ -84,10 +90,7 @@ const JoinName = (props) => {
               ) : (
                 <Link to={"/date-of-birth"}>
                   <button
-                    onClick={() => {
-                      props.setFirstName((prev) => (prev = fName));
-                      props.setLastName((prev) => (prev = lName));
-                    }}
+                    onClick={onClickHandler}
                     className="btn-registration btn btn-lg"
                   >
                     Continue{" "}

@@ -1,17 +1,19 @@
-import data from "../pages/HomePage/ExploreCourses/CoursesData";
-import SendToken from "./SendToken";
-const PostSignUp = async (body) => {
+const PostSignUp = async (body, authMethod) => {
   console.log("fetch started");
+  console.log(
+    "signupCTX.data that will be sent on PostSignUp submit: " +
+      JSON.stringify(body)
+  );
 
   const settings = {
     method: "POST",
     headers: {
-      Accept: "application/json",
+      // Accept: "application/json",
       "Content-Type": "application/json",
     },
     body: JSON.stringify(body),
   };
-  console.dir(body);
+
   try {
     const formResponse = await fetch(
       "https://tlancer.herokuapp.com/api/signup",
@@ -21,11 +23,13 @@ const PostSignUp = async (body) => {
       throw new Error("error during submission");
     } else {
       const data = await formResponse.json();
-      console.dir(data);
+      // authMethod(data.token);
+      console.log("Fetch completed");
+      console.log("response recieved: " + JSON.stringify(data));
+      console.log("data token: " + data.token);
     }
   } catch (e) {
     console.log("error: " + e);
   }
-  SendToken({ token: data.token, verification_code: "373894" });
 };
 export default PostSignUp;

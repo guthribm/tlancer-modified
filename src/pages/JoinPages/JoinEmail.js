@@ -1,12 +1,13 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import JoinNav from "./JoinNav";
 import JoinRightWrapper from "./JoinRightWrapper";
 import imgSignup from "../../images/Registration/img-signup-1.webp";
+import SignUpContext from "../../store/signup-context";
 const JoinEmail = (props) => {
   console.log("email rendered");
   const [emailValue, setEmailValue] = useState("");
-
+  const signupCTX = useContext(SignUpContext);
   function emailChecker(value) {
     return value.includes("@");
   }
@@ -63,11 +64,7 @@ const JoinEmail = (props) => {
                 <Link to={"/names"}>
                   <button
                     onClick={() => {
-                      props.setEmail(
-                        (prev) =>
-                          (prev =
-                            document.getElementById("join-email-input").value)
-                      );
+                      signupCTX.actions.emailHandler(emailValue);
                     }}
                     className="btn-registration btn btn-lg"
                   >

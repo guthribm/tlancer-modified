@@ -1,13 +1,15 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import JoinRightWrapper from "./JoinRightWrapper";
 import imgSignup from "../../images/Registration/img-signup.webp";
 import JoinNav from "./JoinNav";
+import SignUpContext from "../../store/signup-context";
 const ChooseAccount = (props) => {
   console.log("choose account rendered");
 
   const [entry, setEntry] = useState("");
   const [isValid, setIsValid] = useState(false);
+  const signupCTX = useContext(SignUpContext);
   console.log("entry: " + entry);
   console.log("isValid: " + isValid);
 
@@ -76,9 +78,9 @@ const ChooseAccount = (props) => {
               ) : (
                 <Link to={"/email"}>
                   <button
-                    onClick={() =>
-                      props.setAccountType((prev) => (prev = entry))
-                    }
+                    onClick={() => {
+                      signupCTX.actions.accountHandler(entry);
+                    }}
                     className="btn-registration btn btn-lg"
                   >
                     Continue{" "}

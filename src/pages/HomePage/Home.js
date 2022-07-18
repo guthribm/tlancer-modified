@@ -34,34 +34,15 @@ const Home = () => {
   const [phone, setPhone] = useState("");
   const [password, setPassword] = useState("");
 
-  let joinData = {
-    type: accountType,
-    email: email,
-    first_name: firstName,
-    last_name: lastName,
-    dob: date,
-    location: location,
-    password: password,
-  };
-
-  console.log(
-    " acctType: " +
-      joinData.accountType +
-      "email " +
-      joinData.email +
-      " firstname " +
-      joinData.firstName +
-      " lastname " +
-      joinData.lastName +
-      " birthday " +
-      joinData.date,
-    " location " +
-      joinData.location +
-      " password " +
-      joinData.password +
-      " phone " +
-      phone
-  );
+  // let joinData = {
+  //   type: accountType,
+  //   email: email,
+  //   first_name: firstName,
+  //   last_name: lastName,
+  //   dob: date,
+  //   location: location,
+  //   password: password,
+  // };
 
   return (
     <>
@@ -156,7 +137,7 @@ const Home = () => {
           path="/password"
           element={
             <>
-              <JoinPassword setPassword={setPassword} joinData={joinData} />
+              <JoinPassword setPassword={setPassword} />
             </>
           }
         />
@@ -174,7 +155,7 @@ const Home = () => {
           path="/verify-account"
           element={
             <>
-              <VerifyEmail joinData={joinData} />
+              <VerifyEmail />
             </>
           }
         />

@@ -1,26 +1,31 @@
 import { Link, useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import JoinNav from "./JoinNav";
 import JoinRightWrapper from "./JoinRightWrapper";
 import imgSignup from "../../images/Registration/img-signup-7.webp";
 import padlock from "../../images/Registration/padlock.svg";
 import PostSighUp from "../../helperFunctions/PostSighUp";
+import SignUpContext from "../../store/signup-context";
+import AuthContext from "../../store/auth-context";
+
 const JoinPassword = (props) => {
-  console.log("passwords rendered");
+  const signupCTX = useContext(SignUpContext);
+  const authCTX = useContext(AuthContext);
   const navigate = useNavigate();
+  console.log("passwords rendered");
+
   const [pass, setPass] = useState("");
   const [confirmPass, setConfirmPass] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
-  console.dir(props.joinData);
 
   const joinSubmitHandler = (e) => {
     e.preventDefault();
-    setIsLoading(true);
-    console.log("propsJoinData submitted:  ");
-    console.dir(props.joinData);
-
-    PostSighUp(props.joinData);
-    setIsLoading(false);
+    console.log(
+      "password submit handler sent width data: " +
+        JSON.stringify(signupCTX.data) +
+        " and login: " +
+        authCTX.login
+    );
+    PostSighUp(signupCTX.data, authCTX.login);
     navigate("/data-sent");
   };
 
@@ -55,13 +60,6 @@ const JoinPassword = (props) => {
       <JoinNav to="/phone-number" button="back" />
 
       <section className="container-fluid registration fade-in d-flex flex-column p-md-5 mb-5">
-        {isLoading && (
-          <div className="container-fluid loading d-flex fade-in p-5 m-5">
-            <div className="col container loading-box mx-auto bg-white p-5 text-center m-5">
-              <h2 className="h1 display-1">Loading..</h2>
-            </div>
-          </div>
-        )}
         <div className="container d-flex flex-column-reverse flex-md-row  align-items-center">
           <div className="col col-md-7 me-md-5 text-center text-md-start mb-5">
             <h2 className="account-heading mb-3">
@@ -104,6 +102,7 @@ const JoinPassword = (props) => {
                   type={"password"}
                   placeholder="Confirm password"
                   onChange={(e) => {
+                    signupCTX.actions.passwordHandler(e.target.value);
                     setConfirmPass(e.target.value);
                   }}
                 />
@@ -134,7 +133,6 @@ const JoinPassword = (props) => {
                 <Link to={"/data-sent"}>
                   <button
                     onClick={(e) => {
-                      props.setPassword((prev) => (prev = confirmPass));
                       joinSubmitHandler(e);
                     }}
                     className="btn-registration btn btn-lg mt-5"
