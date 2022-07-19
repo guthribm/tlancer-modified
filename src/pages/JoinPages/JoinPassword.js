@@ -25,7 +25,7 @@ const JoinPassword = (props) => {
         " and login: " +
         authCTX.login
     );
-    PostSighUp(signupCTX.data, authCTX.login);
+    PostSighUp(signupCTX.data);
     navigate("/data-sent");
   };
 

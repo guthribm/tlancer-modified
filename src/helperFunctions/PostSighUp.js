@@ -1,4 +1,4 @@
-const PostSignUp = async (body, authMethod) => {
+const PostSignUp = async (body) => {
   console.log("fetch started");
   console.log(
     "signupCTX.data that will be sent on PostSignUp submit: " +
@@ -8,10 +8,10 @@ const PostSignUp = async (body, authMethod) => {
   const settings = {
     method: "POST",
     headers: {
-      // Accept: "application/json",
+      Accept: "application/json",
       "Content-Type": "application/json",
     },
-    body: JSON.stringify(body),
+    body: { name: "nope" },
   };
 
   try {

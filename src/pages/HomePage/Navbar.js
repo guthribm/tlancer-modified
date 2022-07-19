@@ -147,7 +147,7 @@ const Navbar = () => {
 
                 <li className="nav-btn-container">
                   <Link
-                    to="/join"
+                    to="/email"
                     className="btn btn-nav btn-lg join mx-auto ms-lg-4"
                   >
                     Join
