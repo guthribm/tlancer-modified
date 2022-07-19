@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
 import JoinNav from "./JoinNav";
 import JoinRightWrapper from "./JoinRightWrapper";
@@ -12,8 +12,11 @@ const JoinEmail = (props) => {
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
   const [confirmPass, setConfirmPass] = useState("");
+  const [tokenVal, setTokenVal] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const signupCTX = useContext(SignUpContext);
   const authCTX = useContext(AuthContext);
+  const navigate = useNavigate();
 
   // if (pass.length > 1 && confirmPass.length > 1 && pass === confirmPass) {
   //   console.log("passwords match");
@@ -23,7 +26,7 @@ const JoinEmail = (props) => {
     return value.includes("@");
   }
 
-  const submitHandler = (e) => {
+  const submitHandler = async (e) => {
     e.preventDefault();
     signupCTX.actions.passwordHandler(confirmPass);
     signupCTX.actions.emailHandler(email);
@@ -42,25 +45,37 @@ const JoinEmail = (props) => {
       },
     };
     const url = "https://tlancer.herokuapp.com/api/signup-tmp";
+    setIsLoading(true);
     console.log("test fetch started with body of: " + JSON.stringify(body));
-    fetch(url, settings)
-      .then((res) => {
-        if (res.ok) {
-          console.log("test fetch POST successfully sent");
-          return res.json();
-        } else {
-          return res.json().then((data) => {
-            let errorMessage = "";
-            if (data && data.error && data.error.message) {
-              errorMessage = data.error.message;
+    try {
+      const signUpResponse = await fetch(url, settings);
 
-              throw new Error(errorMessage);
-            }
-          });
+      if (signUpResponse.ok) {
+        console.log("test fetch POST successfully sent");
+        setIsLoading(false);
+        const responseData = await signUpResponse.json();
+        // console.log("responseData: " + JSON.stringify(responseData));
+        setTokenVal(responseData.data.token);
+        console.log("token value: " + tokenVal);
+        authCTX.login(responseData.data.token);
+        navigate("/verify-account");
+      } else {
+        const responseError = signUpResponse.json();
+
+        let errorMessage = "";
+        if (
+          responseError &&
+          responseError.error &&
+          responseError.error.message
+        ) {
+          errorMessage = responseError.error.message;
+
+          throw new Error(errorMessage);
         }
-      })
-      .then((data) => authCTX.login(data.token))
-      .catch((err) => alert(err.message));
+      }
+    } catch (err) {
+      alert(err.message);
+    }
   };
 
   console.log("emailChecker: " + emailChecker(email));
@@ -130,28 +145,26 @@ const JoinEmail = (props) => {
                 Password must include, Letters, numbers, and symbols
               </h5>
 
-              <Link to={"/verify-account"}>
-                <button
-                  onClick={(e) => submitHandler(e)}
-                  className="btn-registration btn btn-lg"
+              <button
+                onClick={(e) => submitHandler(e)}
+                className="btn-registration btn btn-lg"
+              >
+                {isLoading ? "Sending..." : "Continue"}{" "}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  className="bi bi-arrow-down ms-5"
+                  viewBox="0 0 16 16"
+                  style={{ transform: "rotate(-90deg)" }}
                 >
-                  Continue{" "}
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="currentColor"
-                    className="bi bi-arrow-down ms-5"
-                    viewBox="0 0 16 16"
-                    style={{ transform: "rotate(-90deg)" }}
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"
-                    />
-                  </svg>
-                </button>
-              </Link>
+                  <path
+                    fillRule="evenodd"
+                    d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"
+                  />
+                </svg>
+              </button>
             </form>
           </div>
           <div className="col col-md-5">

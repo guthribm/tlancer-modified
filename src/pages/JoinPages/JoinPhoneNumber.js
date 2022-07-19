@@ -46,7 +46,7 @@ const JoinPhoneNumber = (props) => {
                   placeholder="Enter phone number"
                 />
               </div>
-              <Link to={"/password"}>
+              <Link to={"/profile"}>
                 <button
                   onClick={() => {
                     props.setPhone(

@@ -21,6 +21,7 @@ import JoinPassword from "../JoinPages/JoinPassword";
 import VerifyEmail from "../JoinPages/VerifyEmail";
 import JoinDataSent from "../JoinPages/JoinDataSent";
 import { useState } from "react";
+import ProfilePage from "../ProfilePage/ProfilePage";
 
 const Home = () => {
   console.log("home rendered");
@@ -143,7 +144,7 @@ const Home = () => {
         />
 
         <Route
-          path="/data-sent"
+          path="/success"
           element={
             <>
               <JoinDataSent />
@@ -156,6 +157,15 @@ const Home = () => {
           element={
             <>
               <VerifyEmail />
+            </>
+          }
+        />
+
+        <Route
+          path="/profile"
+          element={
+            <>
+              <ProfilePage />
             </>
           }
         />

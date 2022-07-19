@@ -1,20 +1,21 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
 import JoinNav from "./JoinNav";
 import JoinRightWrapper from "./JoinRightWrapper";
 import imgSignup from "../../images/Registration/img-signup-6.webp";
 import padlock from "../../images/Registration/padlock.svg";
 import AuthContext from "../../store/auth-context";
-import SignUpContext from "../../store/signup-context";
 const VerifyEmail = (props) => {
   console.log("verifyEmail rendered");
   const authCtx = useContext(AuthContext);
-  const sighUPCtx = useContext(SignUpContext);
+  const navigate = useNavigate();
   const [verifyCode, setVerifyCode] = useState("");
   const verifyBody = {
     verify_token: authCtx.token,
-    verfy_code: verifyCode,
+    verify_code: verifyCode,
   };
+
+  const url = "https://tlancer.herokuapp.com/api/verify-account-code";
 
   const settings = {
     method: "POST",
@@ -25,31 +26,34 @@ const VerifyEmail = (props) => {
     body: JSON.stringify(verifyBody),
   };
 
-  const verifySubmitHandler = (e) => {
+  const verifySubmitHandler = async (e) => {
     e.preventDefault();
     console.log("verify submit started");
     console.log("verify body being sent: " + JSON.stringify(verifyBody));
-    fetch("https://tlancer.herokuapp.com/api/verify-account-code", settings)
-      .then((res) => {
-        if (res.ok) {
-          return res.json();
-        } else {
-          return res.json().then((data) => {
-            let errorMessage = "Authentication Failed";
-            // if (data && data.error && data.error.message) {
-            //   errorMessage = data.error.message;
-            // }
-
-            throw new Error(errorMessage);
-          });
+    try {
+      const verifyResponse = await fetch(url, settings);
+      if (verifyResponse.ok) {
+        const verifyData = await verifyResponse.json();
+        console.log(
+          "data recieved from verifyData: " + JSON.stringify(verifyData)
+        );
+        navigate("/success");
+      } else {
+        const verifyDataErro = await verifyResponse.json();
+        let errorMessage = "Authentication Failed";
+        if (
+          verifyDataErro &&
+          verifyDataErro.error &&
+          verifyDataErro.error.message
+        ) {
+          errorMessage = verifyDataErro.error.message;
         }
-      })
-      .then((data) => {
-        console.log("data recieved from verify code: " + JSON.stringify(data));
-      })
-      .catch((err) => {
-        alert(err.message);
-      });
+
+        throw new Error(errorMessage);
+      }
+    } catch (err) {
+      alert(err.message);
+    }
   };
 
   return (
@@ -66,11 +70,11 @@ const VerifyEmail = (props) => {
           <div className="col col-md-7 me-md-5 text-center text-md-start mb-5">
             <h2 className="account-heading mb-3">
               A verification code was sent to your email{" "}
-              {sighUPCtx.data.email && (
+              {/* {sighUPCtx.data.email && (
                 <span className="email-accent">
                   {props.sighUPCtx.data.email}
                 </span>
-              )}
+              )} */}
             </h2>
             <h3 className="h1 display-5 fw-bold account-form-label">
               Enter Verification code

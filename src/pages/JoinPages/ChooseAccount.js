@@ -76,7 +76,7 @@ const ChooseAccount = (props) => {
                   </svg>
                 </button>
               ) : (
-                <Link to={"/email"}>
+                <Link to={"/date-of-birth"}>
                   <button
                     onClick={() => {
                       signupCTX.actions.accountHandler(entry);
