@@ -1,36 +1,63 @@
-import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useState, useContext } from "react";
 import JoinRightWrapper from "./JoinRightWrapper";
 import imgLogin from "../../images/Registration/img-login.webp";
 import atSign from "../../images/Registration/at-sign.svg";
 import padlock from "../../images/Registration/padlock.svg";
 import JoinNav from "./JoinNav";
-import PostLogin from "../../helperFunctions/PostLogin";
+import AuthContext from "../../store/auth-context";
 
 // import LoginButton from "../../Components/LoginButton";
 const Login = () => {
   console.log("login rendered");
-
+  const navigate = useNavigate();
+  const authCTX = useContext(AuthContext);
   const [loginPassword, setLoginPassword] = useState("");
   const [loginEmail, setLoginEmail] = useState("");
 
   const emailInputHandler = (e) => {
-    console.log(e.target.value);
     setLoginEmail(e.target.value);
   };
   const passwordInputHandler = (e) => {
-    console.log(e.target.value);
     setLoginPassword(e.target.value);
   };
-  const submitHandler = (e) => {
-    e.preventDefault();
-    console.log("button clicked");
-    const loginData = { email: loginEmail, password: loginPassword };
-    PostLogin(loginData);
-  };
 
-  console.log("email " + loginEmail + " pass " + loginPassword);
-  useEffect(() => {});
+  const submitHandler = async (e) => {
+    e.preventDefault();
+    console.log("login fetch started");
+    const loginData = { email: loginEmail, password: loginPassword };
+    const settings = {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(loginData),
+    };
+    console.log(JSON.stringify(loginData));
+    try {
+      const formResponse = await fetch(
+        "https://tlancer.herokuapp.com/api/login",
+        settings
+      );
+      if (!formResponse.ok) {
+        throw new Error("error during submission");
+      } else {
+        const data = await formResponse.json();
+        if (data.data.verified) {
+          authCTX.userLogIn();
+          authCTX.setName(data.data.first_name);
+          console.log("verified == true");
+        }
+        console.log("response data: ");
+        console.log(data.data.verified);
+
+        navigate("/");
+      }
+    } catch (e) {
+      console.log("error: " + e);
+    }
+  };
 
   return (
     <>

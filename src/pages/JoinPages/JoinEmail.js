@@ -13,6 +13,7 @@ const JoinEmail = (props) => {
   const [pass, setPass] = useState("");
   const [confirmPass, setConfirmPass] = useState("");
   const [tokenVal, setTokenVal] = useState("");
+  const [tokenHasValue, setTokenHasValue] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
   const signupCTX = useContext(SignUpContext);
   const authCTX = useContext(AuthContext);
@@ -46,19 +47,25 @@ const JoinEmail = (props) => {
     };
     const url = "https://tlancer.herokuapp.com/api/signup-tmp";
     setIsLoading(true);
-    console.log("test fetch started with body of: " + JSON.stringify(body));
+    console.log(
+      "join email fetch started with body of: " + JSON.stringify(body)
+    );
     try {
       const signUpResponse = await fetch(url, settings);
 
       if (signUpResponse.ok) {
-        console.log("test fetch POST successfully sent");
+        console.log("join email fetch POST successfully sent");
         setIsLoading(false);
         const responseData = await signUpResponse.json();
         // console.log("responseData: " + JSON.stringify(responseData));
-        setTokenVal(responseData.data.token);
-        console.log("token value: " + tokenVal);
-        authCTX.login(responseData.data.token);
-        navigate("/verify-account");
+        if (responseData.data.token) {
+          setTokenVal(responseData.data.token);
+          console.log("token value: " + tokenVal);
+          authCTX.login(responseData.data.token);
+        } else if (responseData.code === "000") {
+          setTokenHasValue(false);
+          console.log("user already exists");
+        } else navigate("/verify-account");
       } else {
         const responseError = signUpResponse.json();
 
@@ -74,7 +81,7 @@ const JoinEmail = (props) => {
         }
       }
     } catch (err) {
-      alert(err.message);
+      console.log(err.message);
     }
   };
 
@@ -96,7 +103,9 @@ const JoinEmail = (props) => {
           <div className="col col-md-7 me-md-5 text-center text-md-start mb-5">
             <h2 className="account-heading mb-3">Continue to registration</h2>
             <h3 className="h1 display-5 fw-bold account-form-label">
-              Type in your email and password to continue
+              {tokenHasValue
+                ? "Type in your email and password to continue"
+                : "User email already exists"}
             </h3>
             <form>
               <input

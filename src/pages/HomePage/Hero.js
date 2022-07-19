@@ -5,8 +5,11 @@ import microsoft from "../../images/partners/microsoft.png";
 import certiport from "../../images/partners/certiport.png";
 import ic3 from "../../images/partners/ic3.png";
 import apple from "../../images/partners/apple.png";
-
+import AuthContext from "../../store/auth-context";
+import { useContext } from "react";
 const Hero = () => {
+  const authCTX = useContext(AuthContext);
+  console.log("user name displayed on hero: " + authCTX.userName);
   return (
     <>
       <style>{`
@@ -42,6 +45,7 @@ const Hero = () => {
       <section id="hero-section" className="container-fluid pt-5">
         <div className="container d-flex flex-column-reverse flex-md-row justify-content-center align-items-center align-items-md-start p-md-5 my-5">
           <div className="col col-md-7 me-md-5 pe-md-5">
+            {/* {authCTX.isLoggedIn && <p>Welcome back {authCTX.userName}!</p>} */}
             <h1 className="my-3 my-md-5 display-4 text-center text-md-start fw-bold">
               Learn any course at your own pace here from world class tutors
             </h1>

@@ -1,8 +1,19 @@
 import { Link } from "react-router-dom";
+import { useContext } from "react";
 import CustomLink from "./CustomLink";
 import logo from "../../images/logo.webp";
+import AuthContext from "../../store/auth-context";
 const Navbar = () => {
   console.log("navbar rendered");
+  const authCTX = useContext(AuthContext);
+  console.log("authCTX value: " + JSON.stringify(authCTX));
+
+  const logoutHandler = () => {
+    console.log("logout handler clicked");
+    console.log(authCTX.isLoggedIn);
+    authCTX.logout();
+    console.log("after " + authCTX.isLoggedIn);
+  };
   return (
     <>
       <style>{`
@@ -48,6 +59,7 @@ const Navbar = () => {
             align-items: center;
             font-family: 'Work Sans', sans-serif;
             color: #6b7280; 
+            margin: 0 auto;
         }
         #nav-login-arrow {
             transform: rotate(-90deg);
@@ -90,8 +102,8 @@ const Navbar = () => {
       <header className="contianer-fluid">
         <nav className="navbar navbar-expand-lg navbar-light bg-white fixed-top w-100">
           <div className="container mt-2 mx-auto px-0">
-            <div className="d-flex align-items-center justify-content-between container-fluid">
-              <Link className="navbar-brand" to="/">
+            <div className="d-flex align-items-center">
+              <Link to="/">
                 <img
                   className="home-logo"
                   src={logo}
@@ -145,39 +157,54 @@ const Navbar = () => {
                 <CustomLink to="/">Why us?</CustomLink>
                 <CustomLink to="/">Reviews</CustomLink>
 
-                <li className="nav-btn-container">
-                  <Link
-                    to="/email"
-                    className="btn btn-nav btn-lg join mx-auto ms-lg-4"
-                  >
-                    Join
-                  </Link>
-                </li>
-
-                <li className="nav-btn-container">
-                  <Link
-                    to="/login"
-                    className="btn btn-nav btn-lg login mx-auto ms-lg-4"
-                  >
-                    login
-                    <svg
-                      id="nav-login-arrow"
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
-                      fill="currentColor"
-                      className="bi bi-arrow-down ms-2"
-                      viewBox="0 0 16 16"
+                {authCTX.isLoggedIn && (
+                  <li className="nav-btn-container">
+                    <button
+                      onClick={logoutHandler}
+                      className="btn btn-nav btn-lg join mx-auto ms-lg-4"
                     >
-                      <path
-                        fillRule="evenodd"
-                        d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"
-                      />
-                    </svg>
-                  </Link>
-                </li>
-                <li id="lang-btn-list-item">
-                  <button className="btn btn-lang btn-lg mx-auto ms-lg-4">
+                      Logout
+                    </button>
+                  </li>
+                )}
+
+                {!authCTX.isLoggedIn && (
+                  <li className="nav-btn-container">
+                    <Link
+                      to="/email"
+                      className="btn btn-nav btn-lg join mx-auto ms-lg-4"
+                    >
+                      Join
+                    </Link>
+                  </li>
+                )}
+
+                {!authCTX.isLoggedIn && (
+                  <li className="nav-btn-container">
+                    <Link
+                      to="/login"
+                      className="btn btn-nav btn-lg login mx-auto ms-lg-4"
+                    >
+                      login
+                      <svg
+                        id="nav-login-arrow"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        className="bi bi-arrow-down ms-2"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"
+                        />
+                      </svg>
+                    </Link>
+                  </li>
+                )}
+                <li id="lang-btn-list-item my-auto">
+                  <button className="btn btn-lang mx-auto my-auto ms-lg-4">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="16"
