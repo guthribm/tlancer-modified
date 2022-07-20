@@ -21,7 +21,9 @@ import JoinPassword from "../JoinPages/JoinPassword";
 import VerifyEmail from "../JoinPages/VerifyEmail";
 import JoinDataSent from "../JoinPages/JoinDataSent";
 import { useState } from "react";
-import ProfilePage from "../ProfilePage/ProfilePage";
+import StudentPage from "../ProfilePage/StudentPage";
+import TutorPage from "../ProfilePage/TutorPage";
+import ParentPage from "../ProfilePage/ParentPage";
 
 const Home = () => {
   console.log("home rendered");
@@ -84,7 +86,7 @@ const Home = () => {
           path="/join"
           element={
             <>
-              <ChooseAccount setAccountType={setAccountType} />
+              <ChooseAccount />
             </>
           }
         />
@@ -93,7 +95,7 @@ const Home = () => {
           path="/email"
           element={
             <>
-              <JoinEmail setEmail={setEmail} />
+              <JoinEmail />
             </>
           }
         />
@@ -102,7 +104,7 @@ const Home = () => {
           path="/names"
           element={
             <>
-              <JoinName setFirstName={setFirstName} setLastName={setLastName} />
+              <JoinName />
             </>
           }
         />
@@ -111,7 +113,7 @@ const Home = () => {
           path="/date-of-birth"
           element={
             <>
-              <JoinDateOfBirth setDate={setDate} />
+              <JoinDateOfBirth />
             </>
           }
         />
@@ -120,7 +122,7 @@ const Home = () => {
           path="/location"
           element={
             <>
-              <JoinLocation setLocation={setLocation} />
+              <JoinLocation />
             </>
           }
         />
@@ -129,7 +131,7 @@ const Home = () => {
           path="/phone-number"
           element={
             <>
-              <JoinPhoneNumber setPhone={setPhone} />
+              <JoinPhoneNumber />
             </>
           }
         />
@@ -138,7 +140,7 @@ const Home = () => {
           path="/password"
           element={
             <>
-              <JoinPassword setPassword={setPassword} />
+              <JoinPassword />
             </>
           }
         />
@@ -162,10 +164,28 @@ const Home = () => {
         />
 
         <Route
-          path="/profile"
+          path="/student"
           element={
             <>
-              <ProfilePage />
+              <StudentPage />
+            </>
+          }
+        />
+
+        <Route
+          path="/tutor"
+          element={
+            <>
+              <TutorPage />
+            </>
+          }
+        />
+
+        <Route
+          path="/parent"
+          element={
+            <>
+              <ParentPage />
             </>
           }
         />

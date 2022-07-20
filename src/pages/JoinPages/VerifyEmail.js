@@ -5,9 +5,11 @@ import JoinRightWrapper from "./JoinRightWrapper";
 import imgSignup from "../../images/Registration/img-signup-6.webp";
 import padlock from "../../images/Registration/padlock.svg";
 import AuthContext from "../../store/auth-context";
+import SignUpContext from "../../store/signup-context";
 const VerifyEmail = (props) => {
   console.log("verifyEmail rendered");
   const authCtx = useContext(AuthContext);
+  const signupCTX = useContext(SignUpContext);
   const navigate = useNavigate();
   const [verifyCode, setVerifyCode] = useState("");
   const verifyBody = {
@@ -59,9 +61,7 @@ const VerifyEmail = (props) => {
   return (
     <>
       <style>{`
-      .email-accent {
-        color: #0ebe6a;
-      }
+      
       
     `}</style>
       <JoinNav to="/" button="close" />
@@ -70,11 +70,9 @@ const VerifyEmail = (props) => {
           <div className="col col-md-7 me-md-5 text-center text-md-start mb-5">
             <h2 className="account-heading mb-3">
               A verification code was sent to your email{" "}
-              {/* {sighUPCtx.data.email && (
-                <span className="email-accent">
-                  {props.sighUPCtx.data.email}
-                </span>
-              )} */}
+              {signupCTX.data.email && (
+                <span className="email-accent">{signupCTX.data.email}</span>
+              )}
             </h2>
             <h3 className="h1 display-5 fw-bold account-form-label">
               Enter Verification code

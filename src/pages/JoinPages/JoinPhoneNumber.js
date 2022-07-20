@@ -1,10 +1,17 @@
 import { Link } from "react-router-dom";
+import { useState, useContext } from "react";
 import JoinNav from "./JoinNav";
 import JoinRightWrapper from "./JoinRightWrapper";
 import imgSignup from "../../images/Registration/img-signup-5.webp";
 import phoneIcon from "../../images/Registration/charm_phone.svg";
+import SignUpContext from "../../store/signup-context";
 const JoinPhoneNumber = (props) => {
   console.log("phone rendered");
+  const signupCTX = useContext(SignUpContext);
+  const [phone, setPhone] = useState("");
+  const joinPhoneHandler = () => {
+    signupCTX.actions.phoneHandler(phone);
+  };
   return (
     <>
       <style>{`
@@ -41,20 +48,17 @@ const JoinPhoneNumber = (props) => {
                 />
                 <input
                   id="registration-phone"
+                  onChange={(e) => {
+                    setPhone(e.target.value);
+                  }}
                   className="d-block"
                   type={"tel"}
                   placeholder="Enter phone number"
                 />
               </div>
-              <Link to={"/profile"}>
+              <Link to={`/${signupCTX.data.account}`}>
                 <button
-                  onClick={() => {
-                    props.setPhone(
-                      (prev) =>
-                        (prev =
-                          document.getElementById("registration-phone").value)
-                    );
-                  }}
+                  onClick={joinPhoneHandler}
                   className="btn-registration btn btn-lg"
                 >
                   Continue{" "}

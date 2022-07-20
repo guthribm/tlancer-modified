@@ -57,17 +57,21 @@ const JoinEmail = (props) => {
         console.log("join email fetch POST successfully sent");
         setIsLoading(false);
         const responseData = await signUpResponse.json();
-        // console.log("responseData: " + JSON.stringify(responseData));
-        if (responseData.data.token) {
+        console.log("responseData: " + JSON.stringify(responseData));
+        if (responseData.message === "User email already exist") {
+          setTokenHasValue(false);
+          console.log("user already exists");
+        } else if (responseData.data.token) {
           setTokenVal(responseData.data.token);
           console.log("token value: " + tokenVal);
           authCTX.login(responseData.data.token);
-        } else if (responseData.code === "000") {
-          setTokenHasValue(false);
-          console.log("user already exists");
+          authCTX.userLogIn();
+          localStorage.setItem("token", responseData.data.token);
+          navigate("/verify-account");
         } else navigate("/verify-account");
       } else {
         const responseError = signUpResponse.json();
+        console.log("error response: " + responseError.response.status);
 
         let errorMessage = "";
         if (
@@ -102,11 +106,17 @@ const JoinEmail = (props) => {
         <div className="container d-flex flex-column-reverse flex-md-row  align-items-center">
           <div className="col col-md-7 me-md-5 text-center text-md-start mb-5">
             <h2 className="account-heading mb-3">Continue to registration</h2>
-            <h3 className="h1 display-5 fw-bold account-form-label">
-              {tokenHasValue
-                ? "Type in your email and password to continue"
-                : "User email already exists"}
-            </h3>
+
+            {tokenHasValue ? (
+              <h3 className="h1 display-5 fw-bold account-form-label">
+                Type in your email and password to continue
+              </h3>
+            ) : (
+              <h3 className="h1 display-5 fw-bold text-danger">
+                User email already exists
+              </h3>
+            )}
+
             <form>
               <input
                 required

@@ -19,16 +19,20 @@ export const AuthContextProvider = (props) => {
     setToken(token);
   };
 
+  // function to set userLoggedIn to true
   const userLoginHandler = () => {
     setUserIsLoggedIn(true);
   };
 
   // function for logging out
   const logoutHandler = () => {
+    console.log("logoutHandler Ran");
     setToken(null);
+    setUserName("");
     setUserIsLoggedIn(false);
   };
 
+  // function for setting user first name value
   const userNameHandler = (name) => {
     setUserName(name);
   };

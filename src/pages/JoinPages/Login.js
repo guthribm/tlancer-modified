@@ -14,6 +14,7 @@ const Login = () => {
   const authCTX = useContext(AuthContext);
   const [loginPassword, setLoginPassword] = useState("");
   const [loginEmail, setLoginEmail] = useState("");
+  const [isValid, setIsValid] = useState(true);
 
   const emailInputHandler = (e) => {
     setLoginEmail(e.target.value);
@@ -44,12 +45,16 @@ const Login = () => {
         throw new Error("error during submission");
       } else {
         const data = await formResponse.json();
-        if (data.data.verified) {
+        if (data.success) {
           authCTX.userLogIn();
           authCTX.setName(data.data.first_name);
+          authCTX.login(localStorage.getItem("token"));
           console.log("verified == true");
+        } else {
+          setIsValid(false);
+          console.log("not valid values: " + data.data);
         }
-        console.log("response data: ");
+        console.log("response data: " + JSON.stringify(data));
         console.log(data.data.verified);
 
         navigate("/");
@@ -148,6 +153,9 @@ const Login = () => {
                   onChange={passwordInputHandler}
                 />
               </div>
+              {!isValid && (
+                <p className="text-danger">Invalid username or password</p>
+              )}
             </form>
 
             <div className="my-4 login-btn-container">
