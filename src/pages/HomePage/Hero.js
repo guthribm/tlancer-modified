@@ -46,7 +46,7 @@ const Hero = () => {
         <div className="container d-flex flex-column-reverse flex-md-row justify-content-center align-items-center align-items-md-start p-md-5 my-5">
           <div className="col col-md-7 me-md-5 pe-md-5">
             {authCTX.isLoggedIn && authCTX.userName.length > 0 && (
-              <p>
+              <p className="text-center text-lg-start mt-5 mt-lg-0">
                 Welcome back{" "}
                 <span className="email-accent">{authCTX.userName}</span>!
               </p>
