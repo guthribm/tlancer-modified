@@ -22,6 +22,7 @@ const StudentHero = () => {
     #student-hero-search-container {
         border: 1px solid #d1d5db;
         border-radius: 20px;
+        max-width: 50vw;
     }
 
     #student-hero-search-btn {
@@ -37,13 +38,13 @@ const StudentHero = () => {
 `}</style>
       <section
         id="student-hero-section"
-        className="container-fluid p-5 text-center"
+        className="container-fluid p-lg-5 text-center"
       >
-        <div className="container my-5 p-5">
+        <div className="container my-lg-5 p-lg-5">
           <h1>Love to learn something new today?</h1>
           <div
             id="student-hero-search-container"
-            className="my-5 d-flex justify-content-start align-items-center p-2 p-md-3 w-50 mx-auto"
+            className="my-5 d-flex justify-content-start align-items-center p-2 p-md-3 mx-auto"
           >
             <svg
               id="student-search-icon"
