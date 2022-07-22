@@ -151,7 +151,7 @@ const Navbar = () => {
             <div className="collapse navbar-collapse" id="navbar">
               <ul className="navbar-nav m-auto mb-2 mb-lg-0">
                 <CustomLink to="/">Home</CustomLink>
-                <CustomLink to="/">Student</CustomLink>
+                <CustomLink to="/student">Student</CustomLink>
                 <CustomLink to="/">Tutor</CustomLink>
                 <CustomLink to="/">Mission</CustomLink>
                 <CustomLink to="/">Why us?</CustomLink>

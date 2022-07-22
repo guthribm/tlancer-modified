@@ -1,3 +1,9 @@
+import RecommendedCourseCard from "./RecommendedCourseCard";
+import adams from "../../images/Recommended/adams.png";
+import recommend1 from "../../images/Recommended/recommend1.png";
+import recommend2 from "../../images/Recommended/recommend2.png";
+import recommend3 from "../../images/Recommended/recommend3.png";
+
 const RecommendedCourses = () => {
   return (
     <>
@@ -47,6 +53,35 @@ const RecommendedCourses = () => {
               />
             </svg>
           </button>
+        </div>
+        <div className="container d-flex flex-column flex-lg-row justify-content-center">
+          <RecommendedCourseCard
+            src={recommend1}
+            alt="instructor"
+            courseTitle="Senior Level General Chemistry Course"
+            instructorImg={adams}
+            instructorName="Adams Lavine"
+            price="$15.99"
+            priceBefore="$25.99"
+          />
+          <RecommendedCourseCard
+            src={recommend2}
+            alt="instructor"
+            courseTitle="Senior Level General Chemistry Course"
+            instructorImg={adams}
+            instructorName="Adams Lavine"
+            price="$15.99"
+            priceBefore="$25.99"
+          />
+          <RecommendedCourseCard
+            src={recommend3}
+            alt="instructor"
+            courseTitle="Senior Level General Chemistry Course"
+            instructorImg={adams}
+            instructorName="Adams Lavine"
+            price="$15.99"
+            priceBefore="$25.99"
+          />
         </div>
       </section>
     </>

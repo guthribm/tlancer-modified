@@ -34,7 +34,7 @@ const NewCourseCard = (props) => {
             border-radius: 6px;
         }
     `}</style>
-      <div className="card new-course-card mx-lg-3 mb-5">
+      <div className="card new-course-card mx-lg-3 mb-5 col col-lg-3">
         <img
           className="card-img-top img-fluid"
           src={props.src}

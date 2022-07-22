@@ -22,7 +22,7 @@ const StudentHero = () => {
     #student-hero-search-container {
         border: 1px solid #d1d5db;
         border-radius: 20px;
-        max-width: 50vw;
+        width: 100%;
     }
 
     #student-hero-search-btn {
@@ -34,6 +34,12 @@ const StudentHero = () => {
     }
     #student-hero-section {
         margin-top: 8rem;
+    }
+
+    @media (min-width: 1024px) {
+        student-hero-search-container {
+            max-width: 50vw;
+        }
     }
 `}</style>
       <section
