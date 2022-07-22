@@ -2,7 +2,7 @@ import Navbar from "./Navbar";
 import Hero from "./Hero";
 import PopularCourses from "./PopularCourses/PopularCourses";
 import Divider from "./Divider";
-import ExploreCourses from "./ExploreCourses/ExploreCourses";
+import ExploreCourses from "../../Components/ExploreCourses/ExploreCourses/ExploreCourses";
 import Tutors from "./Tutors";
 import Tips from "./Tips/Tips";
 import Testimonies from "./Testimonies";
@@ -20,22 +20,22 @@ import JoinPhoneNumber from "../../pages/JoinPages/JoinPhoneNumber";
 import JoinPassword from "../JoinPages/JoinPassword";
 import VerifyEmail from "../JoinPages/VerifyEmail";
 import JoinDataSent from "../JoinPages/JoinDataSent";
-import { useState } from "react";
-import StudentPage from "../ProfilePage/StudentPage";
+// import { useState } from "react";
+import StudentPage from "../ProfilePage/StudentPage/StudentPage";
 import TutorPage from "../ProfilePage/TutorPage";
 import ParentPage from "../ProfilePage/ParentPage";
 
 const Home = () => {
   console.log("home rendered");
 
-  const [accountType, setAccountType] = useState("");
-  const [email, setEmail] = useState("");
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [date, setDate] = useState("");
-  const [location, setLocation] = useState("");
-  const [phone, setPhone] = useState("");
-  const [password, setPassword] = useState("");
+  // const [accountType, setAccountType] = useState("");
+  // const [email, setEmail] = useState("");
+  // const [firstName, setFirstName] = useState("");
+  // const [lastName, setLastName] = useState("");
+  // const [date, setDate] = useState("");
+  // const [location, setLocation] = useState("");
+  // const [phone, setPhone] = useState("");
+  // const [password, setPassword] = useState("");
 
   // let joinData = {
   //   type: accountType,
