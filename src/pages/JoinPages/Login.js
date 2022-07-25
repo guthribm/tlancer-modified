@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
-import { useState, useContext } from "react";
+import { useState, useContext, useRef } from "react";
 import JoinRightWrapper from "./JoinRightWrapper";
 import imgLogin from "../../images/Registration/img-login.webp";
 import atSign from "../../images/Registration/at-sign.svg";
@@ -10,23 +10,20 @@ import AuthContext from "../../store/auth-context";
 // import LoginButton from "../../Components/LoginButton";
 const Login = () => {
   console.log("login rendered");
+  const passRef = useRef();
+  const emailRef = useRef();
   const navigate = useNavigate();
   const authCTX = useContext(AuthContext);
-  const [loginPassword, setLoginPassword] = useState("");
-  const [loginEmail, setLoginEmail] = useState("");
   const [isValid, setIsValid] = useState(true);
-
-  const emailInputHandler = (e) => {
-    setLoginEmail(e.target.value);
-  };
-  const passwordInputHandler = (e) => {
-    setLoginPassword(e.target.value);
-  };
+  const [isLoading, setIsLoading] = useState(false);
 
   const submitHandler = async (e) => {
     e.preventDefault();
     console.log("login fetch started");
-    const loginData = { email: loginEmail, password: loginPassword };
+    const loginData = {
+      email: emailRef.current.value,
+      password: passRef.current.value,
+    };
     const settings = {
       method: "POST",
       headers: {
@@ -37,14 +34,17 @@ const Login = () => {
     };
     console.log(JSON.stringify(loginData));
     try {
+      setIsLoading(true);
       const formResponse = await fetch(
         "https://tlancer.herokuapp.com/api/login",
         settings
       );
       if (!formResponse.ok) {
+        setIsLoading(false);
         throw new Error("error during submission");
       } else {
         const data = await formResponse.json();
+        setIsLoading(false);
         if (data.success) {
           authCTX.userLogIn();
           authCTX.setName(data.data.first_name);
@@ -52,6 +52,7 @@ const Login = () => {
           console.log("verified == true");
         } else {
           setIsValid(false);
+          setIsLoading(false);
           console.log("not valid values: " + data.data);
         }
         console.log("response data: " + JSON.stringify(data));
@@ -69,6 +70,10 @@ const Login = () => {
       <style>{`
       .login-btn-container, .login-btn-container span {
         color: #00274c;
+      }
+      .btn-loading {
+        background: #fff;
+        color: var(--active-link);
       }
       .quote-container {
         position: relative;
@@ -130,7 +135,7 @@ const Login = () => {
                   className="d-block text-input form-control"
                   type={"text"}
                   placeholder="Enter email"
-                  onChange={emailInputHandler}
+                  ref={emailRef}
                 />
               </div>
 
@@ -148,9 +153,9 @@ const Login = () => {
                 <input
                   id="login-password"
                   className="d-block text-input form-control"
-                  type={"text"}
+                  type={"password"}
                   placeholder="Enter password"
-                  onChange={passwordInputHandler}
+                  ref={passRef}
                 />
               </div>
               {!isValid && (
@@ -159,29 +164,31 @@ const Login = () => {
             </form>
 
             <div className="my-4 login-btn-container">
-              <Link
-                onClick={submitHandler}
-                className="btn-registration btn btn-lg"
-                to={"/"}
-              >
-                Login{" "}
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                  className="bi bi-arrow-down ms-5"
-                  viewBox="0 0 16 16"
-                  style={{ transform: "rotate(-90deg)" }}
+              {!isLoading ? (
+                <Link
+                  onClick={submitHandler}
+                  className="btn-registration btn btn-lg"
+                  to={"/"}
                 >
-                  <path
-                    fillRule="evenodd"
-                    d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"
-                  />
-                </svg>
-              </Link>
-              {/* <span className="my-4 d-block d-xl-inline mx-xl-4"> or </span>
-              <LoginButton /> */}
+                  Login{" "}
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    className="bi bi-arrow-down ms-5"
+                    viewBox="0 0 16 16"
+                    style={{ transform: "rotate(-90deg)" }}
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"
+                    />
+                  </svg>
+                </Link>
+              ) : (
+                <button className="btn-loading btn btn-lg">Loading </button>
+              )}
             </div>
           </div>
           <div className="col col-md-5">

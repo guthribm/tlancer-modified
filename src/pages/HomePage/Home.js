@@ -20,14 +20,15 @@ import JoinPhoneNumber from "../../pages/JoinPages/JoinPhoneNumber";
 import JoinPassword from "../JoinPages/JoinPassword";
 import VerifyEmail from "../JoinPages/VerifyEmail";
 import JoinDataSent from "../JoinPages/JoinDataSent";
-// import { useState } from "react";
 import StudentPage from "../ProfilePage/StudentPage/StudentPage";
 import TutorPage from "../ProfilePage/TutorPage";
 import ParentPage from "../ProfilePage/ParentPage";
+import AuthContext from "../../store/auth-context";
+import { useContext } from "react";
 
 const Home = () => {
   console.log("home rendered");
-
+  const AuthCTX = useContext(AuthContext);
   // const [accountType, setAccountType] = useState("");
   // const [email, setEmail] = useState("");
   // const [firstName, setFirstName] = useState("");
@@ -73,14 +74,16 @@ const Home = () => {
           }
         />
 
-        <Route
-          path="/login"
-          element={
-            <>
-              <Login />
-            </>
-          }
-        />
+        {!AuthCTX.isLoggedIn && (
+          <Route
+            path="/login"
+            element={
+              <>
+                <Login />
+              </>
+            }
+          />
+        )}
 
         <Route
           path="/join"
@@ -91,14 +94,16 @@ const Home = () => {
           }
         />
 
-        <Route
-          path="/email"
-          element={
-            <>
-              <JoinEmail />
-            </>
-          }
-        />
+        {!AuthCTX.isLoggedIn && (
+          <Route
+            path="/email"
+            element={
+              <>
+                <JoinEmail />
+              </>
+            }
+          />
+        )}
 
         <Route
           path="/names"
@@ -163,29 +168,57 @@ const Home = () => {
           }
         />
 
-        <Route
-          path="/student"
-          element={
-            <>
-              <StudentPage />
-            </>
-          }
-        />
+        {AuthCTX.isLoggedIn && (
+          <Route
+            path="/student"
+            element={
+              <>
+                <StudentPage />
+              </>
+            }
+          />
+        )}
 
-        <Route
-          path="/tutor"
-          element={
-            <>
-              <TutorPage />
-            </>
-          }
-        />
+        {AuthCTX.isLoggedIn && (
+          <Route
+            path="/tutor"
+            element={
+              <>
+                <TutorPage />
+              </>
+            }
+          />
+        )}
 
+        {AuthCTX.isLoggedIn && (
+          <Route
+            path="/parent"
+            element={
+              <>
+                <ParentPage />
+              </>
+            }
+          />
+        )}
         <Route
-          path="/parent"
+          path="*"
           element={
             <>
-              <ParentPage />
+              <Navbar />
+              <Hero />
+              <Divider />
+              <PopularCourses />
+              <Divider />
+              <ExploreCourses />
+              <Tutors />
+              <Divider />
+              <Testimonies />
+              <Divider />
+              <Tips />
+              <Divider />
+              <Newsletter />
+              <Divider />
+              <FooterLinks />
             </>
           }
         />

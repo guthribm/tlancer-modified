@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit/dist/createSlice";
-
+// Setup for using react redux toolkit for login/logout authentication
 const initialAuthState = {
   token: "",
   isAuthenticated: false,

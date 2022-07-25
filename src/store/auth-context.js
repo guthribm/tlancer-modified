@@ -10,13 +10,15 @@ const AuthContext = createContext({
 });
 
 export const AuthContextProvider = (props) => {
-  const [token, setToken] = useState(null);
+  const initialToken = localStorage.getItem("token");
+  const [token, setToken] = useState(initialToken);
   const [userName, setUserName] = useState("");
   const [userIsLoggedIn, setUserIsLoggedIn] = useState(false);
 
   // function for logging in
   const loginHandler = (token) => {
     setToken(token);
+    localStorage.setItem("token", token);
   };
 
   // function to set userLoggedIn to true
@@ -30,6 +32,7 @@ export const AuthContextProvider = (props) => {
     setToken(null);
     setUserName("");
     setUserIsLoggedIn(false);
+    localStorage.removeItem("token");
   };
 
   // function for setting user first name value

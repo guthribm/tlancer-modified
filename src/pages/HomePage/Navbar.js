@@ -17,9 +17,11 @@ const Navbar = () => {
   return (
     <>
       <style>{`
-      * {
-        {/* border: 1px solid red; */}
-      }
+      
+        header {
+          overflow-x: hidden;
+        }
+
         nav {
             font-family: 'Work Sans', sans-serif;
             z-index: 100;
@@ -100,7 +102,7 @@ const Navbar = () => {
         }
     `}</style>
       <header className="contianer-fluid">
-        <nav className="navbar navbar-expand-lg navbar-light bg-white fixed-top w-100">
+        <nav className="navbar px-3 navbar-expand-lg navbar-light bg-white fixed-top w-100">
           <div className="container mt-2 mx-auto px-0">
             <div className="d-flex align-items-center">
               <Link to="/">
@@ -113,27 +115,29 @@ const Navbar = () => {
                 />
               </Link>
 
-              <Link
-                to="/login"
-                id="login-mobile"
-                className="btn btn-nav btn-lg ms-auto me-3 fw-bold text-nowrap"
-              >
-                login
-                <svg
-                  id="nav-login-arrow"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                  className="bi bi-arrow-down ms-2"
-                  viewBox="0 0 16 16"
+              {!authCTX.isLoggedIn && (
+                <Link
+                  to="/login"
+                  id="login-mobile"
+                  className="btn btn-nav btn-lg ms-auto me-3 fw-bold text-nowrap"
                 >
-                  <path
-                    fillRule="evenodd"
-                    d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"
-                  />
-                </svg>
-              </Link>
+                  login
+                  <svg
+                    id="nav-login-arrow"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    className="bi bi-arrow-down ms-2"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"
+                    />
+                  </svg>
+                </Link>
+              )}
 
               <button
                 className="navbar-toggler"

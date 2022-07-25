@@ -40,7 +40,7 @@ const NewCourses = () => {
       <section id="new-courses-section" className="container-fluid p-lg-5 my-5">
         <div className="container">
           <div className="container d-flex flex-column flex-md-row align-items-center justify-content-between mt-5 my-md-5">
-            <h2 className="h4 fw-bold pb-4">New Courses</h2>
+            <h2 className="h4 fw-bold my-5">New Courses</h2>
             <button className="new-courses-btn h5">
               See all
               <svg

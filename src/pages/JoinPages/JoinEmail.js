@@ -19,9 +19,9 @@ const JoinEmail = (props) => {
   const authCTX = useContext(AuthContext);
   const navigate = useNavigate();
 
-  // if (pass.length > 1 && confirmPass.length > 1 && pass === confirmPass) {
-  //   console.log("passwords match");
-  // }
+  if (pass.length > 1 && pass === confirmPass) {
+    console.log("passwords match");
+  }
 
   function emailChecker(value) {
     return value.includes("@");

@@ -22,7 +22,7 @@ const StudentHero = () => {
     #student-hero-search-container {
         border: 1px solid #d1d5db;
         border-radius: 20px;
-        width: 100%;
+        {/* width: 100%; */}
     }
 
     #student-hero-search-btn {
@@ -37,8 +37,8 @@ const StudentHero = () => {
     }
 
     @media (min-width: 1024px) {
-        student-hero-search-container {
-            max-width: 50vw;
+        #student-hero-search-container {
+            max-width: 40vw;
         }
     }
 `}</style>
