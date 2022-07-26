@@ -50,6 +50,7 @@ const Login = () => {
         if (data.success) {
           authCTX.userLogIn();
           authCTX.setName(data.data.first_name);
+          authCTX.setAccount(data.data.type);
           authCTX.login(localStorage.getItem("token"));
           console.log("verified == true");
         } else {
@@ -59,7 +60,7 @@ const Login = () => {
         }
         console.log("response data: " + JSON.stringify(data));
         console.log(data.data.verified);
-        navigate(`/${sighupCTX.data.account}`);
+        navigate(`/${data.data.type}`);
       }
     } catch (e) {
       console.log("error: " + e);
