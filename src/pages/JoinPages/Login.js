@@ -6,6 +6,7 @@ import atSign from "../../images/Registration/at-sign.svg";
 import padlock from "../../images/Registration/padlock.svg";
 import JoinNav from "./JoinNav";
 import AuthContext from "../../store/auth-context";
+import SignUpContext from "../../store/signup-context";
 
 // import LoginButton from "../../Components/LoginButton";
 const Login = () => {
@@ -14,6 +15,7 @@ const Login = () => {
   const emailRef = useRef();
   const navigate = useNavigate();
   const authCTX = useContext(AuthContext);
+  const sighupCTX = useContext(SignUpContext);
   const [isValid, setIsValid] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -57,8 +59,7 @@ const Login = () => {
         }
         console.log("response data: " + JSON.stringify(data));
         console.log(data.data.verified);
-
-        navigate("/");
+        navigate(`/${sighupCTX.data.account}`);
       }
     } catch (e) {
       console.log("error: " + e);

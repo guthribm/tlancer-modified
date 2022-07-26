@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
-import { useState, useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useContext } from "react";
 import JoinNav from "./JoinNav";
 import JoinRightWrapper from "./JoinRightWrapper";
 import imgSignup from "../../images/Registration/img-signup-5.webp";
@@ -7,10 +7,59 @@ import phoneIcon from "../../images/Registration/charm_phone.svg";
 import SignUpContext from "../../store/signup-context";
 const JoinPhoneNumber = (props) => {
   console.log("phone rendered");
+  const navigate = useNavigate();
   const signupCTX = useContext(SignUpContext);
-  const [phone, setPhone] = useState("");
-  const joinPhoneHandler = () => {
-    signupCTX.actions.phoneHandler(phone);
+
+  const url = "https://tlancer.herokuapp.com/api/signup";
+
+  const verifyBody = {
+    type: signupCTX.data.account,
+    email: signupCTX.data.email,
+    first_name: signupCTX.data.first_name,
+    last_name: signupCTX.data.last_name,
+    dob: signupCTX.data.date,
+    location: signupCTX.data.location,
+    password: signupCTX.data.password,
+    verify_token: signupCTX.data.token,
+    verify_code: signupCTX.data.verify_code,
+  };
+  const settings = {
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(verifyBody),
+  };
+
+  const finalSubmitHandler = async (e) => {
+    e.preventDefault();
+    console.log("verify submit started");
+    console.log("verify body being sent: " + JSON.stringify(verifyBody));
+    try {
+      const verifyResponse = await fetch(url, settings);
+      if (verifyResponse.ok) {
+        const verifyData = await verifyResponse.json();
+        console.log(
+          "data recieved from verifyData: " + JSON.stringify(verifyData)
+        );
+        navigate(`/success`);
+      } else {
+        const verifyDataErro = await verifyResponse.json();
+        let errorMessage = "Authentication Failed";
+        if (
+          verifyDataErro &&
+          verifyDataErro.error &&
+          verifyDataErro.error.message
+        ) {
+          errorMessage = verifyDataErro.error.message;
+        }
+
+        throw new Error(errorMessage);
+      }
+    } catch (err) {
+      alert(err.message);
+    }
   };
   return (
     <>
@@ -49,7 +98,7 @@ const JoinPhoneNumber = (props) => {
                 <input
                   id="registration-phone"
                   onChange={(e) => {
-                    setPhone(e.target.value);
+                    signupCTX.actions.phoneHandler(e.target.value);
                   }}
                   className="d-block"
                   type={"tel"}
@@ -58,7 +107,7 @@ const JoinPhoneNumber = (props) => {
               </div>
               <Link to="/email">
                 <button
-                  onClick={joinPhoneHandler}
+                  onClick={(e) => finalSubmitHandler(e)}
                   className="btn-registration btn btn-lg"
                 >
                   Continue{" "}

@@ -175,7 +175,7 @@ const Navbar = () => {
                 {!authCTX.isLoggedIn && (
                   <li className="nav-btn-container">
                     <Link
-                      to="/account"
+                      to="/join"
                       className="btn btn-nav btn-lg join mx-auto ms-lg-4"
                     >
                       Join

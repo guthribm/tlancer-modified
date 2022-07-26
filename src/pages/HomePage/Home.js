@@ -96,7 +96,7 @@ const Home = () => {
 
         {!AuthCTX.isLoggedIn && (
           <Route
-            path="/email"
+            path="/join"
             element={
               <>
                 <JoinEmail />
@@ -160,7 +160,7 @@ const Home = () => {
         />
 
         <Route
-          path="/verify-account/:tokenID"
+          path="/verify-account"
           element={
             <>
               <VerifyEmail />

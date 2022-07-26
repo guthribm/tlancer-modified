@@ -1,63 +1,18 @@
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useContext, useState } from "react";
 import JoinNav from "./JoinNav";
 import JoinRightWrapper from "./JoinRightWrapper";
 import imgSignup from "../../images/Registration/img-signup-6.webp";
 import padlock from "../../images/Registration/padlock.svg";
-import AuthContext from "../../store/auth-context";
 import SignUpContext from "../../store/signup-context";
 const VerifyEmail = (props) => {
   console.log("verifyEmail rendered");
-  const params = useParams();
-  console.log("params TokenID?:  " + params.tokenID);
-  const authCtx = useContext(AuthContext);
+
   const signupCTX = useContext(SignUpContext);
-  const navigate = useNavigate();
-  const [verifyCode, setVerifyCode] = useState("");
-  const verifyBody = {
-    verify_token: authCtx.token,
-    verify_code: verifyCode,
-  };
+  const [verify, setVerify] = useState("");
 
-  const url = "https://tlancer.herokuapp.com/api/verify-account-code";
-
-  const settings = {
-    method: "POST",
-    headers: {
-      Accept: "application/json",
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(verifyBody),
-  };
-
-  const verifySubmitHandler = async (e) => {
-    e.preventDefault();
-    console.log("verify submit started");
-    console.log("verify body being sent: " + JSON.stringify(verifyBody));
-    try {
-      const verifyResponse = await fetch(url, settings);
-      if (verifyResponse.ok) {
-        const verifyData = await verifyResponse.json();
-        console.log(
-          "data recieved from verifyData: " + JSON.stringify(verifyData)
-        );
-        navigate(`/${signupCTX.data.account}`);
-      } else {
-        const verifyDataErro = await verifyResponse.json();
-        let errorMessage = "Authentication Failed";
-        if (
-          verifyDataErro &&
-          verifyDataErro.error &&
-          verifyDataErro.error.message
-        ) {
-          errorMessage = verifyDataErro.error.message;
-        }
-
-        throw new Error(errorMessage);
-      }
-    } catch (err) {
-      alert(err.message);
-    }
+  const verifyHandler = () => {
+    signupCTX.actions.verifyCodeHandler(verify);
   };
 
   return (
@@ -89,21 +44,39 @@ const VerifyEmail = (props) => {
                   height="24"
                 />
                 <input
-                  onChange={(e) => setVerifyCode(e.target.value)}
+                  onChange={(e) => setVerify(e.target.value)}
                   id="verification code"
                   className="d-block text-input"
                   type={"text"}
                   placeholder="Verification Code"
                 />
               </div>
-              <Link to={`/${signupCTX.data.account}`}>
-                <button
-                  onClick={(e) => {
-                    verifySubmitHandler(e);
-                  }}
-                  className="btn-registration btn btn-lg mt-5"
-                >
-                  Verify{" "}
+              {verify.length === 6 ? (
+                <Link to={"/account"}>
+                  <button
+                    onClick={verifyHandler}
+                    className="btn-registration btn btn-lg mt-5"
+                  >
+                    Continue{" "}
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      className="bi bi-arrow-down ms-5"
+                      viewBox="0 0 16 16"
+                      style={{ transform: "rotate(-90deg)" }}
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"
+                      />
+                    </svg>
+                  </button>
+                </Link>
+              ) : (
+                <button disabled className="btn-registration btn btn-lg mt-5">
+                  Continue{" "}
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
@@ -119,7 +92,7 @@ const VerifyEmail = (props) => {
                     />
                   </svg>
                 </button>
-              </Link>
+              )}
             </form>
           </div>
           <div className="col col-md-5">

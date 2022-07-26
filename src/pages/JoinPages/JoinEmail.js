@@ -1,5 +1,5 @@
 import { useNavigate, Link } from "react-router-dom";
-import { useContext, useState } from "react";
+import { useContext, useState, useRef } from "react";
 import JoinNav from "./JoinNav";
 import JoinRightWrapper from "./JoinRightWrapper";
 import imgSignup from "../../images/Registration/img-signup-1.webp";
@@ -10,9 +10,11 @@ import AuthContext from "../../store/auth-context";
 
 const JoinEmail = (props) => {
   console.log("email rendered");
+  const passRef = useRef();
+  const confirmPassRef = useRef();
   const [email, setEmail] = useState("");
-  const [pass, setPass] = useState("");
-  const [confirmPass, setConfirmPass] = useState("");
+  // const [pass, setPass] = useState("");
+  // const [confirmPass, setConfirmPass] = useState("");
   const [tokenVal, setTokenVal] = useState("");
   const [tokenHasValue, setTokenHasValue] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
@@ -21,28 +23,90 @@ const JoinEmail = (props) => {
   const authCTX = useContext(AuthContext);
   const navigate = useNavigate();
 
-  if (pass.length > 1 && pass === confirmPass) {
-    console.log("passwords match");
-  }
+  // if (pass.length > 1 && pass === confirmPass) {
+  //   console.log("passwords match");
+  // }
 
   function emailChecker(value) {
     return value.includes("@");
   }
 
+  // const submitHandler = async (e) => {
+  //   e.preventDefault();
+  //   signupCTX.actions.passwordHandler(confirmPass);
+  //   signupCTX.actions.emailHandler(email);
+  //   const emailValue = email;
+  //   const passValue = confirmPass;
+  //   const body = {
+  //     type: signupCTX.data.account,
+  //     email: emailValue,
+  //     first_name: signupCTX.data.first_name,
+  //     last_name: signupCTX.data.last_name,
+  //     dob: signupCTX.data.date,
+  //     location: signupCTX.data.location,
+  //     password: passValue,
+  //   };
+  //   const settings = {
+  //     method: "POST",
+  //     body: JSON.stringify(body),
+  //     headers: {
+  //       Accept: "application/json",
+  //       "Content-Type": "application/json",
+  //     },
+  //   };
+  //   const url = "https://tlancer.herokuapp.com/api/signup-tmp";
+
+  //   // const url = "https://tlancer.herokuapp.com/api/signup";
+  //   setIsLoading(true);
+  //   console.log(
+  //     "join email fetch started with body of: " + JSON.stringify(body)
+  //   );
+  //   try {
+  //     const signUpResponse = await fetch(url, settings);
+
+  //     if (signUpResponse.ok) {
+  //       console.log("join email fetch POST successfully sent");
+  //       setIsLoading(false);
+  //       const responseData = await signUpResponse.json();
+  //       console.log("responseData: " + JSON.stringify(responseData));
+  //       if (responseData.message === "User email already exist") {
+  //         setTokenHasValue(false);
+  //         console.log("user already exists");
+  //       } else if (responseData.data.token) {
+  //         setTokenVal(responseData.data.token);
+  //         console.log("token value: " + tokenVal);
+  //         authCTX.login(responseData.data.token);
+  //         authCTX.userLogIn();
+  //         localStorage.setItem("token", responseData.data.token);
+  //         navigate("/success");
+  //       } else navigate("/success");
+  //     } else {
+  //       const responseError = signUpResponse.json();
+  //       console.log("error response: " + responseError.response.status);
+
+  //       let errorMessage = "";
+  //       if (
+  //         responseError &&
+  //         responseError.error &&
+  //         responseError.error.message
+  //       ) {
+  //         errorMessage = responseError.error.message;
+
+  //         throw new Error(errorMessage);
+  //       }
+  //     }
+  //   } catch (err) {
+  //     console.log(err.message);
+  //   }
+  // };
+
   const submitHandler = async (e) => {
     e.preventDefault();
-    signupCTX.actions.passwordHandler(confirmPass);
+    signupCTX.actions.passwordHandler(confirmPassRef.current.value);
     signupCTX.actions.emailHandler(email);
-    const emailValue = email;
-    const passValue = confirmPass;
     const body = {
-      type: signupCTX.data.account,
-      email: emailValue,
-      first_name: signupCTX.data.first_name,
-      last_name: signupCTX.data.last_name,
-      dob: signupCTX.data.date,
-      location: signupCTX.data.location,
-      password: passValue,
+      email: email,
+      password: confirmPassRef.current.value,
     };
     const settings = {
       method: "POST",
@@ -52,8 +116,7 @@ const JoinEmail = (props) => {
         "Content-Type": "application/json",
       },
     };
-    // const url = "https://tlancer.herokuapp.com/api/signup-tmp";
-    const url = "https://tlancer.herokuapp.com/api/signup";
+    const url = "https://tlancer.herokuapp.com/api/signup-tmp";
     setIsLoading(true);
     console.log(
       "join email fetch started with body of: " + JSON.stringify(body)
@@ -68,15 +131,17 @@ const JoinEmail = (props) => {
         console.log("responseData: " + JSON.stringify(responseData));
         if (responseData.message === "User email already exist") {
           setTokenHasValue(false);
-          console.log("user already exists");
-        } else if (responseData.data.token) {
+          console.log("user already exists error");
+        }
+        if (responseData.data.token) {
           setTokenVal(responseData.data.token);
           console.log("token value: " + tokenVal);
           authCTX.login(responseData.data.token);
-          authCTX.userLogIn();
+          signupCTX.actions.tokenHandler(responseData.data.token);
+          // authCTX.userLogIn();
           localStorage.setItem("token", responseData.data.token);
-          navigate("/success");
-        } else navigate("/success");
+          navigate("/verify-account");
+        }
       } else {
         const responseError = signUpResponse.json();
         console.log("error response: " + responseError.response.status);
@@ -154,7 +219,8 @@ const JoinEmail = (props) => {
                 <input
                   id="login-password"
                   required
-                  onChange={(e) => setPass(e.target.value)}
+                  // onChange={(e) => setPass(e.target.value)}
+                  ref={passRef}
                   className="d-block text-input"
                   type={"text"}
                   placeholder="Enter password"
@@ -173,7 +239,7 @@ const JoinEmail = (props) => {
                   className="d-block text-input"
                   type={"password"}
                   placeholder="Confirm password"
-                  onChange={(e) => setConfirmPass(e.target.value)}
+                  ref={confirmPassRef}
                   required
                 />
               </div>

@@ -12,6 +12,16 @@ export const SignUpContextProvider = (props) => {
     setPassword(pass);
   };
 
+  const [verify_code, setVerifyCode] = useState("");
+  const verifyCodeHandler = (code) => {
+    setVerifyCode(code);
+  };
+
+  const [token, setToken] = useState("");
+  const tokenHandler = (token) => {
+    setToken(token);
+  };
+
   const [account, setAccount] = useState("");
   const accountHandler = (acc) => {
     setAccount(acc);
@@ -51,6 +61,8 @@ export const SignUpContextProvider = (props) => {
       date: date,
       location: location,
       phone: phone,
+      verify_code: verify_code,
+      token: token,
     },
     actions: {
       emailHandler: emailHandler,
@@ -61,6 +73,8 @@ export const SignUpContextProvider = (props) => {
       phoneHandler: phoneHandler,
       firstNameHandler: firstNameHandler,
       lastNameHandler: lastNameHandler,
+      verifyCodeHandler: verifyCodeHandler,
+      tokenHandler: tokenHandler,
     },
   };
   console.log(
