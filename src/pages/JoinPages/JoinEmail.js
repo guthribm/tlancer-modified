@@ -249,7 +249,7 @@ const JoinEmail = (props) => {
 
               {!isValid ? (
                 <button disabled className="btn-registration btn btn-lg">
-                  Continue{" "}
+                  {isLoading ? <span>Loading...</span> : <span>Continue </span>}
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
