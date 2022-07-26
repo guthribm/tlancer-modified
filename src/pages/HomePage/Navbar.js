@@ -156,7 +156,7 @@ const Navbar = () => {
               <ul className="navbar-nav m-auto mb-2 mb-lg-0">
                 <CustomLink to="/">Home</CustomLink>
                 <CustomLink to="/student">Student</CustomLink>
-                <CustomLink to="/">Tutor</CustomLink>
+                <CustomLink to="/tutor">Tutor</CustomLink>
                 <CustomLink to="/">Mission</CustomLink>
                 <CustomLink to="/">Why us?</CustomLink>
                 <CustomLink to="/">Reviews</CustomLink>
