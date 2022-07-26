@@ -56,7 +56,7 @@ const JoinPhoneNumber = (props) => {
                   placeholder="Enter phone number"
                 />
               </div>
-              <Link to={`/${signupCTX.data.account}`}>
+              <Link to="/email">
                 <button
                   onClick={joinPhoneHandler}
                   className="btn-registration btn btn-lg"

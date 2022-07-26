@@ -86,7 +86,7 @@ const Home = () => {
         )}
 
         <Route
-          path="/join"
+          path="/account"
           element={
             <>
               <ChooseAccount />
@@ -160,7 +160,7 @@ const Home = () => {
         />
 
         <Route
-          path="/verify-account"
+          path="/verify-account/:tokenID"
           element={
             <>
               <VerifyEmail />

@@ -17,6 +17,16 @@ export const SignUpContextProvider = (props) => {
     setAccount(acc);
   };
 
+  const [first_name, setFirstName] = useState("");
+  const firstNameHandler = (fname) => {
+    setFirstName(fname);
+  };
+
+  const [last_name, setLastName] = useState("");
+  const lastNameHandler = (lname) => {
+    setLastName(lname);
+  };
+
   const [date, setDate] = useState("");
   const dateHandler = (dob) => {
     setDate(dob);
@@ -36,6 +46,8 @@ export const SignUpContextProvider = (props) => {
       email: email,
       password: password,
       account: account,
+      first_name: first_name,
+      last_name: last_name,
       date: date,
       location: location,
       phone: phone,
@@ -47,6 +59,8 @@ export const SignUpContextProvider = (props) => {
       dateHandler: dateHandler,
       locationHandler: locationHandler,
       phoneHandler: phoneHandler,
+      firstNameHandler: firstNameHandler,
+      lastNameHandler: lastNameHandler,
     },
   };
   console.log(

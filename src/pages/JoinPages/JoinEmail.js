@@ -1,10 +1,11 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { useContext, useState } from "react";
 import JoinNav from "./JoinNav";
 import JoinRightWrapper from "./JoinRightWrapper";
 import imgSignup from "../../images/Registration/img-signup-1.webp";
 import SignUpContext from "../../store/signup-context";
 import padlock from "../../images/Registration/padlock.svg";
+import atSign from "../../images/Registration/at-sign.svg";
 import AuthContext from "../../store/auth-context";
 
 const JoinEmail = (props) => {
@@ -15,6 +16,7 @@ const JoinEmail = (props) => {
   const [tokenVal, setTokenVal] = useState("");
   const [tokenHasValue, setTokenHasValue] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
+  const [isValid, setIsValid] = useState(true);
   const signupCTX = useContext(SignUpContext);
   const authCTX = useContext(AuthContext);
   const navigate = useNavigate();
@@ -34,7 +36,12 @@ const JoinEmail = (props) => {
     const emailValue = email;
     const passValue = confirmPass;
     const body = {
+      type: signupCTX.data.account,
       email: emailValue,
+      first_name: signupCTX.data.first_name,
+      last_name: signupCTX.data.last_name,
+      dob: signupCTX.data.date,
+      location: signupCTX.data.location,
       password: passValue,
     };
     const settings = {
@@ -45,7 +52,8 @@ const JoinEmail = (props) => {
         "Content-Type": "application/json",
       },
     };
-    const url = "https://tlancer.herokuapp.com/api/signup-tmp";
+    // const url = "https://tlancer.herokuapp.com/api/signup-tmp";
+    const url = "https://tlancer.herokuapp.com/api/signup";
     setIsLoading(true);
     console.log(
       "join email fetch started with body of: " + JSON.stringify(body)
@@ -67,8 +75,8 @@ const JoinEmail = (props) => {
           authCTX.login(responseData.data.token);
           authCTX.userLogIn();
           localStorage.setItem("token", responseData.data.token);
-          navigate("/verify-account");
-        } else navigate("/verify-account");
+          navigate("/success");
+        } else navigate("/success");
       } else {
         const responseError = signUpResponse.json();
         console.log("error response: " + responseError.response.status);
@@ -89,7 +97,6 @@ const JoinEmail = (props) => {
     }
   };
 
-  console.log("emailChecker: " + emailChecker(email));
   return (
     <>
       <style>{`
@@ -118,14 +125,24 @@ const JoinEmail = (props) => {
             )}
 
             <form>
-              <input
-                required
-                onChange={(e) => setEmail(e.target.value)}
-                id="join-email-input"
-                className="registration-input registration-email d-block my-5 p-3 w-75"
-                type={"email"}
-                placeholder="Enter your email"
-              />
+              <div className="w-75 my-3 mt-md-4 p-3 registration-name d-flex flex-row align-items-center registration-input me-5">
+                <img
+                  className="me-3"
+                  src={atSign}
+                  alt="@"
+                  width="24"
+                  height="24"
+                />
+                <input
+                  required
+                  onChange={(e) => setEmail(e.target.value)}
+                  id="join-email-input"
+                  className="d-block text-input"
+                  type={"email"}
+                  placeholder="Enter your email"
+                />
+              </div>
+              <br />
               <div className="w-75 my-3 mt-md-4 p-3 registration-name d-flex flex-row align-items-center registration-input me-5">
                 <img
                   className="me-3"
@@ -164,26 +181,48 @@ const JoinEmail = (props) => {
                 Password must include, Letters, numbers, and symbols
               </h5>
 
-              <button
-                onClick={(e) => submitHandler(e)}
-                className="btn-registration btn btn-lg"
-              >
-                {isLoading ? "Sending..." : "Continue"}{" "}
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                  className="bi bi-arrow-down ms-5"
-                  viewBox="0 0 16 16"
-                  style={{ transform: "rotate(-90deg)" }}
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"
-                  />
-                </svg>
-              </button>
+              {!isValid ? (
+                <button disabled className="btn-registration btn btn-lg">
+                  Continue{" "}
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    className="bi bi-arrow-down ms-5"
+                    viewBox="0 0 16 16"
+                    style={{ transform: "rotate(-90deg)" }}
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"
+                    />
+                  </svg>
+                </button>
+              ) : (
+                <Link to={"/success"}>
+                  <button
+                    onClick={submitHandler}
+                    className="btn-registration btn btn-lg"
+                  >
+                    Continue{" "}
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      className="bi bi-arrow-down ms-5"
+                      viewBox="0 0 16 16"
+                      style={{ transform: "rotate(-90deg)" }}
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"
+                      />
+                    </svg>
+                  </button>
+                </Link>
+              )}
             </form>
           </div>
           <div className="col col-md-5">

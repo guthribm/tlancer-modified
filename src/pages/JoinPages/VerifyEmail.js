@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { useContext, useState } from "react";
 import JoinNav from "./JoinNav";
 import JoinRightWrapper from "./JoinRightWrapper";
@@ -8,6 +8,8 @@ import AuthContext from "../../store/auth-context";
 import SignUpContext from "../../store/signup-context";
 const VerifyEmail = (props) => {
   console.log("verifyEmail rendered");
+  const params = useParams();
+  console.log("params TokenID?:  " + params.tokenID);
   const authCtx = useContext(AuthContext);
   const signupCTX = useContext(SignUpContext);
   const navigate = useNavigate();
@@ -39,7 +41,7 @@ const VerifyEmail = (props) => {
         console.log(
           "data recieved from verifyData: " + JSON.stringify(verifyData)
         );
-        navigate("/success");
+        navigate(`/${signupCTX.data.account}`);
       } else {
         const verifyDataErro = await verifyResponse.json();
         let errorMessage = "Authentication Failed";
@@ -94,7 +96,7 @@ const VerifyEmail = (props) => {
                   placeholder="Verification Code"
                 />
               </div>
-              <Link to={"/"}>
+              <Link to={`/${signupCTX.data.account}`}>
                 <button
                   onClick={(e) => {
                     verifySubmitHandler(e);

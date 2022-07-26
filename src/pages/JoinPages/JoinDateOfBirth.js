@@ -21,7 +21,7 @@ const JoinName = (props) => {
       }
       
     `}</style>
-      <JoinNav to="/join" button="back" />
+      <JoinNav to="/names" button="back" />
       <section className="container-fluid registration fade-in d-flex flex-column p-md-5 mb-5">
         <div className="container d-flex flex-column-reverse flex-md-row  align-items-center">
           <div className="col col-md-7 me-md-5 text-center text-md-start mb-5">
