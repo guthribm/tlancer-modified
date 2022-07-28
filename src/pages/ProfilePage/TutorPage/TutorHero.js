@@ -25,9 +25,9 @@ const TutorHero = () => {
             font-weight: bold;
         }
       `}</style>
-      <section id="tutor-section" className="container-fluid p-5">
-        <div className="container d-flex flex-column flex-md-row align-items-center p-5">
-          <div className="col col-md-7 pe-md-5">
+      <section id="tutor-section" className="container-fluid p-lg-5">
+        <div className="container d-flex flex-column-reverse flex-md-row align-items-center p-lg-5 mb-5">
+          <div className="col col-md-7 pe-md-5 text-center text-lg-start mt-5">
             <h1 className="tutor-heading fw-500 display-4">
               You know it, You can teach it.{" "}
               <span className="tutor-accent display-4">Become a tutor.</span>
@@ -38,7 +38,7 @@ const TutorHero = () => {
             </p>
             <button
               onClick={(e) => submitHandler(e)}
-              className="btn-get-started btn btn-lg mt-5"
+              className="btn-get-started btn btn-lg mt-5 mx-auto ms-lg-0"
             >
               Get Started{" "}
               <svg

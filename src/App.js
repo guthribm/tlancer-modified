@@ -1,12 +1,11 @@
 import Home from "./pages/HomePage/Home";
 
-function App() {
-  console.log("App rendered");
+const App = (props) => {
   return (
     <div className="App">
       <Home />
     </div>
   );
-}
+};
 
 export default App;

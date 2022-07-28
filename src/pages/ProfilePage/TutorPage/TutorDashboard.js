@@ -11,9 +11,12 @@ const TutorDashboard = (props) => {
             box-shadow: 0px 0px 60px rgba(100,100,100,0.07);
         }
       `}</style>
-      <section id="tutor-dashboard-section" className="container-fluid">
+      <section
+        id="tutor-dashboard-section"
+        className="container-fluid mb-5 p-5"
+      >
         <div className="container d-flex flex-column flex-md-row justify-content-center">
-          <div className="dboard-card col col-md-3 d-flex flex-column align-items-center py-4 mx-4">
+          <div className="dboard-card col col-md-3 d-flex flex-column align-items-center py-4 mx-4 mb-5 mb-lg-0">
             <img
               className="img-fluid my-4"
               src={courses}
@@ -26,7 +29,7 @@ const TutorDashboard = (props) => {
             </p>
             <p className="dboard-card-type h5 account-heading">Courses</p>
           </div>
-          <div className="dboard-card col col-md-3 d-flex flex-column align-items-center py-4 mx-4">
+          <div className="dboard-card col col-md-3 d-flex flex-column align-items-center py-4 mx-4 mb-5 mb-lg-0">
             <img
               className="img-fluid my-4"
               src={tlancers}
@@ -39,7 +42,7 @@ const TutorDashboard = (props) => {
             </p>
             <p className="dboard-card-type h5 account-heading">tlancers</p>
           </div>
-          <div className="dboard-card col col-md-3 d-flex flex-column align-items-center py-4 mx-4">
+          <div className="dboard-card col col-md-3 d-flex flex-column align-items-center py-4 mx-4 mb-5 mb-lg-0">
             <img
               className="img-fluid my-4"
               src={tutors}

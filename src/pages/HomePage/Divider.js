@@ -1,4 +1,4 @@
-const Divider = () => {
+const Divider = (props) => {
   return (
     <>
       <style>{`
