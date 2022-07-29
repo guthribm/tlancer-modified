@@ -22,7 +22,8 @@ import VerifyEmail from "../JoinPages/VerifyEmail";
 import JoinDataSent from "../JoinPages/JoinDataSent";
 import StudentPage from "../ProfilePage/StudentPage/StudentPage";
 import TutorPage from "../ProfilePage/TutorPage/TutorPage";
-import ParentPage from "../ProfilePage/ParentPage";
+//import ParentPage from "../ProfilePage/ParentPage";
+import ParentPage from "../ProfilePage/ParentPage/ParentPage";
 import AuthContext from "../../store/auth-context";
 import { useContext } from "react";
 
@@ -168,7 +169,7 @@ const Home = () => {
           }
         />
 
-        {AuthCTX.isLoggedIn && (
+        
           <Route
             path="/student"
             element={
@@ -177,9 +178,9 @@ const Home = () => {
               </>
             }
           />
-        )}
+      
 
-        {AuthCTX.isLoggedIn && (
+        
           <Route
             path="/tutor"
             element={
@@ -188,9 +189,9 @@ const Home = () => {
               </>
             }
           />
-        )}
+       
 
-        {AuthCTX.isLoggedIn && (
+        
           <Route
             path="/parent"
             element={
@@ -199,7 +200,7 @@ const Home = () => {
               </>
             }
           />
-        )}
+       
         <Route
           path="*"
           element={
