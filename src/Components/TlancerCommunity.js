@@ -64,7 +64,7 @@ const TlancerCommunity = () => {
           </div>
           <div className="col col-lg-5 mb-5">
             <img
-              className="img-fluid"
+              className="img-fluid mt-5"
               width={"591"}
               height={"426"}
               src={imgCommunity}

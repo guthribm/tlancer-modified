@@ -54,7 +54,7 @@ const RecommendedCourses = () => {
             </svg>
           </button>
         </div>
-        <div className="container d-flex flex-column flex-lg-row justify-content-center">
+        <div className="container d-flex flex-column flex-lg-row justify-content-center align-items-center">
           <RecommendedCourseCard
             src={recommend1}
             alt="instructor"

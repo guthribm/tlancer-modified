@@ -168,38 +168,33 @@ const Home = () => {
           }
         />
 
-        {AuthCTX.isLoggedIn && (
-          <Route
-            path="/student"
-            element={
-              <>
-                <StudentPage />
-              </>
-            }
-          />
-        )}
+        <Route
+          path="/student"
+          element={
+            <>
+              <StudentPage />
+            </>
+          }
+        />
 
-        {AuthCTX.isLoggedIn && (
-          <Route
-            path="/tutor"
-            element={
-              <>
-                <TutorPage />
-              </>
-            }
-          />
-        )}
+        <Route
+          path="/tutor"
+          element={
+            <>
+              <TutorPage />
+            </>
+          }
+        />
 
-        {AuthCTX.isLoggedIn && (
-          <Route
-            path="/parent"
-            element={
-              <>
-                <ParentPage />
-              </>
-            }
-          />
-        )}
+        <Route
+          path="/parent"
+          element={
+            <>
+              <ParentPage />
+            </>
+          }
+        />
+
         <Route
           path="*"
           element={

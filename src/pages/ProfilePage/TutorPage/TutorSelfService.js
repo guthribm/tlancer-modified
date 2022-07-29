@@ -36,23 +36,25 @@ const TutorSelfService = (props) => {
               height="514"
             />
           </div>
-          <div id="self-serve-text-container" className="container">
-            <div className="container p-5 mb-5">
-              <div className="container d-flex align-items-start px-0 mb-5">
-                <h2 className="pe-2 fw-bold">Why</h2>
+          <div id="self-serve-text-container" className="container px-0">
+            <div className="container p-lg-5 my-5">
+              <div className="container d-flex align-items-start justify-content-center justify-content-lg-start px-0 mb-5">
+                <h2 className="pe-2 fw-bold h1">Why</h2>
                 <img
                   className="img-fluid pt-1"
                   src={selfServLogo}
                   alt="logo"
-                  width={"117"}
-                  height={"28"}
+                  width={"114"}
+                  height={"25"}
                 />
 
-                <h2 className="ps-2 fw-bold">?</h2>
+                <h2 className="ps-2 fw-bold h1">?</h2>
               </div>
 
-              <h3 className="fw-bold mb-3">Self service dashboard</h3>
-              <p className="service-text">
+              <h3 className="fw-bold mb-3 text-center text-lg-start">
+                Self service dashboard
+              </h3>
+              <p className="service-text text-center text-lg-start">
                 Hackton is the leading online coding tutor for beginners join us
                 today to take a step further.
               </p>

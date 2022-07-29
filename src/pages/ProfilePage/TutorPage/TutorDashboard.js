@@ -13,7 +13,7 @@ const TutorDashboard = (props) => {
       `}</style>
       <section
         id="tutor-dashboard-section"
-        className="container-fluid mb-5 p-5"
+        className="container-fluid mb-5 p-lg-5"
       >
         <div className="container d-flex flex-column flex-md-row justify-content-center">
           <div className="dboard-card col col-md-3 d-flex flex-column align-items-center py-4 mx-4 mb-5 mb-lg-0">
