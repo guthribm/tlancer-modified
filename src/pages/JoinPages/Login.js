@@ -6,7 +6,7 @@ import atSign from "../../images/Registration/at-sign.svg";
 import padlock from "../../images/Registration/padlock.svg";
 import JoinNav from "./JoinNav";
 import AuthContext from "../../store/auth-context";
-import SignUpContext from "../../store/signup-context";
+// import SignUpContext from "../../store/signup-context";
 
 // import LoginButton from "../../Components/LoginButton";
 const Login = () => {
@@ -15,7 +15,7 @@ const Login = () => {
   const emailRef = useRef();
   const navigate = useNavigate();
   const authCTX = useContext(AuthContext);
-  const sighupCTX = useContext(SignUpContext);
+  // const sighupCTX = useContext(SignUpContext);
   const [isValid, setIsValid] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -73,9 +73,24 @@ const Login = () => {
       .login-btn-container, .login-btn-container span {
         color: #00274c;
       }
+
+      @keyframes loading {
+        0%{
+          transform: rotate(5deg) scale(1.1);
+        }
+        50%{
+          transform: rotate(-5deg) scale(.9);
+        }
+        100%{
+          transform: rotate(5deg) scale(1.1);
+        }
+      }
+
       .btn-loading {
         background: #fff;
         color: var(--active-link);
+        animation: loading 2s infinite;
+        font-weight: bold;
       }
       .quote-container {
         position: relative;
