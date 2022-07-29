@@ -17,8 +17,8 @@ const TutorSupportSection = () => {
         }
       `}</style>
       <section id="tutor-support-section" className="container-fluid">
-        <div className="container d-flex flex-column flex-md-row align-items-center">
-          <div className="col col-md-7">
+        <div className="container d-flex flex-column-reverse flex-md-row align-items-center">
+          <div className="col col-md-7 text-center text-lg-start my-5 my-lg-0">
             <h2 className="tutor-heading display-4">
               Need help on how to get started?
             </h2>

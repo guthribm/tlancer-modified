@@ -55,7 +55,7 @@ const ExploreCourses = () => {
           >
             Explore Course Library
           </h2>
-          <div className="d-flex flex-md-column">
+          <div className="d-flex flex-md-column justify-content-center">
             <div className="d-flex flex-column align-items-center flex-md-row justify-content-evenly px-2">
               {courses}
             </div>

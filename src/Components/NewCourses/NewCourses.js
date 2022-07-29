@@ -59,7 +59,7 @@ const NewCourses = () => {
               </svg>
             </button>
           </div>
-          <div className="d-flex flex-column flex-lg-row">
+          <div className="d-flex flex-column align-items-center flex-lg-row justify-content-between">
             <NewCourseCard
               src={new1}
               alt="instructor"
