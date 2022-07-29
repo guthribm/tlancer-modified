@@ -19,19 +19,26 @@ const TutorSelfService = (props) => {
         font-family: 'Work Sans', sans-serif;
         color: #808080;
     }
+
+    .accordion-item {
+      {/* border: none; */}
+    }
     
     .accordion {
       --bs-accordion-bg: none;
-      border-left: 1px solid #808080
+      border-left: 1px solid #808080;
+      --bs-accordion-border-color: var(--dark-blue);
     }
 
-    
+    .accordion-button:focus {
+      border-color: var(--dark-blue);
+    }
 
     .accordion-button {
       --bs-accordion-active-bg: none;
       --bs-accordion-active-color: var(--dark-blue);
       --bs-accordion-active-font-weight: bold;
-      --bs-accordion-btn-color: #808080;
+      --bs-accordion-btn-color: rgba(80,80,80,.6);
       --bs-accordion-border-width: 0;
       font-weight: bold;
       transition: .3s;
