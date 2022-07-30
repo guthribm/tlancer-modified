@@ -72,7 +72,8 @@
   --bs-accordion-border-color: none;
 }
 .accordion-button:focus {
-  border-color: var(--dark-blue);
+  border-color: none;
+  box-shadow: none;
 }
 .accordion-button {
   --bs-accordion-active-bg: none;

@@ -14,6 +14,7 @@ const TutorPage = () => {
       <ParentHero />
       <Divider />
       <TutorDashboard />
+      <Divider />
       <ParentLearnMore />
       <ParentSelfService />
       <Divider />
