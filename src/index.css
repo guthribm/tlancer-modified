@@ -61,6 +61,32 @@
   color: #0ebe6a;
 }
 
+.accordion-item {
+  border: none;
+}
+
+.accordion {
+  --bs-accordion-bg: none;
+  
+  --bs-accordion-border-color: var(--dark-blue);
+}
+.accordion-button:focus {
+  border-color: var(--dark-blue);
+}
+.accordion-button {
+  --bs-accordion-active-bg: none;
+  
+  --bs-accordion-active-font-weight: bold;
+  --bs-accordion-btn-color: rgba(150,150,150,.8);
+  --bs-accordion-border-width: 0;
+  font-weight: bold;
+  transition: .3s;
+}
+.accordion [class*="collapsed"] {
+  font-size: .9rem;
+}
+
+
 .fade-in {
   animation: fade-in .3s linear forwards;
 }

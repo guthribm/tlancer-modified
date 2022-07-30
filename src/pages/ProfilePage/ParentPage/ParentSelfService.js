@@ -1,19 +1,18 @@
 import selfServ from "../../../images/Tutors/tutor-dashboard-image.webp";
-import selfServLogo from "../../../images/Tutors/tutorLogo.png";
 import chevUp from "../../../images/Tutors/chevron-up.png";
 import chevDown from "../../../images/Tutors/chevron-down.png";
 
-const TutorSelfService = (props) => {
+const ParentSelfService = (props) => {
   return (
     <>
       <style>{`
     #self-serve-container {
-        background: rgba(223,240,255,0.3)
+        background: var(--dark-blue);
     }
     #self-serve-text-container {
         font-family: 'Ubuntu', san-serif;
         color: var(--dark-blue);
-       
+        border-left: 1px solid #808080;
     }
     .service-text {
         font-family: 'Work Sans', sans-serif;
@@ -21,14 +20,13 @@ const TutorSelfService = (props) => {
     }
 
     .accordion-button {
-      --bs-accordion-active-color: var(--dark-blue);
-    }
-    
-    .accordion-button::after {
-      --bs-accordion-btn-icon: url(${chevDown});
-      --bs-accordion-btn-active-icon: url(${chevUp});
+      --bs-accordion-active-color: white;
     }
 
+    .accordion-button::after {
+        --bs-accordion-btn-icon: url(${chevDown});
+        --bs-accordion-btn-active-icon: url(${chevUp});
+    }
     
    
     `}</style>
@@ -36,8 +34,8 @@ const TutorSelfService = (props) => {
         id="self-serve-container"
         className="container-fluid py-lg-5 p-lg-5"
       >
-        <div className="container d-flex flex-column flex-md-row my-5 p-lg-5">
-          <div className="container">
+        <div className="container d-flex flex-column flex-md-row align-items-center my-5 p-lg-5">
+          <div className="container p-0">
             <img
               className="img-fluid"
               src={selfServ}
@@ -48,17 +46,10 @@ const TutorSelfService = (props) => {
           </div>
           <div id="self-serve-text-container" className="container px-0 my-5">
             <div className="container p-lg-5">
-              <div className="container d-flex align-items-center justify-content-center justify-content-lg-start px-0 mb-5">
-                <h2 className="pe-2 fw-bold h1">Why</h2>
-                <img
-                  className="img-fluid pb-1"
-                  src={selfServLogo}
-                  alt="logo"
-                  width={"114"}
-                  height={"25"}
-                />
-
-                <h2 className="ps-2 fw-bold h1">?</h2>
+              <div className="container d-flex align-items-center justify-content-center justify-content-lg-start px-0 mb-lg-5">
+                <h2 className="fw-bold h2 text-white">
+                  As a parent we offer you :
+                </h2>
               </div>
 
               {/* STart */}
@@ -184,4 +175,4 @@ const TutorSelfService = (props) => {
   );
 };
 
-export default TutorSelfService;
+export default ParentSelfService;

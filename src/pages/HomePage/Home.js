@@ -22,7 +22,7 @@ import VerifyEmail from "../JoinPages/VerifyEmail";
 import JoinDataSent from "../JoinPages/JoinDataSent";
 import StudentPage from "../ProfilePage/StudentPage/StudentPage";
 import TutorPage from "../ProfilePage/TutorPage/TutorPage";
-import ParentPage from "../ProfilePage/ParentPage";
+import ParentPage from "../ProfilePage/ParentPage/ParentPage";
 import AuthContext from "../../store/auth-context";
 import { useContext } from "react";
 
