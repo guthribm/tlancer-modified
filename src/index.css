@@ -68,8 +68,8 @@
 
 .accordion {
   --bs-accordion-bg: none;
-  
-  --bs-accordion-border-color: var(--dark-blue);
+  --bs-accordion-active-color: none;
+  --bs-accordion-border-color: none;
 }
 .accordion-button:focus {
   border-color: var(--dark-blue);

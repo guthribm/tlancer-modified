@@ -1,10 +1,11 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import CustomLink from "./CustomLink";
 import logo from "../../images/logo.webp";
 import AuthContext from "../../store/auth-context";
 const Navbar = () => {
   console.log("navbar rendered");
+  const navigate = useNavigate();
   const authCTX = useContext(AuthContext);
   console.log("authCTX value: " + JSON.stringify(authCTX));
 
@@ -12,6 +13,7 @@ const Navbar = () => {
     console.log("logout handler clicked");
     console.log(authCTX.isLoggedIn);
     authCTX.logout();
+    navigate("/");
     console.log("after " + authCTX.isLoggedIn);
   };
   return (
