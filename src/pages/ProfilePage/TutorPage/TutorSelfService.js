@@ -36,7 +36,7 @@ const TutorSelfService = (props) => {
         id="self-serve-container"
         className="container-fluid py-lg-5 p-lg-5"
       >
-        <div className="container d-flex flex-column flex-md-row my-5 p-lg-5">
+        <div className="container d-flex flex-column align-items-center flex-md-row my-5 p-lg-5">
           <div className="container">
             <img
               className="img-fluid"
