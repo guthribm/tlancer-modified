@@ -24,6 +24,7 @@ import StudentPage from "../ProfilePage/StudentPage/StudentPage";
 import TutorPage from "../ProfilePage/TutorPage/TutorPage";
 import ParentPage from "../ProfilePage/ParentPage/ParentPage";
 import AuthContext from "../../store/auth-context";
+import NewTutorHome from "../ProfilePage/TutorPage/NewTutor/NewTutorHome";
 import { useContext } from "react";
 
 const Home = () => {
@@ -191,6 +192,15 @@ const Home = () => {
           element={
             <>
               <ParentPage />
+            </>
+          }
+        />
+
+        <Route
+          path="/new-tutor"
+          element={
+            <>
+              <NewTutorHome />
             </>
           }
         />

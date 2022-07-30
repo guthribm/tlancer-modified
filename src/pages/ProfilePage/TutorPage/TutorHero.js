@@ -1,9 +1,7 @@
+import { Link } from "react-router-dom";
 import tutorHero from "../../../images/Tutors/tutorHero.webp";
 import JoinRightWrapper from "../../JoinPages/JoinRightWrapper";
 const TutorHero = () => {
-  const submitHandler = (e) => {
-    console.log("button clicked :)");
-  };
   return (
     <>
       <style>{`
@@ -36,8 +34,8 @@ const TutorHero = () => {
               Hackton is the leading online coding tutor for beginners join us
               today to take a step further.
             </p>
-            <button
-              onClick={(e) => submitHandler(e)}
+            <Link
+              to={"/new-tutor"}
               className="btn-get-started btn btn-lg mt-5 mx-auto ms-lg-0"
             >
               Get Started{" "}
@@ -55,7 +53,7 @@ const TutorHero = () => {
                   d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"
                 />
               </svg>
-            </button>
+            </Link>
           </div>
           <div className="col col-md-5 ps-md-5">
             <JoinRightWrapper

@@ -18,6 +18,13 @@
   font-weight: 500;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  max-width: 275px;
+}
+
+.btn-get-started:hover, .btn-get-started:focus {
+  background: var(--dark-blue);
+  color: #fff;
 }
 
 .text-input {
