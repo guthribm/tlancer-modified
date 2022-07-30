@@ -35,7 +35,7 @@ const TutorHero = () => {
               today to take a step further.
             </p>
             <Link
-              to={"/new-tutor"}
+              to={"/tutor/new-tutor"}
               className="btn-get-started btn btn-lg mt-5 mx-auto ms-lg-0"
             >
               Get Started{" "}
