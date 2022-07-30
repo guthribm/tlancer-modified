@@ -18,6 +18,7 @@ const TutorPage = () => {
       <TutorSupportSection />
       <Divider />
       <TlancerCommunity />
+      <Divider />
       <FooterLinks />
     </>
   );

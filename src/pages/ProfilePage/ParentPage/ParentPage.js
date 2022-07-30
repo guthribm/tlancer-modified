@@ -17,10 +17,10 @@ const TutorPage = () => {
       <Divider />
       <ParentLearnMore />
       <ParentSelfService />
-      <Divider />
       <NewCourses />
       <Divider />
       <TlancerCommunity />
+      <Divider />
       <FooterLinks />
     </>
   );

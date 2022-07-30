@@ -17,6 +17,7 @@ const StudentPage = () => {
       <ExploreCourses />
       <NewCourses />
       <TlancerCommunity />
+      <Divider />
       <FooterLinks />
     </>
   );
