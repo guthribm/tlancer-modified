@@ -1,4 +1,4 @@
-import parent_img from "../../../images/Parents/people.png";
+import parent_img from "../../../images/Parents/people.webp";
 import JoinRightWrapper from "../../JoinPages/JoinRightWrapper";
 const ParentLearnMore = () => {
   const submitHandler = (e) => {

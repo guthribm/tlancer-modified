@@ -27,7 +27,7 @@ const TutorSupportSection = () => {
             </p>
             <button
               onClick={(e) => submitHandler(e)}
-              className="btn-registration btn btn-lg py-3 px-4"
+              className="btn-registration btn btn-lg py-3 px-4 text-nowrap"
             >
               Get Started{" "}
               <svg

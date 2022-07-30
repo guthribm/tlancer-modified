@@ -1,4 +1,4 @@
-import parentHero from "../../../images/Parents/parent_hero.png";
+import parentHero from "../../../images/Parents/parent_hero.webp";
 import JoinRightWrapper from "../../JoinPages/JoinRightWrapper";
 const ParentHero = () => {
   const submitHandler = (e) => {
