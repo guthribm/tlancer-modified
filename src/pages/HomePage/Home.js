@@ -10,7 +10,7 @@ import Newsletter from "./Newsletter";
 import FooterLinks from "./FooterLinks";
 import Footer from "./Footer";
 import { Route, Routes } from "react-router-dom";
-import Login from "../../pages/JoinPages/Login";
+import Login from "../../pages/Login";
 import ChooseAccount from "../../pages/JoinPages/ChooseAccount";
 import JoinEmail from "../../pages/JoinPages/JoinEmail";
 import JoinName from "../../pages/JoinPages/JoinName";

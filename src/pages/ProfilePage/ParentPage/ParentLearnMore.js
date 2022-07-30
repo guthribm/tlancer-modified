@@ -30,7 +30,7 @@ const ParentLearnMore = () => {
              border-color:var(--active-link);
         }
       `}</style>
-      <section id="tutor-section" className="container-fluid p-lg-5">
+      <section id="tutor-section" className="container-fluid p-lg-5 pt-lg-0">
         <div className="container d-flex flex-column flex-md-row align-items-center p-lg-5 mb-5">
           <div className="col col-md-5 pe-md-5">
             <div className="container p-lg-5">

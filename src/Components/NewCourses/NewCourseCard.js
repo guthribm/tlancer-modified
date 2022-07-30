@@ -16,9 +16,10 @@ const NewCourseCard = (props) => {
             border-radius: 20px 20px 0px 0px;
         }
         .new-course-card {
-            {/* max-width: 300px; */}
+            max-width: 275px;
             border: none;
             border-radius: 20px;
+            box-shadow: 0px 0px 40px rgba(100,100,100,0.15);
         }
         .course-prices {
             font-family: 'Ubuntu', san-serif;
@@ -35,7 +36,7 @@ const NewCourseCard = (props) => {
         }
     `}</style>
 
-      <div className="card new-course-card col col-lg-3 mb-5">
+      <div className="card new-course-card col col-12 col-lg-3 mb-5 mx-4 px-0">
         <img
           className="card-img-top img-fluid"
           src={props.src}

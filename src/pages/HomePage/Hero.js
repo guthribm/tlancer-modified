@@ -43,7 +43,7 @@ const Hero = () => {
         }
     `}</style>
       <section id="hero-section" className="container-fluid pt-5">
-        <div className="container d-flex flex-column-reverse flex-md-row justify-content-center align-items-center align-items-md-start p-md-5 my-5">
+        <div className="container overflow-hidden d-flex flex-column-reverse flex-md-row justify-content-center align-items-center align-items-md-start p-md-5 my-5">
           <div className="col col-md-7 me-md-5 pe-md-5">
             {authCTX.isLoggedIn && authCTX.userName.length > 0 && (
               <p className="text-center text-lg-start mt-5 mt-lg-0">

@@ -7,6 +7,10 @@
   box-sizing: border-box;
 }
 
+.form-control {
+  background-color: rgba(0,39,76,0.03);
+}
+
 
 .btn-get-started {
   border: 1px solid var(--dark-blue);
@@ -23,6 +27,7 @@
 .text-input:hover, .text-input:focus {        
   outline: none;
   border: none;
+  box-shadow: none;
 }
 
 .registration {
@@ -37,6 +42,12 @@
   color: #fff;
   font-weight: 500;
   font-family: 'Ubuntu', san-serif;
+}
+
+.btn-registration:hover, .btn-registration:focus {
+  background: white;
+  color: var(--active-link);
+  border: 1px solid var(--active-link);
 }
 
 .registration-name {

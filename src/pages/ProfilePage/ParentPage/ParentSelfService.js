@@ -16,11 +16,12 @@ const ParentSelfService = (props) => {
     }
     .service-text {
         font-family: 'Work Sans', sans-serif;
-        color: #808080;
+        color: #e4e4e4;
     }
 
     .accordion-button {
-      --bs-accordion-active-color: white;
+      --bs-accordion-active-color: #fff;
+      font-size: 1.1rem;
     }
 
     .accordion-button::after {
@@ -48,7 +49,8 @@ const ParentSelfService = (props) => {
             <div className="container p-lg-5">
               <div className="container d-flex align-items-center justify-content-center justify-content-lg-start px-0 mb-lg-5">
                 <h2 className="fw-bold h2 text-white">
-                  As a parent we offer you :
+                  As a parent we offer{" "}
+                  <span className="text-nowrap">you :</span>
                 </h2>
               </div>
 

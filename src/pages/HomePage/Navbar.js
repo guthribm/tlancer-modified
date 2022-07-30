@@ -38,13 +38,12 @@ const Navbar = () => {
           border-width: 2px;
         }
 
-        {/* .active {
+        .active {
             font-weight: bold;
-            transform: translateY(-4px);
             text-decoration: dashed underline;
             text-decoration-color: var(--active-link);
             text-underline-offset: 6px;
-        }         */}
+        }        
 
         .btn-nav {
             border: 1px solid var(--dark-blue);
@@ -82,6 +81,10 @@ const Navbar = () => {
           display: none;
         }
         
+        .login:hover {
+          background: var(--dark-blue);
+          color: #fff;
+        }
 
         @media (max-width: 1024px) {
           
@@ -106,10 +109,10 @@ const Navbar = () => {
       <header className="contianer-fluid">
         <nav className="navbar px-3 navbar-expand-lg navbar-light bg-white fixed-top w-100">
           <div className="container mt-2 mx-auto px-0">
-            <div className="d-flex align-items-center">
+            <div className="d-flex align-items-center w-100">
               <Link to="/">
                 <img
-                  className="home-logo"
+                  className="home-logo p-1"
                   src={logo}
                   alt="Tlancer"
                   width={"374"}
@@ -159,9 +162,9 @@ const Navbar = () => {
                 <CustomLink to="/">Home</CustomLink>
                 <CustomLink to="/student">Student</CustomLink>
                 <CustomLink to="/tutor">Tutor</CustomLink>
-                <CustomLink to="/">Mission</CustomLink>
-                <CustomLink to="/">Why us?</CustomLink>
-                <CustomLink to="/">Reviews</CustomLink>
+                <CustomLink to="/page-not-built">Mission</CustomLink>
+                <CustomLink to="/page-not-built">Why us?</CustomLink>
+                <CustomLink to="/page-not-built">Reviews</CustomLink>
 
                 {authCTX.isLoggedIn && (
                   <li className="nav-btn-container">
