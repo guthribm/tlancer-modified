@@ -54,7 +54,7 @@ const TutorHero = () => {
               </svg>
             </Link>
           </div>
-          <div className="col col-lg-5 p-5 p-lg-9 ps-lg-5">
+          <div className="col col-lg-5 pt-5 p-lg-5 p-lg-9 ps-lg-5">
             <JoinRightWrapper
               id="tutor-hero-img"
               src={tutorHero}

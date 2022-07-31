@@ -25,6 +25,7 @@ const TlancerCommunity = () => {
         
         .btn-community {
             border: 1px solid var(--dark-blue);
+            font-size: 1rem;
         }
         .btn-community:hover {
             background: var(--dark-blue);
@@ -39,7 +40,7 @@ const TlancerCommunity = () => {
         `}
       </style>
       <section className="container-fluid p-5 mb-5 mb-lg-0">
-        <div className="container community-container p-5 d-flex flex-column-reverse flex-lg-row text-center text-lg-start">
+        <div className="container community-container p-lg-5 d-flex flex-column-reverse flex-lg-row text-center text-lg-start">
           <div className="col col-lg-7">
             <div className="my-5">
               <img
