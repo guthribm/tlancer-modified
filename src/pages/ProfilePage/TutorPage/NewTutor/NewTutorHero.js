@@ -6,6 +6,10 @@ const NewTutorHero = (props) => {
   return (
     <>
       <style>{`
+    #new-tutor-section {
+        margin-top: 8rem;
+    }
+
     .hero-subtitle {
         font-family: 'Work Sans', sans-serif;
         color: var(--dark-blue);
@@ -18,7 +22,6 @@ const NewTutorHero = (props) => {
         border: none;
     }
     .btn-complete-setup:hover {
-        
         color: var(--dark-blue);
     }
     

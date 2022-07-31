@@ -27,6 +27,8 @@ import AuthContext from "../../store/auth-context";
 import NewTutorHome from "../ProfilePage/TutorPage/NewTutor/NewTutorHome";
 import { useContext } from "react";
 import TutorNewCourse from "../ProfilePage/TutorPage/NewTutor/TutorNewCourse";
+import PageNotFound from "../../Components/PageNotFound";
+import TutorNav from "../../Components/TutorNav";
 
 const Home = () => {
   console.log("home rendered");
@@ -210,6 +212,7 @@ const Home = () => {
           path="/tutor/new-course"
           element={
             <>
+              <TutorNav />
               <TutorNewCourse />
             </>
           }
@@ -220,20 +223,7 @@ const Home = () => {
           element={
             <>
               <Navbar />
-              <Hero />
-              <Divider />
-              <PopularCourses />
-              <Divider />
-              <ExploreCourses />
-              <Tutors />
-              <Divider />
-              <Testimonies />
-              <Divider />
-              <Tips />
-              <Divider />
-              <Newsletter />
-              <Divider />
-              <FooterLinks />
+              <PageNotFound />
             </>
           }
         />
