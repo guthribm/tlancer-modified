@@ -39,7 +39,7 @@ const TlancerCommunity = () => {
         }
         `}
       </style>
-      <section className="container-fluid p-5 mb-5 mb-lg-0">
+      <section className="container-fluid pt-5 p-lg-5 mb-5 mb-lg-0">
         <div className="container community-container p-lg-5 d-flex flex-column-reverse flex-lg-row text-center text-lg-start">
           <div className="col col-lg-7">
             <div className="my-5">

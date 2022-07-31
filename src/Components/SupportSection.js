@@ -16,7 +16,10 @@ const TutorSupportSection = () => {
             color: #6C757D;
         }
       `}</style>
-      <section id="tutor-support-section" className="container-fluid p-5">
+      <section
+        id="tutor-support-section"
+        className="container-fluid pt-5 p-lg-5"
+      >
         <div className="container d-flex flex-column-reverse flex-md-row align-items-center">
           <div className="col col-md-7 text-center text-lg-start my-5 my-lg-0">
             <h2 className="tutor-heading fw-bold display-5">

@@ -27,7 +27,7 @@ const NewTutorCalendar = () => {
         <div className="container d-flex flex-column flex-lg-row align-items-center">
           <div className="col col-lg-7">
             <h2 className="">Course calendar</h2>
-            <div className="temp-cal d-flex align-items-center justify-content-center my-5 w-100 me-lg-5">
+            <div className="temp-cal d-flex align-items-center justify-content-center my-5 w-100 me-lg-5 text-center">
               <p className="h3">Calendly API will be used here for calendar</p>
             </div>
           </div>
