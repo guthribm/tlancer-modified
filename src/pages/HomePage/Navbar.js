@@ -192,7 +192,7 @@ const Navbar = () => {
                   <li className="nav-btn-container">
                     <Link
                       to="/login"
-                      className="btn btn-nav btn-lg login mx-auto ms-lg-4"
+                      className="btn btn-nav login mx-auto ms-lg-4"
                     >
                       login
                       <svg

@@ -27,7 +27,16 @@ const NewTutorHero = (props) => {
         <div className="container d-flex flex-column-reverse flex-lg-row align-items-center justify-content-between p-5 my-5">
           <div className="col col-lg-9">
             <h1 className="account-form-label mb-5">
-              Hi, <span className="email-accent">{authCTX.userName}</span>
+              Hi,{" "}
+              <span className="email-accent">
+                {authCTX.userName ? (
+                  authCTX.userName
+                ) : (
+                  <em>
+                    <span className="h4">"log in to see your name here"</span>
+                  </em>
+                )}
+              </span>
             </h1>
             <p className="hero-subtitle mb-0">
               Complete your account setup today
@@ -51,7 +60,11 @@ const NewTutorHero = (props) => {
             </button>
           </div>
           <div className="col col-lg-3">
-            <img className="img-fluid me-auto" src={photo} alt="no profile" />
+            <img
+              className="img-fluid me-lg-auto mb-5 mb-lg-0"
+              src={photo}
+              alt="no profile"
+            />
           </div>
         </div>
       </section>

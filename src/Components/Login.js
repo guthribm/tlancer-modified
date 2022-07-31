@@ -1,10 +1,10 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useState, useContext, useRef } from "react";
-import JoinRightWrapper from "./JoinPages/JoinRightWrapper";
+import JoinRightWrapper from "../pages/JoinPages/JoinRightWrapper";
 import imgLogin from "../images/Registration/img-login.webp";
 import atSign from "../images/Registration/at-sign.svg";
 import padlock from "../images/Registration/padlock.svg";
-import JoinNav from "./JoinPages/JoinNav";
+import JoinNav from "../pages/JoinPages/JoinNav";
 import AuthContext from "../store/auth-context";
 // import SignUpContext from "../../store/signup-context";
 

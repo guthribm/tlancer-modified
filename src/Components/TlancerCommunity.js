@@ -38,7 +38,7 @@ const TlancerCommunity = () => {
         }
         `}
       </style>
-      <section className="container-fluid p-lg-5 mb-5">
+      <section className="container-fluid p-5 mb-5 mb-lg-0">
         <div className="container community-container p-5 d-flex flex-column-reverse flex-lg-row text-center text-lg-start">
           <div className="col col-lg-7">
             <div className="my-5">
@@ -58,7 +58,7 @@ const TlancerCommunity = () => {
             <p className="community-p h5 mt-4 mb-5">
               Connect with your course mate and share ideas
             </p>
-            <button className="btn btn-community px-lg-5 py-3 mb-5 text-nowrap">
+            <button className="btn btn-lg btn-community px-lg-5 mb-5 text-nowrap">
               Find communities near you
             </button>
           </div>

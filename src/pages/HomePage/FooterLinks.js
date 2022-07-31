@@ -21,7 +21,7 @@ const FooterLinks = () => {
             font-weight: 500;
         }
       `}</style>
-      <div className="container d-flex flex-md-row mb-5 text-center text-md-start">
+      <div className="container d-flex flex-md-row mb-lg-5 text-center text-md-start">
         <div className="col col-md-8 text-center">
           <p className="top">Products</p>
           <div className="d-flex flex-column flex-md-row">

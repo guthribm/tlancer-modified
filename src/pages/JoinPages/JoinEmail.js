@@ -1,5 +1,5 @@
 import { useNavigate, Link } from "react-router-dom";
-import { useContext, useState, useRef, useEffect } from "react";
+import { useContext, useState, useEffect } from "react";
 import JoinNav from "./JoinNav";
 import JoinRightWrapper from "./JoinRightWrapper";
 import imgSignup from "../../images/Registration/img-signup-1.webp";
@@ -185,10 +185,18 @@ const JoinEmail = (props) => {
               <h5 className="password-subtitle mb-5">
                 Password must include, Letters, numbers, and symbols
               </h5>
-
-              {!isValid ? (
+              {isLoading ? (
+                <div className="d-flex align-items-center w-25 h5">
+                  <strong className="visually-hidden">Loading...</strong>
+                  <div
+                    className="spinner-border mx-auto"
+                    role="status"
+                    aria-hidden="true"
+                  ></div>
+                </div>
+              ) : !isValid ? (
                 <button disabled className="btn-registration btn btn-lg">
-                  {isLoading ? <span>Loading...</span> : <span>Continue </span>}
+                  <span>Continue </span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
@@ -228,6 +236,7 @@ const JoinEmail = (props) => {
                   </button>
                 </Link>
               )}
+              {}
             </form>
           </div>
           <div className="col col-md-5">

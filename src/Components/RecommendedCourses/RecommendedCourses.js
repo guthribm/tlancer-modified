@@ -32,7 +32,7 @@ const RecommendedCourses = () => {
     `}</style>
       <section
         id="recommended-courses-section"
-        className="container-fluid my-5"
+        className="container-fluid my-0"
       >
         <div className="container d-flex flex-column flex-md-row align-items-center justify-content-between mt-5 my-md-5">
           <h2 className="h4 fw-bold pb-4">Recommended</h2>

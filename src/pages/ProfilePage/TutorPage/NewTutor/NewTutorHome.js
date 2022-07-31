@@ -1,7 +1,8 @@
 import NewTutorHero from "./NewTutorHero";
 import TutorNoCourses from "./TutorNoCourses";
 import Divider from "../../../HomePage/Divider";
-import TutorSupportSection from "../TutorSupportSection";
+import SupportSection from "../../../../Components/SupportSection";
+import NewTutorCalendar from "./NewTutorCalendar";
 import FooterLinks from "../../../HomePage/FooterLinks";
 
 const NewTutorHome = () => {
@@ -11,7 +12,9 @@ const NewTutorHome = () => {
       <Divider />
       <TutorNoCourses />
       <Divider />
-      <TutorSupportSection />
+      <NewTutorCalendar />
+      <Divider />
+      <SupportSection />
       <Divider />
       <FooterLinks />
     </>

@@ -11,7 +11,9 @@ const TutorNoCourses = () => {
       `}</style>
       <section className="container-fluid ">
         <div className="container">
-          <h2 className="account-form-label fw-bold h3 mb-5">Course Library</h2>
+          <h2 className="account-form-label fw-bold h3 my-5 mt-lg-0">
+            Course Library
+          </h2>
         </div>
 
         <div className="container text-center p-5 my-5">

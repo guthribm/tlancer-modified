@@ -3,7 +3,7 @@ import TutorHero from "./TutorHero";
 import Divider from "../../HomePage/Divider";
 import TutorDashboard from "./TutorDashboard";
 import TutorSelfService from "./TutorSelfService";
-import TutorSupportSection from "./TutorSupportSection";
+import SupportSection from "../../../Components/SupportSection";
 import TlancerCommunity from "../../../Components/TlancerCommunity";
 import FooterLinks from "../../HomePage/FooterLinks";
 const TutorPage = () => {
@@ -15,7 +15,7 @@ const TutorPage = () => {
       <TutorDashboard />
       <TutorSelfService />
       <Divider />
-      <TutorSupportSection />
+      <SupportSection />
       <Divider />
       <TlancerCommunity />
       <Divider />

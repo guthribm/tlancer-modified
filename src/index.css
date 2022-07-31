@@ -12,19 +12,20 @@
 }
 
 
-.btn-get-started {
+.btn-get-started:hover, .btn-get-started:focus {
   border: 1px solid var(--dark-blue);
+  
+}
+
+.btn-get-started {
+  background: var(--dark-blue);
+  color: #fff;
   font-family: 'Ubuntu', san-serif;
   font-weight: 500;
   display: flex;
   align-items: center;
   justify-content: space-between;
   max-width: 275px;
-}
-
-.btn-get-started:hover, .btn-get-started:focus {
-  background: var(--dark-blue);
-  color: #fff;
 }
 
 .text-input {
@@ -117,8 +118,8 @@
   100%{opacity: 1}
 }
 .home-logo {
-  width: 50%;
-  height: 50%;
+  width: 115px;
+  height: 34px;
 }
 
 /* * { border: 1px solid red} */
@@ -135,8 +136,8 @@
   .registration-input {
     width: 100%!important;
   }
-  .home-logo {
-    width: 75%;
-    height: 75%;
-  }
+  /* .home-logo {
+    width: 115px;
+    height: 34px;
+  } */
 }

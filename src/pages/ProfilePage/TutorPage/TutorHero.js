@@ -6,7 +6,6 @@ const TutorHero = () => {
     <>
       <style>{`
         #tutor-section {
-            margin-top: 8rem;
             color: #00274C;
         }
         #tutor-section p {
@@ -23,9 +22,9 @@ const TutorHero = () => {
             font-weight: bold;
         }
       `}</style>
-      <section id="tutor-section" className="container-fluid p-lg-5">
-        <div className="container d-flex flex-column-reverse flex-md-row align-items-center p-lg-5 mb-5">
-          <div className="col col-md-7 pe-md-5 text-center text-lg-start mt-5">
+      <section id="tutor-section" className="container-fluid p-5 pb-lg-0">
+        <div className="container d-flex flex-column-reverse flex-lg-row align-items-center pt-lg-5">
+          <div className="col col-lg-7 pe-lg-5 text-center text-lg-start mt-5 my-lg-5">
             <h1 className="tutor-heading fw-500 display-4">
               You know it, You can teach it.{" "}
               <span className="tutor-accent display-4">Become a tutor.</span>
@@ -55,7 +54,7 @@ const TutorHero = () => {
               </svg>
             </Link>
           </div>
-          <div className="col col-md-5 ps-md-5">
+          <div className="col col-lg-5 p-5 p-lg-9 ps-lg-5">
             <JoinRightWrapper
               id="tutor-hero-img"
               src={tutorHero}
