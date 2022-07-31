@@ -26,7 +26,7 @@ const NewTutorHero = (props) => {
     }
     
   `}</style>
-      <section id="new-tutor-section" className="container-fluid p-lg-5">
+      <section id="new-tutor-section" className="container-fluid">
         <div className="container d-flex flex-column-reverse flex-lg-row align-items-center justify-content-between my-5">
           <div className="col col-lg-9">
             <h1 className="account-form-label mb-5">
@@ -62,7 +62,7 @@ const NewTutorHero = (props) => {
               </svg>
             </button>
           </div>
-          <div className="col col-lg-3">
+          <div className="col col-lg-3 p-5">
             <img
               className="img-fluid me-lg-auto mb-5 mb-lg-0"
               src={photo}

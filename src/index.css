@@ -107,6 +107,12 @@
   font-size: .9rem;
 }
 
+/*  New tutor course properties start */
+
+.new-course-label {
+  font-family: 'Work Sans', sans-serif;
+  color: #808080;
+}
 
 .fade-in {
   animation: fade-in .3s linear forwards;

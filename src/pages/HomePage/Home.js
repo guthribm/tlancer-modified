@@ -25,10 +25,11 @@ import TutorPage from "../ProfilePage/TutorPage/TutorPage";
 import ParentPage from "../ProfilePage/ParentPage/ParentPage";
 import AuthContext from "../../store/auth-context";
 import NewTutorHome from "../ProfilePage/TutorPage/NewTutor/NewTutorHome";
-import { useContext } from "react";
-import TutorNewCourse from "../ProfilePage/TutorPage/NewTutor/TutorNewCourse";
-import PageNotFound from "../../Components/PageNotFound";
 import TutorNav from "../../Components/TutorNav";
+import TutorNewCourse from "../ProfilePage/TutorPage/NewTutor/TutorNewCourse";
+import TutorNewCourseSyllabus from "../ProfilePage/TutorPage/NewTutor/TutorNewCourseSyllabus";
+import { useContext } from "react";
+import PageNotFound from "../../Components/PageNotFound";
 
 const Home = () => {
   console.log("home rendered");
@@ -209,11 +210,21 @@ const Home = () => {
         />
 
         <Route
-          path="/tutor/new-course"
+          path="/tutor/course-details"
           element={
             <>
               <TutorNav />
               <TutorNewCourse />
+            </>
+          }
+        />
+
+        <Route
+          path="/tutor/course-syllabus"
+          element={
+            <>
+              <TutorNav />
+              <TutorNewCourseSyllabus />
             </>
           }
         />

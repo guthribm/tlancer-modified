@@ -78,8 +78,8 @@ const TutorNav = () => {
       <header className="contianer-fluid">
         <nav className="navbar px-3 navbar-expand-lg navbar-light bg-white fixed-top w-100">
           <div className="container mt-2 mx-auto px-0">
-            <div className="d-flex align-items-center w-100">
-              <Link id="tutor-nav-logo" to="/tutor">
+            <div className="d-flex flex-row-reverse align-items-center w-100">
+              <Link className="me-lg-auto" id="tutor-nav-logo" to="/tutor">
                 <img
                   className="home-logo p-1"
                   src={logo}
@@ -91,7 +91,7 @@ const TutorNav = () => {
               </Link>
 
               <button
-                className="navbar-toggler ms-auto"
+                className="navbar-toggler me-auto"
                 type="button"
                 data-bs-toggle="collapse"
                 data-bs-target="#navbar"

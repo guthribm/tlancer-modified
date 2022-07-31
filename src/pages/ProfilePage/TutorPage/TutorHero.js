@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import tutorHero from "../../../images/Tutors/tutorHero.webp";
-import JoinRightWrapper from "../../JoinPages/JoinRightWrapper";
 const TutorHero = () => {
   return (
     <>
@@ -21,10 +20,20 @@ const TutorHero = () => {
             font-family: 'Work Sans', san-serif;
             font-weight: bold;
         }
+
+        #tutor-hero-img {
+            border-radius: 30px;
+          }
+
+        @media (min-width: 1024px) {
+          #tutor-hero-img {
+            border-radius: 0px;
+          }
+        }
       `}</style>
-      <section id="tutor-section" className="container-fluid p-5 pb-lg-0">
+      <section id="tutor-section" className="container-fluid py-5 pb-lg-0">
         <div className="container d-flex flex-column-reverse flex-lg-row align-items-center pt-lg-5">
-          <div className="col col-lg-7 pe-lg-5 text-center text-lg-start mt-5 my-lg-5">
+          <div className="col col-lg-7 pe-lg-5 text-start mt-5 my-lg-5">
             <h1 className="tutor-heading fw-500 display-4">
               You know it, You can teach it.{" "}
               <span className="tutor-accent display-4">Become a tutor.</span>
@@ -35,7 +44,7 @@ const TutorHero = () => {
             </p>
             <Link
               to={"/tutor/new-tutor"}
-              className="btn-get-started btn btn-lg mt-5 mx-auto ms-lg-0"
+              className="btn-get-started btn btn-lg mt-5 me-auto ms-lg-0"
             >
               Get Started{" "}
               <svg
@@ -55,11 +64,14 @@ const TutorHero = () => {
             </Link>
           </div>
           <div className="col col-lg-5 pt-5 p-lg-5 p-lg-9 ps-lg-5">
-            <JoinRightWrapper
-              id="tutor-hero-img"
-              src={tutorHero}
-              alt="woman and open laptop"
-            />
+            <div className="container d-flex">
+              <img
+                id="tutor-hero-img"
+                src={tutorHero}
+                alt="woman and open laptop"
+                className="img-fluid ms-lg-auto mb-0"
+              />
+            </div>
           </div>
         </div>
       </section>
