@@ -38,7 +38,7 @@ const TutorSupportSection = () => {
                 width="16"
                 height="16"
                 fill="currentColor"
-                className="bi bi-arrow-down ms-5"
+                className="bi bi-arrow-down ms-sm-5"
                 viewBox="0 0 16 16"
                 style={{ transform: "rotate(-90deg)" }}
               >

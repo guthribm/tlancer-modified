@@ -32,13 +32,15 @@ const NewTutorCalendar = () => {
             </div>
           </div>
           <div className="col col-lg-5 ms-lg-5">
-            <div className="d-flex my-5">
-              <div className="btn btn-new-tutor-calendar mx-5 ms-lg-0">
+            <div className="d-flex flex-column flex-lg-row my-5">
+              <div className="btn btn-new-tutor-calendar mx-lg-5 my-2 ms-lg-0">
                 July 3, 2022
               </div>
-              <div className="btn btn-new-tutor-calendar mx-5">9:30 am</div>
+              <div className="btn btn-new-tutor-calendar mx-lg-5 my-2">
+                9:30 am
+              </div>
             </div>
-            <div className="add-course-container container text-center p-5">
+            <div className="add-course-container container text-center p-lg-5">
               <p className="account-heading fw-bold">No class on this date</p>
               <button className="btn btn-new-course btn-lg fw-bold h5">
                 + Add new course

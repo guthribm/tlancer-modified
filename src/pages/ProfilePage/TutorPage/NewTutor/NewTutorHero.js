@@ -10,6 +10,10 @@ const NewTutorHero = (props) => {
         margin-top: 8rem;
     }
 
+    #new-tutor-section button {
+      text-align: left;
+    }
+
     .hero-subtitle {
         font-family: 'Work Sans', sans-serif;
         color: var(--dark-blue);
@@ -19,7 +23,6 @@ const NewTutorHero = (props) => {
         font-family: 'Ubuntu', san-serif;
         font-weight: 500;
         color: var(--active-link);
-        border: none;
     }
     .btn-complete-setup:hover {
         color: var(--dark-blue);
@@ -44,14 +47,14 @@ const NewTutorHero = (props) => {
             <p className="hero-subtitle mb-0">
               Complete your account setup today
             </p>
-            <button className="btn-complete-setup btn mx-auto ms-lg-0 ps-0 h5">
-              Complete account setup{" "}
+            <button className="btn-complete-setup text-start btn ms-auto ms-lg-0 ps-0 h5">
+              Complete account setup
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
                 height="16"
                 fill="currentColor"
-                className="bi bi-arrow-down ms-5"
+                className="bi bi-arrow-down ms-sm-5"
                 viewBox="0 0 16 16"
                 style={{ transform: "rotate(-90deg)" }}
               >
@@ -62,7 +65,7 @@ const NewTutorHero = (props) => {
               </svg>
             </button>
           </div>
-          <div className="col col-lg-3 p-5">
+          <div className="col col-lg-3 p-lg-5">
             <img
               className="img-fluid me-lg-auto mb-5 mb-lg-0"
               src={photo}

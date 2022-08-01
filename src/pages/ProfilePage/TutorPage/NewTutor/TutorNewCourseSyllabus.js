@@ -4,7 +4,7 @@ const TutorNewCourseSyllabus = () => {
       <style>{``}</style>
       <section className="container-fluid p-5">
         <div className="container my-5 p-5">
-          <h1>Syllabus here</h1>
+          <h1>Syllabus goes here.</h1>
         </div>
       </section>
     </>

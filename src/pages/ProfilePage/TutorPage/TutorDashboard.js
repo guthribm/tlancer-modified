@@ -16,7 +16,7 @@ const TutorDashboard = (props) => {
         className="container-fluid mb-5 p-lg-5"
       >
         <div className="container d-flex flex-column flex-md-row justify-content-center my-5">
-          <div className="dboard-card col col-md-3 d-flex flex-column align-items-center py-4 mx-4 mb-5 mb-lg-0">
+          <div className="dboard-card col col-md-3 d-flex flex-column align-items-center pb-3 mx-lg-4 mb-5 mb-lg-0">
             <img
               className="img-fluid my-4"
               src={courses}
@@ -29,7 +29,7 @@ const TutorDashboard = (props) => {
             </p>
             <p className="dboard-card-type h5 account-heading">Courses</p>
           </div>
-          <div className="dboard-card col col-md-3 d-flex flex-column align-items-center py-4 mx-4 mb-5 mb-lg-0">
+          <div className="dboard-card col col-md-3 d-flex flex-column align-items-center pb-3 mx-lg-4 mb-5 mb-lg-0">
             <img
               className="img-fluid my-4"
               src={tlancers}
@@ -42,7 +42,7 @@ const TutorDashboard = (props) => {
             </p>
             <p className="dboard-card-type h5 account-heading">tlancers</p>
           </div>
-          <div className="dboard-card col col-md-3 d-flex flex-column align-items-center py-4 mx-4 mb-5 mb-lg-0">
+          <div className="dboard-card col col-md-3 d-flex flex-column align-items-center pb-3 mx-lg-4 mb-5 mb-lg-0">
             <img
               className="img-fluid my-4"
               src={tutors}
