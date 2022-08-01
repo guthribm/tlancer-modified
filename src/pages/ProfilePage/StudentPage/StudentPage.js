@@ -15,7 +15,7 @@ const StudentPage = () => {
       <RecommendedCourses />
       <Divider />
       <ExploreCourses />
-      <NewCourses bgColor="#F3F4F6" />
+      <NewCourses bgColor="#F3F4F6" heading="New Courses" />
       <TlancerCommunity />
       <Divider />
       <FooterLinks />

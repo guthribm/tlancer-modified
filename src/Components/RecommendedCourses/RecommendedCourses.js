@@ -4,7 +4,7 @@ import recommend1 from "../../images/Recommended/recommend1.png";
 import recommend2 from "../../images/Recommended/recommend2.png";
 import recommend3 from "../../images/Recommended/recommend3.png";
 
-const RecommendedCourses = () => {
+const RecommendedCourses = (props) => {
   return (
     <>
       <style>{`
