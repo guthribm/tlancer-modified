@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-import parent_img from "../../../images/Parents/people.png";
-=======
 import parent_img from "../../../images/Parents/people.webp";
->>>>>>> main
 import JoinRightWrapper from "../../JoinPages/JoinRightWrapper";
 const ParentLearnMore = () => {
   const submitHandler = (e) => {
@@ -11,18 +7,10 @@ const ParentLearnMore = () => {
   return (
     <>
       <style>{`
-<<<<<<< HEAD
-        #tutor-section {
-            margin-top: 8rem;
-            color: #00274C;
-        }
-        #tutor-section p {
-=======
         #parent-learn-more-section {
             color: #00274C;
         }
         #parent-learn-more-section p {
->>>>>>> main
             font-family: 'Work Sans', san-serif;
             font-weight: 400;
             color: #6C757D;
@@ -41,33 +29,6 @@ const ParentLearnMore = () => {
              border-color:var(--active-link);
         }
       `}</style>
-<<<<<<< HEAD
-      <section id="tutor-section" className="container-fluid p-lg-5">
-        
-            <div className="container d-flex flex-column-reverse flex-md-row align-items-center p-lg-5 mb-5">
-
-                 <div className="col col-md-5 ps-md-5">    
-                 <div className="container p-5">
-                      <JoinRightWrapper
-                    id="peple-img"
-                    src={parent_img}
-                    alt="people"
-                        />     
-                     </div>       
-                    
-          </div>
-          <div className="col col-md-7 pe-md-5 text-center text-lg-start mt-5 ">
-            <h2 className="tutor-heading fw-500 display-4">
-              We connect students with the best tutors across the world to help them learn.
-              
-            </h2>
-            <p className="my-4 h4">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit adipiscing elit consectetur Lorem ipsum dolor sit amet, consectetur adipiscing elit  elit consectetur ipsum dolor sit amet, consectetur adipiscing elit adipiscing elit consectetur 
-            </p>
-            <button
-              onClick={(e) => submitHandler(e)}
-              className="btn-get-started btn btn-lg mt-5 mx-auto ms-lg-0"
-=======
       <section id="parent-learn-more-section" className="container-fluid">
         <div className="container d-flex flex-column flex-lg-row align-items-center py-5 pt-lg-0 mb-5">
           <div className="col col-lg-5 pe-lg-5">
@@ -87,7 +48,6 @@ const ParentLearnMore = () => {
             <button
               onClick={(e) => submitHandler(e)}
               className="btn-get-started btn btn-lg mt-5 mx-auto ms-lg-0 text-nowrap"
->>>>>>> main
             >
               Learn more about us{" "}
               <svg
@@ -106,15 +66,7 @@ const ParentLearnMore = () => {
               </svg>
             </button>
           </div>
-<<<<<<< HEAD
-          
         </div>
-
-           
-          
-=======
-        </div>
->>>>>>> main
       </section>
     </>
   );

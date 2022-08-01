@@ -22,10 +22,6 @@ import VerifyEmail from "../JoinPages/VerifyEmail";
 import JoinDataSent from "../JoinPages/JoinDataSent";
 import StudentPage from "../ProfilePage/StudentPage/StudentPage";
 import TutorPage from "../ProfilePage/TutorPage/TutorPage";
-<<<<<<< HEAD
-//import ParentPage from "../ProfilePage/ParentPage";
-=======
->>>>>>> main
 import ParentPage from "../ProfilePage/ParentPage/ParentPage";
 import AuthContext from "../../store/auth-context";
 import NewTutorHome from "../ProfilePage/TutorPage/NewTutor/NewTutorHome";
@@ -177,38 +173,33 @@ const Home = () => {
           }
         />
 
-        
-          <Route
-            path="/student"
-            element={
-              <>
-                <StudentPage />
-              </>
-            }
-          />
-      
+        <Route
+          path="/student"
+          element={
+            <>
+              <StudentPage />
+            </>
+          }
+        />
 
-        
-          <Route
-            path="/tutor"
-            element={
-              <>
-                <TutorPage />
-              </>
-            }
-          />
-       
+        <Route
+          path="/tutor"
+          element={
+            <>
+              <TutorPage />
+            </>
+          }
+        />
 
-        
-          <Route
-            path="/parent"
-            element={
-              <>
-                <ParentPage />
-              </>
-            }
-          />
-       
+        <Route
+          path="/parent"
+          element={
+            <>
+              <ParentPage />
+            </>
+          }
+        />
+
         <Route
           path="/tutor/new-tutor"
           element={
