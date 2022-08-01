@@ -1,5 +1,7 @@
 {
   "name": "tlancer-modified",
+  "homepage": "https://www.tlancer.net",
+  "description": "Welcome to Tlancer, where you can learn any course from world class tutors at your own pace.",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

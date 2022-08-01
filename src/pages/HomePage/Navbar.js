@@ -46,6 +46,11 @@ const Navbar = () => {
             z-index: 100;
         }
 
+        .navbar-nav li {
+          margin-top: 0;
+          margin-bottom: 0;
+        }
+
         .nav-link {
             color: var(--dark-blue);
             font-size: 20px;          
