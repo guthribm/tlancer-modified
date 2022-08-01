@@ -1,4 +1,4 @@
-import TutorNav from "../../../Components/TutorNav";
+import Navbar from "../../HomePage/Navbar";
 import TutorHero from "./TutorHero";
 import Divider from "../../HomePage/Divider";
 import TutorDashboard from "./TutorDashboard";
@@ -9,7 +9,7 @@ import FooterLinks from "../../HomePage/FooterLinks";
 const TutorPage = () => {
   return (
     <>
-      <TutorNav />
+      <Navbar />
 
       <TutorHero />
       <Divider />

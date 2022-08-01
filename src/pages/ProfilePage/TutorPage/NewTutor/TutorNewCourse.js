@@ -13,12 +13,12 @@ const TutorNewCourse = () => {
           border-radius: 20px;          
         }
       `}</style>
-      <section id="tutor-new-course-section" className="container-fluid p-5">
+      <section id="tutor-new-course-section" className="container-fluid p-lg-5">
         <div className="container">
           <form>
             <div className="form-row">
               <h3 className="account-form-label fw-bold mb-4 h4">Student</h3>
-              <div className="d-flex">
+              <div className="d-flex flex-column flex-lg-row align-items-center">
                 <div className="form-group me-5">
                   <select
                     id="grouped-students"

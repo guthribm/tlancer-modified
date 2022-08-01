@@ -59,7 +59,7 @@ const TlancerCommunity = () => {
             <p className="community-p h5 mt-4 mb-5">
               Connect with your course mate and share ideas
             </p>
-            <button className="btn btn-lg btn-community px-lg-5 mb-5 text-nowrap">
+            <button className="btn btn-lg btn-community px-lg-5 mb-5">
               Find communities near you
             </button>
           </div>

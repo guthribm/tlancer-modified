@@ -107,7 +107,7 @@ const TutorNav = () => {
               <ul className="navbar-nav m-auto mb-2 mb-lg-0 text-center">
                 <li className="nav-item">
                   <Link
-                    to={"/"}
+                    to={"/tutor"}
                     className="nav-link text-nowrap"
                     aria-current="page"
                   >
