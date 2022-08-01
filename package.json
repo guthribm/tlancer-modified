@@ -1,7 +1,7 @@
 {
   "name": "hostinger-react",
   "homepage": "https://www.tlancer.net",
-  "description": "Welcome to Tlancer",
+  "description": "Welcome to Tlancer.",
   "version": "1.0.0",
   "private": true,
   "dependencies": {
