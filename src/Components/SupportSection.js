@@ -1,5 +1,5 @@
-import JoinRightWrapper from "../../JoinPages/JoinRightWrapper";
-import supportImg from "../../../images/Tutors/tutorSupport.webp";
+import JoinRightWrapper from "../pages/JoinPages/JoinRightWrapper";
+import supportImg from "../images/Tutors/tutorSupport.webp";
 const TutorSupportSection = () => {
   const submitHandler = () => {
     console.log("button clicked :) :)");
@@ -16,18 +16,21 @@ const TutorSupportSection = () => {
             color: #6C757D;
         }
       `}</style>
-      <section id="tutor-support-section" className="container-fluid">
+      <section
+        id="tutor-support-section"
+        className="container-fluid pt-5 p-lg-5"
+      >
         <div className="container d-flex flex-column-reverse flex-md-row align-items-center">
           <div className="col col-md-7 text-center text-lg-start my-5 my-lg-0">
-            <h2 className="tutor-heading display-4">
+            <h2 className="tutor-heading fw-bold display-5">
               Need help on how to get started?
             </h2>
-            <p className="my-4 h4">
+            <p className="my-4 h5">
               Find the help you need on the support page
             </p>
             <button
               onClick={(e) => submitHandler(e)}
-              className="btn-registration btn btn-lg py-3 px-4"
+              className="btn-registration btn btn-lg my-4 px-4 text-nowrap"
             >
               Get Started{" "}
               <svg
@@ -35,7 +38,7 @@ const TutorSupportSection = () => {
                 width="16"
                 height="16"
                 fill="currentColor"
-                className="bi bi-arrow-down ms-5"
+                className="bi bi-arrow-down ms-sm-5"
                 viewBox="0 0 16 16"
                 style={{ transform: "rotate(-90deg)" }}
               >

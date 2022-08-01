@@ -12,6 +12,7 @@ const ParentSelfService = (props) => {
     #self-serve-text-container {
         font-family: 'Ubuntu', san-serif;
         color: var(--dark-blue);
+<<<<<<< HEAD
        
     }
     .service-text {
@@ -51,15 +52,40 @@ const ParentSelfService = (props) => {
       --bs-accordion-btn-active-icon: url(${chevUp});
     }
 
+=======
+        border-left: 1px solid #808080;
+    }
+    .service-text {
+        font-family: 'Work Sans', sans-serif;
+        color: #e4e4e4;
+    }
+
+    .accordion-button {
+      --bs-accordion-active-color: #fff;
+      font-size: 1.1rem;
+    }
+
+    .accordion-button::after {
+        --bs-accordion-btn-icon: url(${chevDown});
+        --bs-accordion-btn-active-icon: url(${chevUp});
+    }
+>>>>>>> main
     
    
     `}</style>
       <section
         id="self-serve-container"
+<<<<<<< HEAD
         className="container-fluid my-5 p-lg-5"
       >
         <div className="container d-flex flex-column flex-md-row my-5 p-lg-5">
           <div className="container">
+=======
+        className="container-fluid py-lg-5 p-lg-5"
+      >
+        <div className="container d-flex flex-column flex-md-row align-items-center my-5 p-lg-5">
+          <div className="container p-0">
+>>>>>>> main
             <img
               className="img-fluid"
               src={selfServ}
@@ -68,11 +94,21 @@ const ParentSelfService = (props) => {
               height="514"
             />
           </div>
+<<<<<<< HEAD
           <div id="self-serve-text-container" className="container px-0">
             <div className="container p-lg-5 my-5">
               <div className="container d-flex align-items-center justify-content-center justify-content-lg-start px-0 mb-5">
                 <h2 className="fw-bold h1">As a parent we offer you :</h2>
                 
+=======
+          <div id="self-serve-text-container" className="container px-0 my-5">
+            <div className="container p-lg-5">
+              <div className="container d-flex align-items-center justify-content-center justify-content-lg-start px-0 mb-lg-5">
+                <h2 className="fw-bold h2 text-white">
+                  As a parent we offer{" "}
+                  <span className="text-nowrap">you :</span>
+                </h2>
+>>>>>>> main
               </div>
 
               {/* STart */}
@@ -80,7 +116,11 @@ const ParentSelfService = (props) => {
                 <div className="accordion-item">
                   <h2 className="accordion-header" id="headingOne">
                     <button
+<<<<<<< HEAD
                       className="accordion-button"
+=======
+                      className="accordion-button ps-0"
+>>>>>>> main
                       type="button"
                       data-bs-toggle="collapse"
                       data-bs-target="#collapseOne"
@@ -96,7 +136,11 @@ const ParentSelfService = (props) => {
                     aria-labelledby="headingOne"
                     data-bs-parent="#accordionExample"
                   >
+<<<<<<< HEAD
                     <div className="accordion-body pt-0">
+=======
+                    <div className="accordion-body pt-0 ps-0">
+>>>>>>> main
                       <p className="service-text text-lg-start">
                         Hackton is the leading online coding tutor for beginners
                         join us today to take a step further.
@@ -108,7 +152,11 @@ const ParentSelfService = (props) => {
                 <div className="accordion-item">
                   <h2 className="accordion-header" id="headingTwo">
                     <button
+<<<<<<< HEAD
                       className="accordion-button collapsed"
+=======
+                      className="accordion-button ps-0 collapsed"
+>>>>>>> main
                       type="button"
                       data-bs-toggle="collapse"
                       data-bs-target="#collapseTwo"
@@ -124,7 +172,11 @@ const ParentSelfService = (props) => {
                     aria-labelledby="headingTwo"
                     data-bs-parent="#accordionExample"
                   >
+<<<<<<< HEAD
                     <div class="accordion-body pt-0">
+=======
+                    <div className="accordion-body pt-0 ps-0">
+>>>>>>> main
                       <p className="service-text text-lg-start">
                         Hackton is the leading online coding tutor for beginners
                         join us today to take a step further.
@@ -136,7 +188,11 @@ const ParentSelfService = (props) => {
                 <div className="accordion-item">
                   <h2 className="accordion-header" id="headingThree">
                     <button
+<<<<<<< HEAD
                       className="accordion-button collapsed"
+=======
+                      className="accordion-button ps-0 collapsed"
+>>>>>>> main
                       type="button"
                       data-bs-toggle="collapse"
                       data-bs-target="#collapseThree"
@@ -152,7 +208,11 @@ const ParentSelfService = (props) => {
                     aria-labelledby="headingThree"
                     data-bs-parent="#accordionExample"
                   >
+<<<<<<< HEAD
                     <div className="accordion-body pt-0">
+=======
+                    <div className="accordion-body pt-0 ps-0">
+>>>>>>> main
                       <p className="service-text text-lg-start">
                         Hackton is the leading online coding tutor for beginners
                         join us today to take a step further.
@@ -163,7 +223,11 @@ const ParentSelfService = (props) => {
                   <div className="accordion-item">
                     <h2 className="accordion-header" id="headingFour">
                       <button
+<<<<<<< HEAD
                         className="accordion-button collapsed"
+=======
+                        className="accordion-button ps-0 collapsed"
+>>>>>>> main
                         type="button"
                         data-bs-toggle="collapse"
                         data-bs-target="#collapseFour"
@@ -179,7 +243,11 @@ const ParentSelfService = (props) => {
                       aria-labelledby="headingFour"
                       data-bs-parent="#accordionExample"
                     >
+<<<<<<< HEAD
                       <div className="accordion-body pt-0">
+=======
+                      <div className="accordion-body pt-0 ps-0">
+>>>>>>> main
                         <p className="service-text text-lg-start">
                           Hackton is the leading online coding tutor for
                           beginners join us today to take a step further.
@@ -198,4 +266,8 @@ const ParentSelfService = (props) => {
   );
 };
 
+<<<<<<< HEAD
 export default ParentSelfService;
+=======
+export default ParentSelfService;
+>>>>>>> main

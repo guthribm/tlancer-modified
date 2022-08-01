@@ -10,7 +10,7 @@ import Newsletter from "./Newsletter";
 import FooterLinks from "./FooterLinks";
 import Footer from "./Footer";
 import { Route, Routes } from "react-router-dom";
-import Login from "../../pages/JoinPages/Login";
+import Login from "../../Components/Login";
 import ChooseAccount from "../../pages/JoinPages/ChooseAccount";
 import JoinEmail from "../../pages/JoinPages/JoinEmail";
 import JoinName from "../../pages/JoinPages/JoinName";
@@ -22,10 +22,18 @@ import VerifyEmail from "../JoinPages/VerifyEmail";
 import JoinDataSent from "../JoinPages/JoinDataSent";
 import StudentPage from "../ProfilePage/StudentPage/StudentPage";
 import TutorPage from "../ProfilePage/TutorPage/TutorPage";
+<<<<<<< HEAD
 //import ParentPage from "../ProfilePage/ParentPage";
+=======
+>>>>>>> main
 import ParentPage from "../ProfilePage/ParentPage/ParentPage";
 import AuthContext from "../../store/auth-context";
+import NewTutorHome from "../ProfilePage/TutorPage/NewTutor/NewTutorHome";
+import TutorNav from "../../Components/TutorNav";
+import TutorNewCourse from "../ProfilePage/TutorPage/NewTutor/TutorNewCourse";
+import TutorNewCourseSyllabus from "../ProfilePage/TutorPage/NewTutor/TutorNewCourseSyllabus";
 import { useContext } from "react";
+import PageNotFound from "../../Components/PageNotFound";
 
 const Home = () => {
   console.log("home rendered");
@@ -202,24 +210,40 @@ const Home = () => {
           />
        
         <Route
+          path="/tutor/new-tutor"
+          element={
+            <>
+              <NewTutorHome />
+            </>
+          }
+        />
+
+        <Route
+          path="/tutor/course-details"
+          element={
+            <>
+              <TutorNav />
+              <TutorNewCourse />
+            </>
+          }
+        />
+
+        <Route
+          path="/tutor/course-syllabus"
+          element={
+            <>
+              <TutorNav />
+              <TutorNewCourseSyllabus />
+            </>
+          }
+        />
+
+        <Route
           path="*"
           element={
             <>
               <Navbar />
-              <Hero />
-              <Divider />
-              <PopularCourses />
-              <Divider />
-              <ExploreCourses />
-              <Tutors />
-              <Divider />
-              <Testimonies />
-              <Divider />
-              <Tips />
-              <Divider />
-              <Newsletter />
-              <Divider />
-              <FooterLinks />
+              <PageNotFound />
             </>
           }
         />

@@ -1,14 +1,10 @@
+import { Link } from "react-router-dom";
 import tutorHero from "../../../images/Tutors/tutorHero.webp";
-import JoinRightWrapper from "../../JoinPages/JoinRightWrapper";
 const TutorHero = () => {
-  const submitHandler = (e) => {
-    console.log("button clicked :)");
-  };
   return (
     <>
       <style>{`
         #tutor-section {
-            margin-top: 8rem;
             color: #00274C;
         }
         #tutor-section p {
@@ -24,10 +20,20 @@ const TutorHero = () => {
             font-family: 'Work Sans', san-serif;
             font-weight: bold;
         }
+
+        #tutor-hero-img {
+            border-radius: 30px;
+          }
+
+        @media (min-width: 1024px) {
+          #tutor-hero-img {
+            border-radius: 0px;
+          }
+        }
       `}</style>
-      <section id="tutor-section" className="container-fluid p-lg-5">
-        <div className="container d-flex flex-column-reverse flex-md-row align-items-center p-lg-5 mb-5">
-          <div className="col col-md-7 pe-md-5 text-center text-lg-start mt-5">
+      <section id="tutor-section" className="container-fluid py-5 pb-lg-0">
+        <div className="container d-flex flex-column-reverse flex-lg-row align-items-center pt-lg-5">
+          <div className="col col-lg-7 pe-lg-5 text-start mt-5 my-lg-5">
             <h1 className="tutor-heading fw-500 display-4">
               You know it, You can teach it.{" "}
               <span className="tutor-accent display-4">Become a tutor.</span>
@@ -36,9 +42,9 @@ const TutorHero = () => {
               Hackton is the leading online coding tutor for beginners join us
               today to take a step further.
             </p>
-            <button
-              onClick={(e) => submitHandler(e)}
-              className="btn-get-started btn btn-lg mt-5 mx-auto ms-lg-0"
+            <Link
+              to={"/tutor/new-tutor"}
+              className="btn-get-started btn btn-lg mt-5 me-auto ms-lg-0"
             >
               Get Started{" "}
               <svg
@@ -55,14 +61,17 @@ const TutorHero = () => {
                   d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"
                 />
               </svg>
-            </button>
+            </Link>
           </div>
-          <div className="col col-md-5 ps-md-5">
-            <JoinRightWrapper
-              id="tutor-hero-img"
-              src={tutorHero}
-              alt="woman and open laptop"
-            />
+          <div className="col col-lg-5 pt-5 p-lg-5 p-lg-9 ps-lg-5">
+            <div className="container d-flex">
+              <img
+                id="tutor-hero-img"
+                src={tutorHero}
+                alt="woman and open laptop"
+                className="img-fluid ms-lg-auto mb-0"
+              />
+            </div>
           </div>
         </div>
       </section>

@@ -25,6 +25,7 @@ const TlancerCommunity = () => {
         
         .btn-community {
             border: 1px solid var(--dark-blue);
+            font-size: 1rem;
         }
         .btn-community:hover {
             background: var(--dark-blue);
@@ -38,8 +39,8 @@ const TlancerCommunity = () => {
         }
         `}
       </style>
-      <section className="container-fluid p-lg-5 mb-5">
-        <div className="container community-container d-flex flex-column-reverse flex-lg-row text-center text-lg-start">
+      <section className="container-fluid pt-5 p-lg-5 mb-5 mb-lg-0">
+        <div className="container community-container p-lg-5 d-flex flex-column-reverse flex-lg-row text-center text-lg-start">
           <div className="col col-lg-7">
             <div className="my-5">
               <img
@@ -58,7 +59,7 @@ const TlancerCommunity = () => {
             <p className="community-p h5 mt-4 mb-5">
               Connect with your course mate and share ideas
             </p>
-            <button className="btn btn-community px-lg-5 py-3 mb-5">
+            <button className="btn btn-lg btn-community px-lg-5 mb-5">
               Find communities near you
             </button>
           </div>

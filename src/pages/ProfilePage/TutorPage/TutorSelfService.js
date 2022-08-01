@@ -20,33 +20,10 @@ const TutorSelfService = (props) => {
         color: #808080;
     }
 
-    .accordion-item {
-      {/* border: none; */}
+    .accordion-button {
+      --bs-accordion-active-color: var(--dark-blue);
     }
     
-    .accordion {
-      --bs-accordion-bg: none;
-      border-left: 1px solid #808080;
-      --bs-accordion-border-color: var(--dark-blue);
-    }
-
-    .accordion-button:focus {
-      border-color: var(--dark-blue);
-    }
-
-    .accordion-button {
-      --bs-accordion-active-bg: none;
-      --bs-accordion-active-color: var(--dark-blue);
-      --bs-accordion-active-font-weight: bold;
-      --bs-accordion-btn-color: rgba(80,80,80,.6);
-      --bs-accordion-border-width: 0;
-      font-weight: bold;
-      transition: .3s;
-    }
-    .accordion [class*="collapsed"] {
-      font-size: .9rem;
-    }
-
     .accordion-button::after {
       --bs-accordion-btn-icon: url(${chevDown});
       --bs-accordion-btn-active-icon: url(${chevUp});
@@ -57,9 +34,9 @@ const TutorSelfService = (props) => {
     `}</style>
       <section
         id="self-serve-container"
-        className="container-fluid my-5 p-lg-5"
+        className="container-fluid py-lg-5 p-lg-5"
       >
-        <div className="container d-flex flex-column flex-md-row my-5 p-lg-5">
+        <div className="container d-flex flex-column align-items-center flex-md-row my-5 p-lg-5">
           <div className="container">
             <img
               className="img-fluid"
@@ -69,8 +46,8 @@ const TutorSelfService = (props) => {
               height="514"
             />
           </div>
-          <div id="self-serve-text-container" className="container px-0">
-            <div className="container p-lg-5 my-5">
+          <div id="self-serve-text-container" className="container px-0 my-5">
+            <div className="container p-lg-5">
               <div className="container d-flex align-items-center justify-content-center justify-content-lg-start px-0 mb-5">
                 <h2 className="pe-2 fw-bold h1">Why</h2>
                 <img
@@ -89,7 +66,7 @@ const TutorSelfService = (props) => {
                 <div className="accordion-item">
                   <h2 className="accordion-header" id="headingOne">
                     <button
-                      className="accordion-button"
+                      className="accordion-button ps-0"
                       type="button"
                       data-bs-toggle="collapse"
                       data-bs-target="#collapseOne"
@@ -105,7 +82,7 @@ const TutorSelfService = (props) => {
                     aria-labelledby="headingOne"
                     data-bs-parent="#accordionExample"
                   >
-                    <div className="accordion-body pt-0">
+                    <div className="accordion-body pt-0 ps-0">
                       <p className="service-text text-lg-start">
                         Hackton is the leading online coding tutor for beginners
                         join us today to take a step further.
@@ -117,7 +94,7 @@ const TutorSelfService = (props) => {
                 <div className="accordion-item">
                   <h2 className="accordion-header" id="headingTwo">
                     <button
-                      className="accordion-button collapsed"
+                      className="accordion-button ps-0 collapsed"
                       type="button"
                       data-bs-toggle="collapse"
                       data-bs-target="#collapseTwo"
@@ -133,7 +110,7 @@ const TutorSelfService = (props) => {
                     aria-labelledby="headingTwo"
                     data-bs-parent="#accordionExample"
                   >
-                    <div class="accordion-body pt-0">
+                    <div className="accordion-body pt-0 ps-0">
                       <p className="service-text text-lg-start">
                         Hackton is the leading online coding tutor for beginners
                         join us today to take a step further.
@@ -145,7 +122,7 @@ const TutorSelfService = (props) => {
                 <div className="accordion-item">
                   <h2 className="accordion-header" id="headingThree">
                     <button
-                      className="accordion-button collapsed"
+                      className="accordion-button ps-0 collapsed"
                       type="button"
                       data-bs-toggle="collapse"
                       data-bs-target="#collapseThree"
@@ -161,7 +138,7 @@ const TutorSelfService = (props) => {
                     aria-labelledby="headingThree"
                     data-bs-parent="#accordionExample"
                   >
-                    <div className="accordion-body pt-0">
+                    <div className="accordion-body pt-0 ps-0">
                       <p className="service-text text-lg-start">
                         Hackton is the leading online coding tutor for beginners
                         join us today to take a step further.
@@ -172,7 +149,7 @@ const TutorSelfService = (props) => {
                   <div className="accordion-item">
                     <h2 className="accordion-header" id="headingFour">
                       <button
-                        className="accordion-button collapsed"
+                        className="accordion-button ps-0 collapsed"
                         type="button"
                         data-bs-toggle="collapse"
                         data-bs-target="#collapseFour"
@@ -188,7 +165,7 @@ const TutorSelfService = (props) => {
                       aria-labelledby="headingFour"
                       data-bs-parent="#accordionExample"
                     >
-                      <div className="accordion-body pt-0">
+                      <div className="accordion-body pt-0 ps-0">
                         <p className="service-text text-lg-start">
                           Hackton is the leading online coding tutor for
                           beginners join us today to take a step further.

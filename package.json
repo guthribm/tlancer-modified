@@ -1,6 +1,7 @@
 {
-  "name": "tlancer-modified",
-  "version": "0.1.0",
+  "name": "hostinger-react",
+  "description": "Welcome to Tlancer.",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.3",

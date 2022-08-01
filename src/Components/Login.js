@@ -1,11 +1,11 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useState, useContext, useRef } from "react";
-import JoinRightWrapper from "./JoinRightWrapper";
-import imgLogin from "../../images/Registration/img-login.webp";
-import atSign from "../../images/Registration/at-sign.svg";
-import padlock from "../../images/Registration/padlock.svg";
-import JoinNav from "./JoinNav";
-import AuthContext from "../../store/auth-context";
+import JoinRightWrapper from "../pages/JoinPages/JoinRightWrapper";
+import imgLogin from "../images/Registration/img-login.webp";
+import atSign from "../images/Registration/at-sign.svg";
+import padlock from "../images/Registration/padlock.svg";
+import JoinNav from "../pages/JoinPages/JoinNav";
+import AuthContext from "../store/auth-context";
 // import SignUpContext from "../../store/signup-context";
 
 // import LoginButton from "../../Components/LoginButton";
@@ -76,19 +76,18 @@ const Login = () => {
 
       @keyframes loading {
         0%{
-          transform: rotate(5deg) scale(1.1);
+          opacity: 1;
         }
         50%{
-          transform: rotate(-5deg) scale(.9);
+          opacity: 0;
         }
         100%{
-          transform: rotate(5deg) scale(1.1);
+          opacity: 1;
         }
       }
 
       .btn-loading {
         background: #fff;
-        color: var(--active-link);
         animation: loading 2s infinite;
         font-weight: bold;
       }
@@ -204,7 +203,14 @@ const Login = () => {
                   </svg>
                 </Link>
               ) : (
-                <button className="btn-loading btn btn-lg">Loading </button>
+                <div className="d-flex align-items-center w-25 h5">
+                  <strong className="visually-hidden">Loading...</strong>
+                  <div
+                    className="spinner-border mx-auto"
+                    role="status"
+                    aria-hidden="true"
+                  ></div>
+                </div>
               )}
             </div>
           </div>

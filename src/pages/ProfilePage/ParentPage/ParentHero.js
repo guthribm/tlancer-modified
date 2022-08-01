@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import parentHero from "../../../images/Parents/parent_hero.png";
+=======
+import parentHero from "../../../images/Parents/parent_hero.webp";
+>>>>>>> main
 import JoinRightWrapper from "../../JoinPages/JoinRightWrapper";
 const ParentHero = () => {
   const submitHandler = (e) => {
@@ -7,11 +11,18 @@ const ParentHero = () => {
   return (
     <>
       <style>{`
+<<<<<<< HEAD
         #tutor-section {
             margin-top: 8rem;
             color: #00274C;
         }
         #tutor-section p {
+=======
+        #parent-section {
+            color: #00274C;
+        }
+        #parent-section p {
+>>>>>>> main
             font-family: 'Work Sans', san-serif;
             font-weight: 400;
             color: #6C757D;
@@ -30,6 +41,7 @@ const ParentHero = () => {
              border-color:var(--active-link);
         }
       `}</style>
+<<<<<<< HEAD
       <section id="tutor-section" className="container-fluid p-lg-5">
         <div className="container d-flex flex-column-reverse flex-md-row align-items-center p-lg-5 mb-5">
           <div className="col col-md-7 pe-md-5 text-center text-lg-start mt-5">
@@ -39,6 +51,20 @@ const ParentHero = () => {
             </h1>
             <p className="my-4 h4">
               Hackton is the leading online coding tutor for beginners join us today to take a step further.
+=======
+      <section id="parent-section" className="container-fluid p-5">
+        <div className="container d-flex flex-column-reverse flex-md-row align-items-center p-lg-5 mb-lg-5">
+          <div className="col col-md-7 pe-md-5 text-center text-lg-start mt-lg-5">
+            <h1 className="tutor-heading fw-500 display-4">
+              See how your child grade is doing.{" "}
+              <span className="tutor-accent display-4">
+                Signup as a parent.
+              </span>
+            </h1>
+            <p className="my-4 h4">
+              Hackton is the leading online coding tutor for beginners join us
+              today to take a step further.
+>>>>>>> main
             </p>
             <button
               onClick={(e) => submitHandler(e)}

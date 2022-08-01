@@ -7,12 +7,25 @@
   box-sizing: border-box;
 }
 
-.btn-get-started {
+.form-control {
+  background-color: rgba(0,39,76,0.03);
+}
+
+
+.btn-get-started:hover, .btn-get-started:focus {
   border: 1px solid var(--dark-blue);
+  
+}
+
+.btn-get-started {
+  background: var(--dark-blue);
+  color: #fff;
   font-family: 'Ubuntu', san-serif;
   font-weight: 500;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  max-width: 275px;
 }
 
 .text-input {
@@ -22,6 +35,7 @@
 .text-input:hover, .text-input:focus {        
   outline: none;
   border: none;
+  box-shadow: none;
 }
 
 .registration {
@@ -36,6 +50,12 @@
   color: #fff;
   font-weight: 500;
   font-family: 'Ubuntu', san-serif;
+}
+
+.btn-registration:hover, .btn-registration:focus {
+  background: white;
+  color: var(--active-link);
+  border: 1px solid var(--active-link);
 }
 
 .registration-name {
@@ -61,6 +81,39 @@
   color: #0ebe6a;
 }
 
+.accordion-item {
+  border: none;
+}
+
+.accordion {
+  --bs-accordion-bg: none;
+  --bs-accordion-active-color: none;
+  --bs-accordion-border-color: none;
+}
+.accordion-button:focus {
+  border-color: none;
+  box-shadow: none;
+}
+.accordion-button {
+  --bs-accordion-active-bg: none;
+  
+  --bs-accordion-active-font-weight: bold;
+  --bs-accordion-btn-color: rgba(150,150,150,.8);
+  --bs-accordion-border-width: 0;
+  font-weight: bold;
+  transition: .3s;
+}
+.accordion [class*="collapsed"] {
+  font-size: .9rem;
+}
+
+/*  New tutor course properties start */
+
+.new-course-label {
+  font-family: 'Work Sans', sans-serif;
+  color: #808080;
+}
+
 .fade-in {
   animation: fade-in .3s linear forwards;
 }
@@ -71,8 +124,8 @@
   100%{opacity: 1}
 }
 .home-logo {
-  width: 50%;
-  height: 50%;
+  width: 115px;
+  height: 34px;
 }
 
 /* * { border: 1px solid red} */
@@ -89,8 +142,8 @@
   .registration-input {
     width: 100%!important;
   }
-  .home-logo {
-    width: 75%;
-    height: 75%;
-  }
+  /* .home-logo {
+    width: 115px;
+    height: 34px;
+  } */
 }

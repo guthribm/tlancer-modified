@@ -7,13 +7,14 @@ import avatar1 from "../../images/New Courses/avatar1.png";
 import avatar2 from "../../images/New Courses/avatar2.png";
 import avatar3 from "../../images/New Courses/avatar3.png";
 import avatar4 from "../../images/New Courses/avatar4.png";
-const NewCourses = () => {
+
+const NewCourses = (props) => {
   return (
     <>
       <style>{`
-    #new-courses-section {
-        background: #F3F4F6;
-    }
+      #new-courses-section {
+        background: ${props.bgColor};
+      }
 
     #new-courses-section h2 {
         font-family: 'Ubuntu', san-serif;
@@ -37,7 +38,7 @@ const NewCourses = () => {
       }
     }
     `}</style>
-      <section id="new-courses-section" className="container-fluid p-lg-5 my-5">
+      <section id="new-courses-section" className="container-fluid p-lg-5">
         <div className="container">
           <div className="container d-flex flex-column flex-md-row align-items-center justify-content-between mt-5 my-md-5">
             <h2 className="h4 fw-bold my-5">New Courses</h2>
@@ -59,7 +60,7 @@ const NewCourses = () => {
               </svg>
             </button>
           </div>
-          <div className="d-flex flex-column align-items-center flex-lg-row justify-content-between">
+          <div className="row justify-content-center">
             <NewCourseCard
               src={new1}
               alt="instructor"
