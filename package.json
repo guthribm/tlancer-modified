@@ -1,7 +1,7 @@
 {
-  "name": "tlancer-modified",
+  "name": "hostinger-react",
   "homepage": "https://www.tlancer.net",
-  "description": "Welcome to Tlancer, where you can learn any course from world class tutors at your own pace.",
+  "description": "Welcome to Tlancer",
   "version": "1.0.0",
   "private": true,
   "dependencies": {
