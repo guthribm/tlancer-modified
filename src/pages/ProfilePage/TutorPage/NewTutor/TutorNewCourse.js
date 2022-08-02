@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import pencil from "../../../../images/Tutors/pencil.png";
+import { NewCourseProgress } from "../../../../Components/NewCourseProgress";
+
 const TutorNewCourse = () => {
   return (
     <>
@@ -7,7 +9,7 @@ const TutorNewCourse = () => {
         #tutor-new-course-section {
           margin-top: 8rem;
         }
-        
+
         .course-description-input {
           border: 1px solid rgba(100,100,100,0.3);
           border-radius: 20px;          
@@ -16,14 +18,21 @@ const TutorNewCourse = () => {
         #course-description {
           border-color: rgba(100,100,100,0.3);
         }
+
+        .current {
+          color: var(--product-dark-blue);
+        }
+
+        
       `}</style>
       <section id="tutor-new-course-section" className="container-fluid p-lg-5">
-        <div className="container">
-          <form>
+        <div className="container d-flex flex-column flex-md-row">
+          <NewCourseProgress current={1} />
+          <form className="col col-md-8">
             <h3 className="account-form-label fw-bold mb-4 h4">Student</h3>
             <div className="form-group">
-              <div className="d-flex flex-column flex-sm-row align-items-start align-items-sm-center justify-content-evenly col">
-                <div className="me-auto">
+              <div className="d-flex flex-column flex-sm-row align-items-start justify-content-evenly col">
+                <div className="me-5">
                   <select
                     id="grouped-students"
                     className="form-select new-course-label"
@@ -77,7 +86,7 @@ const TutorNewCourse = () => {
                 Input course title, keep it simple.
               </label>
 
-              <div className="form-group col-md-6">
+              <div className="form-group col-md-10">
                 <textarea
                   className="new-course-label p-3 rounded-4"
                   id="course-description"
@@ -88,7 +97,7 @@ const TutorNewCourse = () => {
                 />
               </div>
 
-              <div className="form-row mt-5 col">
+              <div className="form-row mt-5 col col-md-10">
                 <h3 className="account-form-label fw-bold mb-3 h4">
                   Course categories
                 </h3>
@@ -114,7 +123,7 @@ const TutorNewCourse = () => {
                   Choose Course Category
                 </label>
 
-                <div className="form-row mt-5 col-sm-3">
+                <div className="form-row mt-5 col col-sm-6">
                   <h3 className="account-form-label fw-bold mb-3 h4">
                     Class type
                   </h3>
@@ -134,7 +143,7 @@ const TutorNewCourse = () => {
               </div>
             </div>
             <Link to={"/tutor/course-syllabus"}>
-              <button className="btn-registration btn btn-lg mt-5">
+              <button className="btn-registration btn btn-lg my-5">
                 Next{" "}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
