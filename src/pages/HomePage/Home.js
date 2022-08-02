@@ -26,6 +26,7 @@ import ParentPage from "../ProfilePage/ParentPage/ParentPage";
 import AuthContext from "../../store/auth-context";
 import NewTutorHome from "../ProfilePage/TutorPage/NewTutor/NewTutorHome";
 import TutorNav from "../../Components/TutorNav";
+import StudentNav from "../../Components/StudentNav";
 import ParentNav from "../../Components/ParentNav";
 import TutorNewCourse from "../ProfilePage/TutorPage/NewTutor/TutorNewCourse";
 import TutorNewCourseSyllabus from "../ProfilePage/TutorPage/NewTutor/TutorNewCourseSyllabus";
@@ -209,6 +210,16 @@ const Home = () => {
           element={
             <>
               <ParentNav />
+              <TutorNewCourseSyllabus />
+            </>
+          }
+        />
+
+        <Route
+          path="/student/student_nav"
+          element={
+            <>
+              <StudentNav />
               <TutorNewCourseSyllabus />
             </>
           }
