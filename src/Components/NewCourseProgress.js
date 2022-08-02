@@ -1,6 +1,7 @@
 import greenBall from "../images/Tutors/greenBall.png";
 import greyBall from "../images/Tutors/greyBall.png";
 export const NewCourseProgress = (props) => {
+  console.log("current Progress for new course: " + props.current);
   return (
     <>
       <style>{`
@@ -34,19 +35,19 @@ export const NewCourseProgress = (props) => {
           New Course
         </h3>
         <ul className="h4 fw-bold new-course-progress-list py-1">
-          <li className="my-5 current">
+          <li className={props.current === 1 ? "my-5 current" : "my-5"}>
             <span>Course Details</span>
           </li>
-          <li className="my-5">
+          <li className={props.current === 2 ? "my-5 current" : "my-5"}>
             <span>Syllabus</span>
           </li>
-          <li className="my-5">
+          <li className={props.current === 3 ? "my-5 current" : "my-5"}>
             <span>Course preview video</span>
           </li>
-          <li className="my-5">
+          <li className={props.current === 4 ? "my-5 current" : "my-5"}>
             <span>Set course calendar</span>
           </li>
-          <li className="my-5">
+          <li className={props.current === 5 ? "my-5 current" : "my-5"}>
             <span>Pricing</span>
           </li>
         </ul>
