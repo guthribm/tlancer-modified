@@ -18,7 +18,7 @@ const ParentNav = () => {
             font-weight: 600;
         }
 
-        #tutor-nav-logo {
+        #parent-nav-logo {
             text-decoration: none;
         }
       
@@ -79,17 +79,15 @@ const ParentNav = () => {
         <nav className="navbar px-3 navbar-expand-lg navbar-light bg-white fixed-top w-100">
           <div className="container mt-2 mx-auto px-0">
             <div className="d-flex flex-row-reverse align-items-center w-100">
-              <Link className="me-lg-auto" id="tutor-nav-logo" to="/tutor">
+              <Link className="me-lg-auto" id="parent-nav-logo" to="/parent">
                 <img
                   className="home-logo p-1"
                   src={logo}
                   alt="Tlancer"
                   width={"374"}
                   height={"90"}
-                />
-                <span className="tutors-sup h4 mx-2">tutors</span>
+                />              
               </Link>
-
               <button
                 className="navbar-toggler me-auto"
                 type="button"
@@ -102,7 +100,6 @@ const ParentNav = () => {
                 <span className="navbar-toggler-icon"></span>
               </button>
             </div>
-
             <div className="collapse navbar-collapse" id="navbar">
               <ul className="navbar-nav m-auto mb-2 mb-lg-0 text-center">
                 <li className="nav-item">
@@ -113,8 +110,7 @@ const ParentNav = () => {
                   >
                     Home
                   </Link>
-                </li>
-                
+                </li>                
                 <li className="nav-item">
                   <Link
                     to={"/tutor"}
@@ -124,7 +120,6 @@ const ParentNav = () => {
                     Tutor
                   </Link>
                 </li>
-
                 <li className="nav-item">
                   <Link
                     to={"/parent/task"}
@@ -143,7 +138,6 @@ const ParentNav = () => {
                     Attendance
                   </Link>
                 </li>
-
                 <li className="nav-item">
                   <Link
                     to={"/parent/orders"}
@@ -153,9 +147,6 @@ const ParentNav = () => {
                     Orders
                   </Link>
                 </li>
-
-  
-
               </ul>
             </div>
           </div>
