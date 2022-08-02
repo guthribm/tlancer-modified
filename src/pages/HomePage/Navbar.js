@@ -124,7 +124,7 @@ const Navbar = () => {
 
           }
           .nav-item:first-of-type {
-            padding-top: 5rem;
+            padding-top: 3rem;
           }
         }
     `}</style>
