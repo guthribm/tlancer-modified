@@ -32,6 +32,7 @@ import TutorNewCourse from "../ProfilePage/TutorPage/NewTutor/TutorNewCourse";
 import TutorNewCourseSyllabus from "../ProfilePage/TutorPage/NewTutor/TutorNewCourseSyllabus";
 import { useContext } from "react";
 import PageNotFound from "../../Components/PageNotFound";
+import AssesmentCourse from "../../Components/AssesmentCourses/AssesmentCourse"
 
 const Home = () => {
   console.log("home rendered");
@@ -109,6 +110,15 @@ const Home = () => {
           element={
             <>
               <JoinDateOfBirth />
+            </>
+          }
+        />
+
+        <Route
+          path="/AssesmentCourse"
+          element={
+            <>
+              <AssesmentCourse />
             </>
           }
         />
