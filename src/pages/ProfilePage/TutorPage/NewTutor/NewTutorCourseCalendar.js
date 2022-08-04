@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { NewCourseProgress } from "../../../../Components/NewCourseProgress";
-const TutorNewCourseSyllabus = () => {
+const NewTutorCourseCalendar = () => {
   return (
     <>
       <style>{`
@@ -28,10 +28,10 @@ const TutorNewCourseSyllabus = () => {
         className="container-fluid p-lg-5"
       >
         <div className="container d-flex flex-column flex-md-row">
-          <NewCourseProgress current={2} />
+          <NewCourseProgress current={4} />
           <form className="col col-md-8">
-            <h1>Syllabus goes here.</h1>
-            <Link to={"/tutor/course-preview-video"}>
+            <h1>New Course Calendar goes here.</h1>
+            <Link to={"/tutor/course-pricing"}>
               <button className="btn-registration btn btn-lg my-5">
                 Next{" "}
                 <svg
@@ -57,4 +57,4 @@ const TutorNewCourseSyllabus = () => {
   );
 };
 
-export default TutorNewCourseSyllabus;
+export default NewTutorCourseCalendar;
