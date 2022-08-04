@@ -39,7 +39,10 @@ import ChildProgress from "../../pages/ProfilePage/ParentPage/ChildProgress";
 const Home = () => {
   console.log("home rendered");
   const AuthCTX = useContext(AuthContext);
+<<<<<<< HEAD
 
+=======
+>>>>>>> main
 
   return (
     <>

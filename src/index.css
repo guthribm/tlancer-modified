@@ -2,6 +2,9 @@
 :root {
   --dark-blue: #00274c;
   --active-link: #0ebe6a;
+  --body-grey: #6C757D;
+  --grey-5: #9CA3AF;
+  --product-dark-blue: #00274C;
 }
 *, ::after, ::before {
   box-sizing: border-box;
@@ -9,6 +12,10 @@
 
 .form-control {
   background-color: rgba(0,39,76,0.03);
+}
+
+.ubuntu {
+  font-family: 'Ubuntu', san-serif;
 }
 
 
@@ -113,6 +120,12 @@
   font-family: 'Work Sans', sans-serif;
   color: #808080;
 }
+
+.new-course-progress-heading {
+  color: var(--grey-5);
+}
+
+
 
 .fade-in {
   animation: fade-in .3s linear forwards;
