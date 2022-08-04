@@ -30,6 +30,8 @@ import TutorNewCourse from "../ProfilePage/TutorPage/NewTutor/TutorNewCourse";
 import TutorNewCourseSyllabus from "../ProfilePage/TutorPage/NewTutor/TutorNewCourseSyllabus";
 import { useContext } from "react";
 import PageNotFound from "../../Components/PageNotFound";
+import ParentLoggedPage from "../ProfilePage/ParentPage/ParentLoggedPage";
+import ParentNav from "../../Components/ParentNav";
 
 const Home = () => {
   console.log("home rendered");
@@ -207,6 +209,16 @@ const Home = () => {
             <>
               <TutorNav />
               <TutorNewCourseSyllabus />
+            </>
+          }
+        />
+
+        <Route
+          path="/parent/parent-logged-in"
+          element={
+            <>
+              <ParentNav />
+              <ParentLoggedPage />
             </>
           }
         />
