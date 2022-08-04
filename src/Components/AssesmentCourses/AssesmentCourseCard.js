@@ -73,7 +73,7 @@ const AssesmentCourseCard = (props) => {
           width="350"
           height="223"
         />
-        <div className="card-body p-lg-4">
+        <div className="card-body p-lg-3 d-flex flex-column justify-content-between">
           <h5 className="course-title mb-3 text_color">{props.courseTitle}</h5>
           <div className="d-flex">
             <img
@@ -100,7 +100,13 @@ const AssesmentCourseCard = (props) => {
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
                 height="24"
-                fillRule="currentColor"
+                fill={
+                  props.assesmentProgress === "Failed"
+                    ? "#FD4E5D"
+                    : props.assesmentProgress === "Completed"
+                    ? "#0ebe6a"
+                    : "#FFCB05"
+                }
                 className="bi bi-hourglass"
                 viewBox="0 0 16 16"
               >

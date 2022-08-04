@@ -68,57 +68,36 @@ const AssesmentCourses = (props) => {
               instructorImg={avatar4}
               instructorName="Wade Warren"
               assesmentProgress="Pending"
-              //   assesmentScoreImg={score_icon}
               score="0"
-              score_divsion="/"
-              score_denomenator="10"
               assesmentAction="Complete Assesment"
             />
             <AssesmentCourseCard
               src={new1}
-              alt="instructor"
               courseTitle="User Experience Design foundation intro Assesment"
               instructorImg={avatar1}
               instructorName="Nicole Savana"
-              //   assesmentCompletedIcon={completed_icon}
-              assesmentVal="Score"
               assesmentProgress="Completed"
-              //   assesmentScoreImg={score_icon}
-              score_numerator="10"
-              score_divsion="/"
-              score_denomenator="10"
+              score="10"
               assesmentAction="View Assesment"
             />
 
             <AssesmentCourseCard
               src={new3}
-              alt="instructor"
               courseTitle="Mathematic - Equation Assessment 2"
               instructorImg={avatar3}
               instructorName="Anina David"
-              assesmentVal="Score"
-              //   assesmentCompletedIcon={failed_icon}
               assesmentProgress="Failed"
-              //   assesmentScoreImg={score_icon}
-              score_numerator="0"
-              score_divsion="/"
-              score_denomenator="10"
+              score="0"
               assesmentAction="Retake Assesment"
             />
 
             <AssesmentCourseCard
               src={new3}
-              alt="instructor"
               courseTitle="Mathematic - Equation Assessment 2"
               instructorImg={avatar3}
               instructorName="Anina David"
-              assesmentVal="Score"
-              //   assesmentCompletedIcon={failed_icon}
               assesmentProgress="Failed"
-              //   assesmentScoreImg={score_icon}
-              score_numerator="0"
-              score_divsion="/"
-              score_denomenator="10"
+              score="0"
               assesmentAction="Retake Assesment"
             />
           </div>
