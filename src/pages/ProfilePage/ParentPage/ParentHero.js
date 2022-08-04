@@ -31,7 +31,7 @@ const ParentHero = () => {
         }
       `}</style>
       <section id="parent-section" className="container-fluid p-5">
-        <div className="container d-flex flex-column-reverse flex-md-row align-items-center p-lg-5 mb-lg-5">
+        <div className="container d-flex flex-column-reverse flex-md-row align-items-center p-lg-5">
           <div className="col col-md-7 pe-md-5 text-center text-lg-start mt-lg-5">
             <h1 className="tutor-heading fw-500 display-4">
               See how your child grade is doing.{" "}

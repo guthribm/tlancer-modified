@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
 
 const AssesmentCourseCard = (props) => {
+  const bgColor =
+    props.assesmentProgress === "Failed" ? "rgba(253, 78, 93, 0.15)" : "#fff";
+
   return (
     <>
       <style>{`
@@ -65,7 +68,10 @@ const AssesmentCourseCard = (props) => {
         }
     `}</style>
 
-      <div className="card new-course-card col col-12 col-lg-3 mb-5 mx-4 px-0">
+      <div
+        style={{ backgroundColor: bgColor }}
+        className="card new-course-card col col-12 col-lg-3 mb-5 mx-4 px-0"
+      >
         <img
           className="card-img-top img-fluid"
           src={props.src}
@@ -134,6 +140,7 @@ const AssesmentCourseCard = (props) => {
         <div className="p-3">
           <Link
             to={"/parent/assesment"}
+            style={{ backgroundColor: bgColor }}
             className="btn-get-started_new btn text-nowrap"
           >
             {props.assesmentAction}{" "}
