@@ -34,24 +34,6 @@ import PageNotFound from "../../Components/PageNotFound";
 const Home = () => {
   console.log("home rendered");
   const AuthCTX = useContext(AuthContext);
-  // const [accountType, setAccountType] = useState("");
-  // const [email, setEmail] = useState("");
-  // const [firstName, setFirstName] = useState("");
-  // const [lastName, setLastName] = useState("");
-  // const [date, setDate] = useState("");
-  // const [location, setLocation] = useState("");
-  // const [phone, setPhone] = useState("");
-  // const [password, setPassword] = useState("");
-
-  // let joinData = {
-  //   type: accountType,
-  //   email: email,
-  //   first_name: firstName,
-  //   last_name: lastName,
-  //   dob: date,
-  //   location: location,
-  //   password: password,
-  // };
 
   return (
     <>

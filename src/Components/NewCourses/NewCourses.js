@@ -41,7 +41,7 @@ const NewCourses = (props) => {
       <section id="new-courses-section" className="container-fluid p-lg-5">
         <div className="container">
           <div className="container d-flex flex-column flex-md-row align-items-center justify-content-between mt-5 my-md-5">
-            <h2 className="h4 fw-bold my-5">New Courses</h2>
+            <h2 className="h4 fw-bold my-5">{props.heading}</h2>
             <button className="new-courses-btn h5">
               See all
               <svg
