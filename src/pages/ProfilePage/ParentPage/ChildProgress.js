@@ -1,6 +1,6 @@
 import parent_img from "../../../images/Parents/people.webp";
 import JoinRightWrapper from "../../JoinPages/JoinRightWrapper";
-const ParentLearnMore = () => {
+const ChildProgress = () => {
   const submitHandler = (e) => {
     console.log("button clicked :)");
   };
@@ -71,4 +71,4 @@ const ParentLearnMore = () => {
     </>
   );
 };
-export default ParentLearnMore;
+export default ChildProgress;
