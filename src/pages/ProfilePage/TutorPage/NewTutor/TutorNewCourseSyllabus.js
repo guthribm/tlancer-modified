@@ -41,11 +41,11 @@ const TutorNewCourseSyllabus = () => {
       `}</style>
       <section
         id="tutor-new-syllabus-section"
-        className="container-fluid p-lg-5"
+        className="container-fluid px-lg-5"
       >
         <div className="container d-flex flex-column flex-md-row">
           <NewCourseProgress current={2} />
-          <form className="col col-md-8">
+          <form className="col col-md-8 ms-auto">
             <h3 className="account-heading h5">Course Syllabus</h3>
             <div className="course-description-input d-flex align-items-center col col-md-8 my-4 p-2">
               <svg

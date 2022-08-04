@@ -27,11 +27,11 @@ const TutorNewCoursePreviewVideo = () => {
       `}</style>
       <section
         id="tutor-new-syllabus-section"
-        className="container-fluid p-lg-5"
+        className="container-fluid px-lg-5"
       >
         <div className="container d-flex flex-column flex-md-row">
           <NewCourseProgress current={3} />
-          <div className="col col-md-8">
+          <div className="col col-md-8 ms-auto">
             <div className="d-flex flex-column">
               <h3 className="account-form-label fw-bold h5">
                 Upload Course Preview

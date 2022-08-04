@@ -25,11 +25,11 @@ const TutorNewCoursePricing = () => {
       `}</style>
       <section
         id="tutor-new-syllabus-section"
-        className="container-fluid p-lg-5"
+        className="container-fluid px-lg-5"
       >
         <div className="container d-flex flex-column flex-md-row">
           <NewCourseProgress current={5} />
-          <form className="col col-md-8">
+          <form className="col col-md-8 ms-auto">
             <h1>New Course Pricing goes here.</h1>
           </form>
         </div>

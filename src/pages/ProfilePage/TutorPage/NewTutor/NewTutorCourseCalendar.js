@@ -25,11 +25,11 @@ const NewTutorCourseCalendar = () => {
       `}</style>
       <section
         id="tutor-new-syllabus-section"
-        className="container-fluid p-lg-5"
+        className="container-fluid px-lg-5"
       >
         <div className="container d-flex flex-column flex-md-row">
           <NewCourseProgress current={4} />
-          <form className="col col-md-8">
+          <form className="col col-md-8 ms-auto">
             <h1>New Course Calendar goes here.</h1>
             <Link to={"/tutor/course-pricing"}>
               <button className="btn-registration btn btn-lg my-5">

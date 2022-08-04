@@ -25,10 +25,13 @@ const TutorNewCourse = () => {
 
         
       `}</style>
-      <section id="tutor-new-course-section" className="container-fluid p-lg-5">
+      <section
+        id="tutor-new-course-section"
+        className="container-fluid px-lg-5"
+      >
         <div className="container d-flex flex-column flex-md-row">
           <NewCourseProgress current={1} />
-          <form className="col col-md-8">
+          <form className="col col-md-8 ms-auto">
             <h3 className="account-form-label fw-bold mb-4 h4">Student</h3>
             <div className="form-group">
               <div className="d-flex flex-column flex-sm-row align-items-start justify-content-evenly col">
