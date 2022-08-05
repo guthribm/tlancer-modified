@@ -30,6 +30,11 @@ import TutorNewCourse from "../ProfilePage/TutorPage/NewTutor/TutorNewCourse";
 import TutorNewCourseSyllabus from "../ProfilePage/TutorPage/NewTutor/TutorNewCourseSyllabus";
 import { useContext } from "react";
 import PageNotFound from "../../Components/PageNotFound";
+import ParentLoggedPage from "../ProfilePage/ParentPage/ParentLoggedPage";
+import ParentNav from "../../Components/ParentNav";
+import TutorNewCoursePreviewVideo from "../ProfilePage/TutorPage/NewTutor/TutorNewCoursePreviewVideo";
+import TutorNewCoursePricing from "../ProfilePage/TutorPage/NewTutor/TutorNewCoursePricing";
+import NewTutorCourseCalendar from "../ProfilePage/TutorPage/NewTutor/NewTutorCourseCalendar";
 
 const Home = () => {
   console.log("home rendered");
@@ -207,6 +212,46 @@ const Home = () => {
             <>
               <TutorNav />
               <TutorNewCourseSyllabus />
+            </>
+          }
+        />
+
+        <Route
+          path="/tutor/course-preview-video"
+          element={
+            <>
+              <TutorNav />
+              <TutorNewCoursePreviewVideo />
+            </>
+          }
+        />
+
+        <Route
+          path="/tutor/course-calendar"
+          element={
+            <>
+              <TutorNav />
+              <NewTutorCourseCalendar />
+            </>
+          }
+        />
+
+        <Route
+          path="/tutor/course-pricing"
+          element={
+            <>
+              <TutorNav />
+              <TutorNewCoursePricing />
+            </>
+          }
+        />
+
+        <Route
+          path="/parent/parent-logged-in"
+          element={
+            <>
+              <ParentNav />
+              <ParentLoggedPage />
             </>
           }
         />
