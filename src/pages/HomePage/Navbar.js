@@ -124,7 +124,7 @@ const Navbar = () => {
 
           }
           .nav-item:first-of-type {
-            padding-top: 5rem;
+            padding-top: 3rem;
           }
         }
     `}</style>
@@ -184,9 +184,7 @@ const Navbar = () => {
                 <CustomLink to="/">Home</CustomLink>
                 <CustomLink to="/student">Student</CustomLink>
                 <CustomLink to="/tutor">Tutor</CustomLink>
-                <li className="nav-item">
-                  <span className="nav-link text-nowrap">Mission</span>
-                </li>
+                <CustomLink to="/parent">Parent</CustomLink>
                 <li className="nav-item">
                   <span className="nav-link text-nowrap">Why Us?</span>
                 </li>

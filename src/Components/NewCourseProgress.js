@@ -11,6 +11,7 @@ export const NewCourseProgress = (props) => {
         color: var(--body-grey);
       }
      
+     
 
       ul {
         padding-left: 13px;
@@ -29,8 +30,17 @@ export const NewCourseProgress = (props) => {
       .new-course-progress-list .current {
         list-style: url(${greenBall});
       }
+
+      @media (min-width: 768px) {
+        #progress-container {
+          position: fixed;
+        }
+      }
     `}</style>
-      <div className="p-5 pt-0 ps-0 ubuntu mx-auto mr-md-auto col col-md-4">
+      <div
+        id="progress-container"
+        className="p-0 ubuntu mx-auto mr-md-auto col col-md-3 mb-5"
+      >
         <h3 className="h4 fw-bold new-course-progress-heading ps-4">
           New Course
         </h3>

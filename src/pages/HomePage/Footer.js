@@ -15,8 +15,10 @@ const Footer = () => {
             font-weight: 500;
             color: #6b7280;
         }
+        
       `}</style>
-      <footer className="container-fluid">
+
+      <footer className="container-fluid bg-white">
         <div className="container">
           <hr />
           <div className="d-flex flex-column flex-md-row align-items-md-end mt-4 mb-5">

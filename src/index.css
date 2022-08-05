@@ -143,20 +143,12 @@
 
 /* * { border: 1px solid red} */
 
-/* @media (max-width: 1024px) {
-  .home-logo {
-    width: 100%;
-    height: 100%;
-  }
-} */
+
 
 
 @media (max-width: 768px) {
   .registration-input {
     width: 100%!important;
   }
-  /* .home-logo {
-    width: 115px;
-    height: 34px;
-  } */
+  
 }
