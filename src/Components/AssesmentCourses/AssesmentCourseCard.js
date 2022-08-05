@@ -1,18 +1,9 @@
-<<<<<<< HEAD
-// import starFull from "../../images/star_full.png";
-// import starEmpty from "../../images/star_empty.png";
-
-import { Link } from "react-router-dom";
-
-const AssesmentCourseCard = (props) => {
-=======
 import { Link } from "react-router-dom";
 
 const AssesmentCourseCard = (props) => {
   const bgColor =
     props.assesmentProgress === "Failed" ? "rgba(253, 78, 93, 0.15)" : "#fff";
 
->>>>>>> main
   return (
     <>
       <style>{`
@@ -46,31 +37,11 @@ const AssesmentCourseCard = (props) => {
             display: inline-block;
             border-radius: 6px;
         }
-<<<<<<< HEAD
-        .spacing{
-            padding-left: 25px;
-            
-        }
-        .spacing-right{
-            padding-right: 15px;
-            
-        }
-        .spacing-left{
-            padding-right: 5px;
-            
-        }
-        .score-properties{
-            color: #00274c;
-            font-family: 'Ubuntu';
-            san-serif;
-
-=======
         
         
         .score-properties{
             color: #00274c;
             font-family: 'Ubuntu';
->>>>>>> main
         }
         
         .text_color{
@@ -87,11 +58,6 @@ const AssesmentCourseCard = (props) => {
             max-width: 275px;
             border: 1px solid var(--dark-blue);
         }
-<<<<<<< HEAD
-    `}</style>
-
-      <div className="card new-course-card col col-12 col-lg-3 mb-5 mx-4 px-0">
-=======
 
         .pending {
             color: #FFCB05;
@@ -106,7 +72,6 @@ const AssesmentCourseCard = (props) => {
         style={{ backgroundColor: bgColor }}
         className="card new-course-card col col-12 col-lg-3 mb-5 mx-4 px-0"
       >
->>>>>>> main
         <img
           className="card-img-top img-fluid"
           src={props.src}
@@ -114,12 +79,7 @@ const AssesmentCourseCard = (props) => {
           width="350"
           height="223"
         />
-<<<<<<< HEAD
-        <div className="card-body p-lg-4">
-          
-=======
         <div className="card-body p-lg-3 d-flex flex-column justify-content-between">
->>>>>>> main
           <h5 className="course-title mb-3 text_color">{props.courseTitle}</h5>
           <div className="d-flex">
             <img
@@ -131,53 +91,6 @@ const AssesmentCourseCard = (props) => {
             />
             <p className="instructor-name ">{props.instructorName}</p>
           </div>
-<<<<<<< HEAD
-          
-          
-
-          <div className="d-flex spacing-left">
-              <div className="d-flex spacing-left">
-                    <img
-                    className="instructor-img me-2"
-                    src={props.assesmentCompletedIcon}
-                    alt="instructor"
-                    width={"20"}
-                    height={"20"}
-                    
-                    />
-                    <p className="instructor-name spacing-right">{props.assesmentProgress}</p>
-              </div>
-            
-            
-               
-              <div className="d-flex spacing-left">
-                  <img
-                    className="score-img me-2"
-                    src={props.assesmentScoreImg}
-                    alt="score"
-                    width={"20"}
-                    height={"20"}
-                    
-
-                 />
-                 <p className="Assesment text_color spacing-left">{props.assesmentVal}</p>               
-                 <p className="Assesment_numerator  text_color ">{props.score_numerator}</p>
-                 <p className="Assesment_numerator  text_color">{props.score_divsion}</p>
-                 <p className="Assesment_denominator  text_color">{props.score_denomenator}</p>
-
-            </div>
-                 
-
-          </div>
-        </div>
-        <div>
-              <Link
-              to={"/student/assesment"}
-              className="btn-get-started_new btn"
-            >
-              
-              {props.assesmentAction}{" "}
-=======
 
           <div className="d-flex justify-content-between">
             <div
@@ -209,24 +122,10 @@ const AssesmentCourseCard = (props) => {
             </div>
 
             <div className="d-flex align-items-center score-properties">
->>>>>>> main
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="20"
                 height="20"
-<<<<<<< HEAD
-                fill="currentColor"
-                className="bi bi-arrow-down ms-5"
-                viewBox="0 0 20 20"
-                style={{ transform: "rotate(-90deg)" }}
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"
-                />
-              </svg>
-            </Link>
-=======
                 fillRule="currentColor"
                 className="bi bi-mortarboard"
                 viewBox="0 0 16 16"
@@ -259,7 +158,6 @@ const AssesmentCourseCard = (props) => {
               />
             </svg>
           </Link>
->>>>>>> main
         </div>
       </div>
     </>

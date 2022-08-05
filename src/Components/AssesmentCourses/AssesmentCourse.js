@@ -8,19 +8,10 @@ import avatar2 from "../../images/New Courses/avatar2.png";
 import avatar3 from "../../images/New Courses/avatar3.png";
 import avatar4 from "../../images/New Courses/avatar4.png";
 
-<<<<<<< HEAD
-import completed_icon from "../../images/AssesmentCourses/completed_icon.png";
-import failed_icon from "../../images/AssesmentCourses/failed_icon.png";
-import pending_icon from "../../images/AssesmentCourses/pending_icon.png";
-import score_icon from "../../images/AssesmentCourses/score_icon.png";
-
-
-=======
 // import completed_icon from "../../images/AssesmentCourses/completed_icon.png";
 // import failed_icon from "../../images/AssesmentCourses/failed_icon.png";
 // import pending_icon from "../../images/AssesmentCourses/pending_icon.png";
 // import score_icon from "../../images/AssesmentCourses/score_icon.png";
->>>>>>> main
 
 const AssesmentCourses = (props) => {
   return (
@@ -29,35 +20,19 @@ const AssesmentCourses = (props) => {
       #new-courses-section {
         background: ${props.bgColor};
       }
-<<<<<<< HEAD
-
     #new-courses-section h2 {
         font-family: 'Ubuntu', san-serif;
     }
-
-=======
-    #new-courses-section h2 {
-        font-family: 'Ubuntu', san-serif;
-    }
->>>>>>> main
     .new-courses-btn {
         background: none;
         border: none;
         font-family: 'Work Sans', sans-serif;
         font-weight: 500;
     }
-<<<<<<< HEAD
-
-=======
->>>>>>> main
     #new-courses-arrow {
         transform: rotate(235deg);
         margin-left: 0.25rem;
     }
-<<<<<<< HEAD
-
-=======
->>>>>>> main
     @media (max-width: 768px) {
       .new-courses-btn {
         display: none;
@@ -87,57 +62,6 @@ const AssesmentCourses = (props) => {
             </button>
           </div>
           <div className="row justify-content-center">
-<<<<<<< HEAD
-              <AssesmentCourseCard
-              src={new4}
-              alt="instructor"
-              courseTitle="Geometry from Beginner to Senior Level"
-              instructorImg={avatar4}
-              instructorName="Wade Warren"
-              assesmentCompletedIcon={pending_icon}
-              assesmentVal="Score"
-              assesmentProgress="Pending"
-              assesmentScoreImg={score_icon}
-              score_numerator="0"
-              score_divsion="/"
-              score_denomenator="10"
-              assesmentAction="Complete Assesment"
-              
-
-            />
-            <AssesmentCourseCard
-              src={new1}
-              alt="instructor"
-              courseTitle="User Experience Design foundation intro Assesment"
-              instructorImg={avatar1}
-              instructorName="Nicole Savana"
-              assesmentCompletedIcon={completed_icon}
-              assesmentVal="Score"
-              assesmentProgress="Completed"
-              assesmentScoreImg={score_icon}
-              score_numerator="10"
-              score_divsion="/"
-              score_denomenator="10"
-              assesmentAction="View Assesment"
-              
-            />
-            
-            <AssesmentCourseCard
-              src={new3}
-              alt="instructor"
-              courseTitle="Mathematic - Equation Assessment 2"
-              instructorImg={avatar3}
-              instructorName="Anina David"
-              assesmentVal="Score"
-              assesmentCompletedIcon={failed_icon}
-              assesmentProgress="Failed"
-              assesmentScoreImg={score_icon}
-              score_numerator="0"
-              score_divsion="/"
-              score_denomenator="10"
-              assesmentAction="Retake Assesment"
-              
-=======
             <AssesmentCourseCard
               src={new4}
               courseTitle="Geometry from Beginner to Senior Level"
@@ -165,29 +89,10 @@ const AssesmentCourses = (props) => {
               assesmentProgress="Failed"
               score="0"
               assesmentAction="Retake Assesment"
->>>>>>> main
             />
 
             <AssesmentCourseCard
               src={new3}
-<<<<<<< HEAD
-              alt="instructor"
-              courseTitle="Mathematic - Equation Assessment 2"
-              instructorImg={avatar3}
-              instructorName="Anina David"
-              assesmentVal="Score"
-              assesmentCompletedIcon={failed_icon}
-              assesmentProgress="Failed"
-              assesmentScoreImg={score_icon}
-              score_numerator="0"
-              score_divsion="/"
-              score_denomenator="10"
-              assesmentAction="Retake Assesment"
-            />
-
-            
-            
-=======
               courseTitle="Mathematic - Equation Assessment 2"
               instructorImg={avatar3}
               instructorName="Anina David"
@@ -195,7 +100,6 @@ const AssesmentCourses = (props) => {
               score="0"
               assesmentAction="Retake Assesment"
             />
->>>>>>> main
           </div>
         </div>
       </section>

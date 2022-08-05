@@ -11,19 +11,11 @@ const StudentNav = () => {
   return (
     <>
       <style>{`
-<<<<<<< HEAD
-
-=======
->>>>>>> main
         .tutors-sup {
             font-family: 'Work Sans', sans-serif;
             color: var(--dark-blue);
             font-weight: 600;
         }
-<<<<<<< HEAD
-
-=======
->>>>>>> main
         #student-nav-logo {
             text-decoration: none;
         }
@@ -31,43 +23,23 @@ const StudentNav = () => {
         header {
           overflow-x: hidden;
         }
-<<<<<<< HEAD
-
-=======
->>>>>>> main
         nav {
             font-family: 'Work Sans', sans-serif;
             z-index: 100;
         }
-<<<<<<< HEAD
-
-=======
->>>>>>> main
         .nav-link {
             color: var(--dark-blue);
             font-size: 20px;          
         }
-<<<<<<< HEAD
-
         .navbar-toggler:focus {
           border-width: 2px;
         }
-
-=======
-        .navbar-toggler:focus {
-          border-width: 2px;
-        }
->>>>>>> main
         .active {
             font-weight: bold;
             text-decoration: dashed underline;
             text-decoration-color: var(--active-link);
             text-underline-offset: 6px;
         }        
-<<<<<<< HEAD
-
-=======
->>>>>>> main
         .btn-nav {
             border: 1px solid var(--dark-blue);
             color: var(--dark-blue);
@@ -82,27 +54,15 @@ const StudentNav = () => {
         }
        
         
-<<<<<<< HEAD
-
-=======
->>>>>>> main
         .nav-btn-container {
           display: flex;
           align-items: center;
         }
        
-<<<<<<< HEAD
-
-        @media (max-width: 1024px) {
-          
-          .nav-item:first-of-type {
-            padding-top: 5rem;
-=======
         @media (max-width: 1024px) {
           
           .nav-item:first-of-type {
             padding-top: 3rem;
->>>>>>> main
           }
         }
     `}</style>
@@ -180,11 +140,7 @@ const StudentNav = () => {
                     Assignments
                   </Link>
                 </li>
-<<<<<<< HEAD
-               
-=======
 
->>>>>>> main
                 <li className="nav-item">
                   <Link
                     to={"/student/orders"}

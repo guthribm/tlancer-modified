@@ -2,11 +2,7 @@ import { Link } from "react-router-dom";
 import { useContext } from "react";
 import logo from "../images/logo.webp";
 import AuthContext from "../store/auth-context";
-<<<<<<< HEAD
-const ParentNav = () => {
-=======
 const TutorNav = () => {
->>>>>>> main
   console.log("navbar rendered");
 
   const authCTX = useContext(AuthContext);
@@ -22,11 +18,7 @@ const TutorNav = () => {
             font-weight: 600;
         }
 
-<<<<<<< HEAD
-        #parent-nav-logo {
-=======
         #tutor-nav-logo {
->>>>>>> main
             text-decoration: none;
         }
       
@@ -79,11 +71,7 @@ const TutorNav = () => {
         @media (max-width: 1024px) {
           
           .nav-item:first-of-type {
-<<<<<<< HEAD
-            padding-top: 5rem;
-=======
             padding-top: 3rem;
->>>>>>> main
           }
         }
     `}</style>
@@ -91,26 +79,17 @@ const TutorNav = () => {
         <nav className="navbar px-3 navbar-expand-lg navbar-light bg-white fixed-top w-100">
           <div className="container mt-2 mx-auto px-0">
             <div className="d-flex flex-row-reverse align-items-center w-100">
-<<<<<<< HEAD
-              <Link className="me-lg-auto" id="parent-nav-logo" to="/parent">
-=======
               <Link className="me-lg-auto" id="tutor-nav-logo" to="/tutor">
->>>>>>> main
                 <img
                   className="home-logo p-1"
                   src={logo}
                   alt="Tlancer"
                   width={"374"}
                   height={"90"}
-<<<<<<< HEAD
-                />              
-              </Link>
-=======
                 />
                 <span className="tutors-sup h4 mx-2">parent</span>
               </Link>
 
->>>>>>> main
               <button
                 className="navbar-toggler me-auto"
                 type="button"
@@ -123,10 +102,7 @@ const TutorNav = () => {
                 <span className="navbar-toggler-icon"></span>
               </button>
             </div>
-<<<<<<< HEAD
-=======
 
->>>>>>> main
             <div className="collapse navbar-collapse" id="navbar">
               <ul className="navbar-nav m-auto mb-2 mb-lg-0 text-center">
                 <li className="nav-item">
@@ -137,17 +113,10 @@ const TutorNav = () => {
                   >
                     Home
                   </Link>
-<<<<<<< HEAD
-                </li>                
-                <li className="nav-item">
-                  <Link
-                    to={"/tutor"}
-=======
                 </li>
                 <li className="nav-item">
                   <Link
                     to={"/parent/tutor"}
->>>>>>> main
                     className="nav-link text-nowrap"
                     aria-current="page"
                   >
@@ -156,11 +125,7 @@ const TutorNav = () => {
                 </li>
                 <li className="nav-item">
                   <Link
-<<<<<<< HEAD
-                    to={"/parent/task"}
-=======
                     to={"/parent/Task"}
->>>>>>> main
                     className="nav-link text-nowrap"
                     aria-current="page"
                   >
@@ -169,11 +134,7 @@ const TutorNav = () => {
                 </li>
                 <li className="nav-item">
                   <Link
-<<<<<<< HEAD
-                    to={"/student/attendance"}
-=======
                     to={"/parent/attendance"}
->>>>>>> main
                     className="nav-link text-nowrap"
                     aria-current="page"
                   >
@@ -182,8 +143,6 @@ const TutorNav = () => {
                 </li>
                 <li className="nav-item">
                   <Link
-<<<<<<< HEAD
-=======
                     to={"/parent/assignments"}
                     className="nav-link text-nowrap"
                     aria-current="page"
@@ -193,7 +152,6 @@ const TutorNav = () => {
                 </li>
                 <li className="nav-item">
                   <Link
->>>>>>> main
                     to={"/parent/orders"}
                     className="nav-link text-nowrap"
                     aria-current="page"
@@ -202,8 +160,6 @@ const TutorNav = () => {
                   </Link>
                 </li>
               </ul>
-<<<<<<< HEAD
-=======
               <div className="d-flex align-items-center justify-content-center my-5 my-lg-0 ms-auto ms-lg-5">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -251,7 +207,6 @@ const TutorNav = () => {
                   />
                 </svg>
               </div>
->>>>>>> main
             </div>
           </div>
         </nav>
@@ -259,8 +214,4 @@ const TutorNav = () => {
     </>
   );
 };
-<<<<<<< HEAD
-export default ParentNav;
-=======
 export default TutorNav;
->>>>>>> main

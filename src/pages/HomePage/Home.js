@@ -32,17 +32,11 @@ import TutorNewCourse from "../ProfilePage/TutorPage/NewTutor/TutorNewCourse";
 import TutorNewCourseSyllabus from "../ProfilePage/TutorPage/NewTutor/TutorNewCourseSyllabus";
 import { useContext } from "react";
 import PageNotFound from "../../Components/PageNotFound";
-<<<<<<< HEAD
-import AssesmentCourse from "../../Components/AssesmentCourses/AssesmentCourse";
 import ParentLoggedPage from "../ProfilePage/ParentPage/ParentLoggedPage";
-import ChildProgress from "../../pages/ProfilePage/ParentPage/ChildProgress";
-=======
-import ParentLoggedPage from "../ProfilePage/ParentPage/ParentLoggedPage";
-import ParentNav from "../../Components/ParentNav";
 import TutorNewCoursePreviewVideo from "../ProfilePage/TutorPage/NewTutor/TutorNewCoursePreviewVideo";
 import TutorNewCoursePricing from "../ProfilePage/TutorPage/NewTutor/TutorNewCoursePricing";
 import NewTutorCourseCalendar from "../ProfilePage/TutorPage/NewTutor/NewTutorCourseCalendar";
->>>>>>> main
+import ChildProgress from "../../pages/ProfilePage/ParentPage/ChildProgress";
 
 const Home = () => {
   console.log("home rendered");
@@ -142,14 +136,7 @@ const Home = () => {
           }
         />
 
-        <Route
-          path="/AssesmentCourse"
-          element={
-            <>
-              <AssesmentCourse />
-            </>
-          }
-        />
+        
 
         <Route
           path="/location"
