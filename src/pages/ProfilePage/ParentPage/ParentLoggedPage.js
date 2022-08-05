@@ -10,6 +10,7 @@ import FooterLinks from "../../HomePage/FooterLinks";
 import AssesmentCourses from "../../../Components/AssesmentCourses/AssesmentCourse";
 import NewCourses from "../../../Components/NewCourses/NewCourses";
 import AssesmentCourse from "../../../Components/AssesmentCourses/AssesmentCourse";
+import ChildProgress from "../../../pages/ProfilePage/ParentPage/ChildProgress"
 const ParentLoggedPage = () => {
   return (
     <>
@@ -18,10 +19,10 @@ const ParentLoggedPage = () => {
       <Divider />
       <TutorDashboard />
       <Divider />
+      <ChildProgress />
       <ParentLearnMore />
       <ParentSelfService />
-      <AssesmentCourse  heading="Assesments"/>
-      
+      <AssesmentCourse  heading="Assesments"/>     
       <NewCourses  heading="payal's favourite courses"/> 
       <Divider />
       <TlancerCommunity />
