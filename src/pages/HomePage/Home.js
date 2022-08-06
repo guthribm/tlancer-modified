@@ -37,7 +37,9 @@ import TutorNewCoursePreviewVideo from "../ProfilePage/TutorPage/NewTutor/TutorN
 import TutorNewCoursePricing from "../ProfilePage/TutorPage/NewTutor/TutorNewCoursePricing";
 import NewTutorCourseCalendar from "../ProfilePage/TutorPage/NewTutor/NewTutorCourseCalendar";
 import ChildProgress from "../../pages/ProfilePage/ParentPage/ChildProgress";
-
+import  StudentMyCourseHero from "../ProfilePage/StudentPage/StudentMyCourseHero";
+import StudentCourseNav from"../ProfilePage/StudentPage/StudentCourseNav";
+import StudentMyCourse from "../ProfilePage/StudentPage/StudentMyCourse";
 
 const Home = () => {
   console.log("home rendered");
@@ -99,7 +101,8 @@ const Home = () => {
             }
           />
         )}
-
+        
+         
         <Route
           path="/names"
           element={
@@ -108,8 +111,32 @@ const Home = () => {
             </>
           }
         />
+        
+        <Route
+          path="/StudentMyCourse"
+          element={
+            <>
+              <StudentMyCourse />
+            </>
+          }
+        />
+          <Route
+          path="/StudentCourseNav"
+          element={
+            <>
+              <StudentCourseNav />
+            </>
+          }
+        />
 
-        ParentLoggedPage
+        <Route
+          path="/StudentMyCourseHero"
+          element={
+            <>
+              <StudentMyCourseHero />
+            </>
+          }
+        />
         <Route
           path="/ParentLoggedPage"
           element={
@@ -238,7 +265,8 @@ const Home = () => {
             </>
           }
         />
-
+       
+ 
 
         <Route
           path="/parent/parent_nav"
