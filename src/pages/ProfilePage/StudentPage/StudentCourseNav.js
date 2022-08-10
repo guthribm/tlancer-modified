@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useContext } from "react";
 import AuthContext from "../../../store/auth-context";
 const StudentCourseNav = () => {
-  console.log("navbar rendered");
+  
 
   const authCTX = useContext(AuthContext);
   console.log("authCTX value: " + JSON.stringify(authCTX));
@@ -64,62 +64,64 @@ const StudentCourseNav = () => {
             padding-top: 3rem;
           }
         }
-        .left_test{
-            margin-left:0px;
+        .margin-from-left{
+            margin-left:30px;
         }
+        .nav-link:hover{
+         font-weight:bold;
+        }
+        .default-font-weight{
+          font-weight:bold;
+        }
+        .default-color{
+          color: #808080;
+        }
+        
     `}</style>
-      <header className="contianer-fluid">
-        <nav className="navbar px-3 navbar-expand-lg navbar-light bg-white fixed-top ">
-          <div className="container  mx-auto px-0">
-             
-            <div className="collapse navbar-collapse" id="navbar">
+            <section id="parent-section" className="container-fluid">
+        <div className="container  flex-column-reverse flex-md-row align-items-center">
+            <div className="d-flex">
                 
-              <ul className="navbar-nav text-center">
-            
-                <li className="nav-item">
+                  
                   <Link
                     to={"/student/courses"}
-                    className="nav-link text-nowrap"
+                    className="nav-link text-nowrap  default-font-weight default-color"
                     aria-current="page"
+                    
+                    
+                    
                   >
                     All My Courses
                   </Link>
-                </li>
-                <li className="nav-item">
+                   
+
                   <Link
                     to={"/student/courses/inProgress"}
-                    className="nav-link text-nowrap"
+                    className="nav-link text-nowrap margin-from-left default-color"
                     aria-current="page"
                   >
-                    In Progress
-                  </Link>
-                </li>
-                <li className="nav-item">
+                    MyCourses
+                  </Link>  
+
                   <Link
                     to={"/student/courses/completed"}
-                    className="nav-link text-nowrap"
+                    className="nav-link text-nowrap margin-from-left default-color"
                     aria-current="page"
                   >
                     Completed
-                  </Link>
-                </li>
-                <li className="nav-item">
+                  </Link> 
+
                   <Link
                     to={"/student/retake"}
-                    className="nav-link text-nowrap"
+                    className="nav-link text-nowrap margin-from-left"
                     aria-current="page"
+                    style={{ color: "#ffaf00"}}
                   >
                     Retake
-                  </Link>
-                </li>
-              </ul>
-
-
-        
+                  </Link>    
             </div>
-          </div>
-        </nav>
-      </header>
+        </div>
+      </section>
     </>
   );
 };

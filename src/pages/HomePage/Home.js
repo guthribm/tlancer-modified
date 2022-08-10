@@ -40,6 +40,9 @@ import ChildProgress from "../../pages/ProfilePage/ParentPage/ChildProgress";
 import  StudentMyCourseHero from "../ProfilePage/StudentPage/StudentMyCourseHero";
 import StudentCourseNav from"../ProfilePage/StudentPage/StudentCourseNav";
 import StudentMyCourse from "../ProfilePage/StudentPage/StudentMyCourse";
+import StudentMyCoursePage from "../ProfilePage/StudentPage/StudentMyCourse";
+import StudentCourseCard from "../../Components/StudentCourses/StudentCourseCard";
+import StudentCourses from "../../Components/StudentCourses/StudentCourse";
 
 const Home = () => {
   console.log("home rendered");
@@ -90,6 +93,14 @@ const Home = () => {
             </>
           }
         />
+        <Route
+          path="/StudentCourses"
+          element={
+            <>
+              <StudentCourses />
+            </>
+          }
+        />
 
         {!AuthCTX.isLoggedIn && (
           <Route
@@ -102,12 +113,32 @@ const Home = () => {
           />
         )}
         
-         
+        
+
+         <Route
+          path="/StudentMyCoursePage"
+          element={
+            <>
+              <StudentMyCoursePage />
+            </>
+          }
+        />
         <Route
           path="/names"
           element={
             <>
               <JoinName />
+            </>
+          }
+        />
+
+
+      
+        <Route
+          path="/StudentCourseCard"
+          element={
+            <>
+              <StudentCourseCard />
             </>
           }
         />

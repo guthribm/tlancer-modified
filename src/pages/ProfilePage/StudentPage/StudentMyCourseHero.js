@@ -56,8 +56,8 @@ const StudentMyCourseHero = () => {
         }
         
       `}</style>
-      <section id="parent-section" className="container-fluid p-5">
-        <div className="container  flex-column-reverse flex-md-row align-items-center p-lg-5">
+      <section id="parent-section" className="container-fluid p-5 mt-5">
+        <div className="container  flex-column-reverse flex-md-row align-items-center p-lg-5 mt-5">
          <div className="announcent-section d-flex test_left left_margin div_left_margin">
                  <img src={notification} width="30" height="30"/>
                  <p className="para_left w-75 left_margin">
