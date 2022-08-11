@@ -45,28 +45,31 @@ const StudentMyCourseHero = () => {
             font-weight: 600;
         }
         .left_margin{
-            margin-left:20px;
+            margin-left:30px;
         }
         .div_left_margin{
-             margin-left:500px;
+             margin-left:540px;
         }
         .arrow_size{
             width: 30px;
             height:15px;
         }
+        .new-margin-left{
+            margin-left:30px;
+        }
         
       `}</style>
-      <section id="parent-section" className="container-fluid p-5 mt-5">
-        <div className="container  flex-column-reverse flex-md-row align-items-center p-lg-5 mt-5">
-         <div className="announcent-section d-flex test_left left_margin div_left_margin">
-                 <img src={notification} width="30" height="30"/>
-                 <p className="para_left w-75 left_margin">
+      <section id="parent-section" className="container-fluid p-5  mt-1">
+        <div className="container   align-items-center p-lg-5">
+         <div className=" d-flex div_left_margin">
+                 <img src={notification} width="30" height="30" className="new-margin-left"/>
+                 <p className="para_left w-75 left_margin ">
                      No announcements have been posted yet. No announcementsNo announcements have been posted yet. No announcements
                  </p>
-                 <img src={charm_cross} width="30" height="30"/>
+                 <img src={charm_cross} width="20" height="20" className="new-margin-left"/>
 
-            </div>
-            <div className="d-flex">
+          </div>
+            <div className="d-flex new-margin-right">
                 
                   <Link
                         to={"/student"}

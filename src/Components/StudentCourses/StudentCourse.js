@@ -26,15 +26,15 @@ const StudentCourses = (props) => {
         transform: rotate(235deg);
         margin-left: 0.25rem;
     }
-    @media (max-width: 768px) {
+    @media (max-width: 768px) 
       .new-courses-btn {
         display: none;
       }
     }
     `}</style>
-      <section id="new-courses-section" className="container-fluid p-lg-5">
+      <section id="new-courses-section" className="container-fluid">
         <div className="container">
-          <div className="container d-flex flex-column flex-md-row align-items-center justify-content-between mt-1 my-md-5">
+          <div className="container d-flex flex-column flex-md-row align-items-center justify-content-between">
             <h2 className="h4 fw-bold my-5">{props.heading}</h2>
           </div>
           <div className="row justify-content-center">

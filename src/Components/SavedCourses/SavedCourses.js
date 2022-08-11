@@ -1,4 +1,4 @@
-import NewCourseCard from "./NewCourseCard";
+import SavedCourseCard from "./SavedCourseCard";
 import new1 from "../../images/New Courses/new1.png";
 import new2 from "../../images/New Courses/new2.png";
 import new3 from "../../images/New Courses/new3.png";
@@ -8,7 +8,7 @@ import avatar2 from "../../images/New Courses/avatar2.png";
 import avatar3 from "../../images/New Courses/avatar3.png";
 import avatar4 from "../../images/New Courses/avatar4.png";
 
-const NewCourses = (props) => {
+const SavedCourses = (props) => {
   return (
     <>
       <style>{`
@@ -37,9 +37,12 @@ const NewCourses = (props) => {
         display: none;
       }
     }
+    .new-background{
+        background:#eff9cd;
+    }
     `}</style>
     
-      <section id="new-courses-section" className="container-fluid p-lg-5" >
+      <section id="new-courses-section" className="container-fluid p-lg-5 new-background" >
         <div className="container" >
           <div className="container d-flex flex-column flex-md-row align-items-center justify-content-between mt-5 my-md-5">
             <h2 className="h4 fw-bold my-5">{props.heading}</h2>
@@ -62,7 +65,7 @@ const NewCourses = (props) => {
             </button>
           </div>
           <div className="row justify-content-center">
-            <NewCourseCard
+            <SavedCourseCard
               src={new1}
               alt="instructor"
               courseTitle="User Research Pro-Level Course for Beginner"
@@ -71,7 +74,7 @@ const NewCourses = (props) => {
               price="$15.99"
               priceBefore="$25.99"
             />
-            <NewCourseCard
+            <SavedCourseCard
               src={new2}
               alt="instructor"
               courseTitle="Senior Level General Chemistry Course"
@@ -80,7 +83,7 @@ const NewCourses = (props) => {
               price="$15.99"
               priceBefore="$25.99"
             />
-            <NewCourseCard
+            <SavedCourseCard
               src={new3}
               alt="instructor"
               courseTitle="Geometry from Beginner to Senior Level"
@@ -89,7 +92,7 @@ const NewCourses = (props) => {
               price="$15.99"
               priceBefore="$25.99"
             />
-            <NewCourseCard
+            <SavedCourseCard
               src={new4}
               alt="instructor"
               courseTitle="Geometry from Beginner to Senior Level"
@@ -104,4 +107,4 @@ const NewCourses = (props) => {
     </>
   );
 };
-export default NewCourses;
+export default SavedCourses;

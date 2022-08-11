@@ -43,6 +43,9 @@ import StudentMyCourse from "../ProfilePage/StudentPage/StudentMyCourse";
 import StudentMyCoursePage from "../ProfilePage/StudentPage/StudentMyCourse";
 import StudentCourseCard from "../../Components/StudentCourses/StudentCourseCard";
 import StudentCourses from "../../Components/StudentCourses/StudentCourse";
+import TutorCard from "../../Components/TutorCourses/TutorCard";
+import TutorCourse from"../../Components/TutorCourses/TutorCourse";
+import SavedCourses from "../../Components/SavedCourses/SavedCourses";
 
 const Home = () => {
   console.log("home rendered");
@@ -94,10 +97,34 @@ const Home = () => {
           }
         />
         <Route
+          path="/SavedCourses"
+          element={
+            <>
+              <SavedCourses />
+            </>
+          }
+        />
+         <Route
+          path="/TutorCard"
+          element={
+            <>
+              <TutorCard />
+            </>
+          }
+        />
+        <Route
           path="/StudentCourses"
           element={
             <>
               <StudentCourses />
+            </>
+          }
+        />
+        <Route
+          path="/TutorCourse"
+          element={
+            <>
+              <TutorCourse />
             </>
           }
         />

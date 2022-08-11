@@ -6,6 +6,10 @@ import StudentCourseNav from "./StudentCourseNav";
 import StudentMyCourseHero from "./StudentMyCourseHero";
 import StudentNav from "../../../Components/StudentNav";
 import StudentCourses from "../../../Components/StudentCourses/StudentCourse";
+import TutorCourse from "../../../Components/TutorCourses/TutorCourse";
+import SavedCourses from "../../../Components/SavedCourses/SavedCourses";   
+
+    
 const StudentMyCoursePage = () => {
   return (
     <>
@@ -14,6 +18,8 @@ const StudentMyCoursePage = () => {
       <StudentMyCourseHero />
       <StudentCourseNav />
       <StudentCourses />
+      <TutorCourse/>
+      <SavedCourses heading="Saved Courses" />
       <FooterLinks/>
       
 

@@ -76,9 +76,12 @@ const StudentCourseNav = () => {
         .default-color{
           color: #808080;
         }
+        .new-left{
+          margin-left:30px;
+        }
         
     `}</style>
-            <section id="parent-section" className="container-fluid">
+            <section id="parent-section" className="container-fluid new-left">
         <div className="container  flex-column-reverse flex-md-row align-items-center">
             <div className="d-flex">
                 
